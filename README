@@ -12,5 +12,8 @@ INFOS RECEUILLIS
 
 Base de données:
 
-Table admin
+Table user
+	- pseudo VARCHAR
+	- mot de passe VARCHAR
+	- estAdmin YES/NO
 Table film
