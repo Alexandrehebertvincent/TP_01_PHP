@@ -13,4 +13,3 @@ $dbMotPasse = "qwerty123";
 
 // Base de données
 $dbNom = "tp1_dionlaflamme_hebertvincent";
-?>
