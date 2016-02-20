@@ -10,26 +10,3 @@ Merci :)
 INFOS RECEUILLIS
 ###############################################################################
 
-Base de données:
-
-Table user
-	- pseudo VARCHAR
-	- mot de passe VARCHAR
-	- estAdmin YES/NO
-	
-Table film
-	- numFilm ??
-	- ajoutePar REFERENCES user
-	- titre	VARCHAR
-	- anneeSortie DATETIME
-
-Table ActeurFilm
-	- numContratActeur
-	- numFilm VARCHAR REFERENCES film
-	- numActeur VARCHAR REFERENCES Acteur
-	- gagnantOscar YES/NO
-	
-Table Acteur
-	- numActeur
-	- nom VARCHAR
-	- prenom VARCHAR
