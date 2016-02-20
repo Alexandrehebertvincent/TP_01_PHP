@@ -1,6 +1,0 @@
-DATABASE: tp1_dionlaflamme_hebertvincent
-USER: garneau
-PASS: qwerty123
-ADRESSE: 97.74.233.135
-
-:) !
