@@ -2,12 +2,6 @@
 
 session_start();
 
-echo $_POST['pseudo'];
-print_r($_POST);
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-	echo "charmante";
-}
-
 // Vérifier s'il y a eu une requête de connexion.
 if (isset($_POST['pseudo']) && isset($_POST['mdp'])) {
     // Vérifier si les champs ne sont pas vides.
@@ -44,13 +38,6 @@ if (isset($_POST['pseudo']) && isset($_POST['mdp'])) {
         }
     }
 }
-
-echo 'Connexion!';
-echo $_POST['pseudo'];
-print_r($_POST);
-echo 'sdjnofds';
-var_dump($_SESSION['utilisateur']);
-var_dump($_COOKIE["utilisateur"]);
 
 ?>
 
@@ -143,7 +130,6 @@ var_dump($_COOKIE["utilisateur"]);
 <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
 <script src="js/index.js"></script>
-
 
 </body>
 
