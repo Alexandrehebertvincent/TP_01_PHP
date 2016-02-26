@@ -48,7 +48,7 @@ if (isset($_POST['pseudo']) && isset($_POST['mdp'])) {
 echo 'Connexion!';
 echo $_POST['pseudo'];
 print_r($_POST);
-echo 'sdjnofds';
+echo 'Essai 1';
 var_dump($_SESSION['utilisateur']);
 var_dump($_COOKIE["utilisateur"]);
 
@@ -115,10 +115,10 @@ var_dump($_COOKIE["utilisateur"]);
                         <span class="logmod__heading-subtitle">Entrez votre pseudo et votre mot de passe <strong>pour vous connecter</strong></span>
                     </div>
                     <div class="logmod__form">
-                        <form accept-charset="utf-8" action="connexion.php" class="simform" method="post">
+                        <form class="simform" method="post">
                             <div class="sminputs">
                                 <div class="input full">
-                                    <label class="string optional" for="user-name">Pseudo</label>
+                                    <label class="string optional" for="pseudo">Pseudo</label>
                                     <input class="string optional" maxlength="255" name="pseudo" placeholder="Pseudo" type="text" size="50" />
                                 </div>
                             </div>
@@ -135,6 +135,23 @@ var_dump($_COOKIE["utilisateur"]);
                             </div>
                         </form>
                     </div>
+					<form method="post">
+			<p>
+				<label for="nome">Nom: </label>
+				<input type="text" name="pseudo" />
+			</p>
+			<p>
+				<label for="age">Âge: </label>
+				<input type="text" name="mdp" />
+			</p>
+			<p>
+				<label for="couleur">COULEUR</label>
+				<input type="text" name="couleur" />
+			</p>
+			<p>
+				<input type="submit" value="Envoyer" />
+			</p>
+		</form>
                 </div>
             </div>
         </div>
