@@ -2,17 +2,23 @@
 
 session_start();
 
+echo $_POST['pseudo'];
+print_r($_POST);
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+	echo "charmante";
+}
+
 // Vérifier s'il y a eu une requête de connexion.
-if (isset($_GET['pseudo']) && isset($_GET['mdp'])) {
+if (isset($_POST['pseudo']) && isset($_POST['mdp'])) {
     // Vérifier si les champs ne sont pas vides.
-    if ($_GET['pseudo'] != '' && $_GET['mdp'] != '') {
+    if ($_POST['pseudo'] != '' && $_POST['mdp'] != '') {
         // Lancer la requête pour identifer l'utilisateur.
         try {
             // Inclure le fichier de connexion.
             include ("config.php");
 
             $req = $connBD->prepare('SELECT * FROM users WHERE Nom = ? AND Mot_de_Passe = ?');
-            $req->execute(array($_GET['pseudo'], $_GET['mdp']));
+            $req->execute(array($_POST['pseudo'], $_POST['mdp']));
 
             // L'utilisateur est initialisé à NULL.
             $_SESSION['utilisateur'] = NULL;
@@ -40,6 +46,9 @@ if (isset($_GET['pseudo']) && isset($_GET['mdp'])) {
 }
 
 echo 'Connexion!';
+echo $_POST['pseudo'];
+print_r($_POST);
+echo 'sdjnofds';
 var_dump($_SESSION['utilisateur']);
 var_dump($_COOKIE["utilisateur"]);
 
@@ -106,23 +115,23 @@ var_dump($_COOKIE["utilisateur"]);
                         <span class="logmod__heading-subtitle">Entrez votre pseudo et votre mot de passe <strong>pour vous connecter</strong></span>
                     </div>
                     <div class="logmod__form">
-                        <form accept-charset="utf-8" action="#" class="simform">
+                        <form accept-charset="utf-8" action="connexion.php" class="simform" method="post">
                             <div class="sminputs">
                                 <div class="input full">
                                     <label class="string optional" for="user-name">Pseudo</label>
-                                    <input class="string optional" maxlength="255" id="user-email" placeholder="Pseudo" type="text" size="50" />
+                                    <input class="string optional" maxlength="255" name="pseudo" placeholder="Pseudo" type="text" size="50" />
                                 </div>
                             </div>
                             <div class="sminputs">
                                 <div class="input full">
                                     <label class="string optional" for="user-pw">Mot de passe</label>
-                                    <input class="string optional" maxlength="255" id="user-pw" placeholder="Mot de passe" type="password" size="50" />
+                                    <input class="string optional" maxlength="255" name="mdp" placeholder="Mot de passe" type="password" size="50" />
                                     <span class="hide-password">Voir</span>
                                 </div>
                             </div>
                             <div class="simform__actions">
-                                <input class="sumbit" name="commit" type="sumbit" value="Connexion" />
-                                <span class="simform__actions-sidetext"><a class="special" role="link" href="#">Vous avez oublié votre mot de passe?<br>Cliquer ici</a></span>
+							<input class="sumbit" type="submit" value="Connexion" >
+                                <span class="simform__actions-sidetext"><a class="special" role="link" href="#">Vous avez oublié votre mot de passe?<br>Cliquer ici</a></span> 
                             </div>
                         </form>
                     </div>
