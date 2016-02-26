@@ -2,6 +2,12 @@
 
 session_start();
 
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    echo $_POST['pseudo'];
+    var_dump($_POST);
+    echo 'lloos';
+}
+
 // Vérifier s'il y a eu une requête de connexion.
 if (isset($_POST['pseudo']) && isset($_POST['mdp'])) {
     // Vérifier si les champs ne sont pas vides.
@@ -92,7 +98,6 @@ if (isset($_POST['pseudo']) && isset($_POST['mdp'])) {
                             </div>
                             <div class="simform__actions">
                                 <input class="sumbit" name="commit" type="sumbit" value="Creation compte" />
-                                <span class="simform__actions-sidetext">Par la création de votre compte, vous acceptez <a class="special" href="#" target="_blank" role="link">nos termes d'utilisation.</a></span>
                             </div>
                         </form>
                     </div>
@@ -102,23 +107,22 @@ if (isset($_POST['pseudo']) && isset($_POST['mdp'])) {
                         <span class="logmod__heading-subtitle">Entrez votre pseudo et votre mot de passe <strong>pour vous connecter</strong></span>
                     </div>
                     <div class="logmod__form">
-                        <form accept-charset="utf-8" action="connexion.php" class="simform" method="post">
+                        <form method="post" class="simform">
                             <div class="sminputs">
                                 <div class="input full">
-                                    <label class="string optional" for="user-name">Pseudo</label>
-                                    <input class="string optional" maxlength="255" name="pseudo" placeholder="Pseudo" type="text" size="50" />
+                                    <label class="string" for="pseudo">Pseudo</label>
+                                    <input class="string" id="pseudo" name="pseudo" placeholder="Pseudo" type="text">
                                 </div>
                             </div>
                             <div class="sminputs">
                                 <div class="input full">
-                                    <label class="string optional" for="user-pw">Mot de passe</label>
+                                    <label class="string optional" for="mdp">Mot de passe</label>
                                     <input class="string optional" maxlength="255" name="mdp" placeholder="Mot de passe" type="password" size="50" />
                                     <span class="hide-password">Voir</span>
                                 </div>
                             </div>
                             <div class="simform__actions">
 							<input class="sumbit" type="submit" value="Connexion" >
-                                <span class="simform__actions-sidetext"><a class="special" role="link" href="#">Vous avez oublié votre mot de passe?<br>Cliquer ici</a></span> 
                             </div>
                         </form>
                     </div>
