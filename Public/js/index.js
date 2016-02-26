@@ -61,10 +61,10 @@ var LoginModalController = {
 
             if ($pwInput.attr("type") == "password") {
                 $pwInput.attr("type", "text");
-                $this.text("Hide");
+                $this.text("Cacher");
             } else {
                 $pwInput.attr("type", "password");
-                $this.text("Show");
+                $this.text("Voir");
             }
         });
 
