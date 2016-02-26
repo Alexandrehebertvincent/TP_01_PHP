@@ -107,11 +107,11 @@ if (isset($_POST['pseudo']) && isset($_POST['mdp'])) {
                         <span class="logmod__heading-subtitle">Entrez votre pseudo et votre mot de passe <strong>pour vous connecter</strong></span>
                     </div>
                     <div class="logmod__form">
-                        <form method="post" class="simform">
+                        <form class="simform" method="post">
                             <div class="sminputs">
                                 <div class="input full">
                                     <label class="string" for="pseudo">Pseudo</label>
-                                    <input class="string" id="pseudo" name="pseudo" placeholder="Pseudo" type="text">
+                                    <input class="string" name="pseudo" placeholder="Pseudo" type="text">
                                 </div>
                             </div>
                             <div class="sminputs">
@@ -124,6 +124,19 @@ if (isset($_POST['pseudo']) && isset($_POST['mdp'])) {
                             <div class="simform__actions">
 							<input class="sumbit" type="submit" value="Connexion" >
                             </div>
+                        </form>
+                        <form method="post">
+                            <p>
+                                <label for="nome">Nom: </label>
+                                <input type="text" name="pseudo" />
+                            </p>
+                            <p>
+                                <label for="age">Âge: </label>
+                                <input type="text" name="mdp" />
+
+                            <p>
+                                <input type="submit" value="Envoyer" />
+                            </p>
                         </form>
                     </div>
                 </div>
