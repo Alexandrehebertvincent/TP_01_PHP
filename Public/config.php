@@ -4,7 +4,7 @@
 // ==================================================
 
 // Serveur
-$dbHote = "97.74.233.135";
+$dbHote = "localhost";
 
 // Nom d'utilisateur
 $dbUtilisateur = "garneau";
