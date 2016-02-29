@@ -3,58 +3,53 @@
 session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    echo $_POST['pseudo'];
-    var_dump($_POST);
-    echo 'lloos';
-}
+    // Vérifier s'il y a eu une requête de connexion.
+    if (isset($_POST['pseudo']) && isset($_POST['mdp'])) {
+        // Vérifier si les champs ne sont pas vides.
+        if ($_POST['pseudo'] != '' && $_POST['mdp'] != '') {
+            // Lancer la requête pour identifer l'utilisateur.
+            try {
+                // Inclure le fichier de connexion.
+                include ("config.php");
 
-// Vérifier s'il y a eu une requête de connexion.
-if (isset($_POST['pseudo']) && isset($_POST['mdp'])) {
-    // Vérifier si les champs ne sont pas vides.
-    if ($_POST['pseudo'] != '' && $_POST['mdp'] != '') {
-        // Lancer la requête pour identifer l'utilisateur.
-        try {
-            // Inclure le fichier de connexion.
-            include ("config.php");
+                $cost = 10;
+                $salt = strtr(base64_encode(mcrypt_create_iv(16, MCRYPT_DEV_URANDOM)), '+', '.');
+                $salt = sprintf("$2a$%02d$", $cost) . $salt;
+                $hash = crypt($_POST['mdp'], $salt);
 
-            $req = $connBD->prepare('SELECT * FROM users WHERE Nom = ? AND Mot_de_Passe = ?');
-            $req->execute(array($_POST['pseudo'], $_POST['mdp']));
+                $req = $connBD->prepare('SELECT * FROM users WHERE Nom =:nom');
+                $req->execute(array($_POST['pseudo']));
 
-            // L'utilisateur est initialisé à NULL.
-            $_SESSION['utilisateur'] = NULL;
-            // Si les données existes, l'utilisateur est alors créé.
-            while ($donnees = $req->fetch()) {
-                $_SESSION['utilisateur'] = array(
-                    "Id" => $donnees["Id"],
-                    "Nom" => $donnees["Nom"],
-                    "Acces" => $donnees["Acces"]
-                );
+                // L'utilisateur est initialisé à NULL.
+                $_SESSION['utilisateur'] = NULL;
+                // Si les données existes, l'utilisateur est alors créé.
+                while ($donnees = $req->fetch()) {
+                    if($donnees["Mot_de_Passe"] == crypt($_POST['mdp'], $donnees["Mot_de_Passe"])){
+                        $_SESSION['utilisateur'] = array(
+                            "Id" => $donnees["Id"],
+                            "Nom" => $donnees["Nom"],
+                            "Acces" => $donnees["Acces"]
+                        );
+                    } else {
+                        $_SESSION = array();
+                    }
+                }
+
+                $req->closeCursor();
+                $connBD = null;
+            } catch (PDOException $e) {
+                exit( "Erreur lors de l'exécution de la requête SQL :<br />\n" .  $e -> getMessage() . "<br />\nREQUÊTE = SELECT");
             }
 
-            $req->closeCursor();
-            $connBD = null;
-        } catch (PDOException $e) {
-            exit( "Erreur lors de l'exécution de la requête SQL :<br />\n" .  $e -> getMessage() . "<br />\nREQUÊTE = SELECT");
-        }
-
-        // Vérifier si l'utilisateur est créé.
-        // Si oui, rediriger vers la page d'accueil.
-        if ($_SESSION["utilisateur"] != NULL && isset($_SESSION["utilisateur"])) {
-            header("LOCATION: index.php");
+            // Vérifier si l'utilisateur est créé.
+            // Si oui, rediriger vers la page d'accueil.
+            if ($_SESSION["utilisateur"] != NULL && isset($_SESSION["utilisateur"])) {
+                header("LOCATION: index.php");
+            }
         }
     }
 }
 
-<<<<<<< HEAD
-echo 'Connexion!';
-echo $_POST['pseudo'];
-print_r($_POST);
-echo 'Essai 1';
-var_dump($_SESSION['utilisateur']);
-var_dump($_COOKIE["utilisateur"]);
-
-=======
->>>>>>> origin/master
 ?>
 
 <!DOCTYPE html>
@@ -74,8 +69,8 @@ var_dump($_COOKIE["utilisateur"]);
 
 </head>
 
-<body>
-
+<body id="body-connexion">
+<div class="filter filter-noir"></div>
 <div class="logmod">
     <div class="logmod__wrapper">
         <div class="logmod__container">
@@ -107,7 +102,7 @@ var_dump($_COOKIE["utilisateur"]);
                                 </div>
                             </div>
                             <div class="simform__actions">
-                                <input class="sumbit" name="commit" type="sumbit" value="Creation compte" />
+                                <input class="sumbit" name="commit" type="sumbit" value="Créer" />
                             </div>
                         </form>
                     </div>
@@ -120,13 +115,8 @@ var_dump($_COOKIE["utilisateur"]);
                         <form class="simform" method="post">
                             <div class="sminputs">
                                 <div class="input full">
-<<<<<<< HEAD
                                     <label class="string optional" for="pseudo">Pseudo</label>
                                     <input class="string optional" maxlength="255" name="pseudo" placeholder="Pseudo" type="text" size="50" />
-=======
-                                    <label class="string" for="pseudo">Pseudo</label>
-                                    <input class="string" name="pseudo" placeholder="Pseudo" type="text">
->>>>>>> origin/master
                                 </div>
                             </div>
                             <div class="sminputs">
@@ -140,37 +130,7 @@ var_dump($_COOKIE["utilisateur"]);
 							<input class="sumbit" type="submit" value="Connexion" >
                             </div>
                         </form>
-                        <form method="post">
-                            <p>
-                                <label for="nome">Nom: </label>
-                                <input type="text" name="pseudo" />
-                            </p>
-                            <p>
-                                <label for="age">Âge: </label>
-                                <input type="text" name="mdp" />
-
-                            <p>
-                                <input type="submit" value="Envoyer" />
-                            </p>
-                        </form>
                     </div>
-					<form method="post">
-			<p>
-				<label for="nome">Nom: </label>
-				<input type="text" name="pseudo" />
-			</p>
-			<p>
-				<label for="age">Âge: </label>
-				<input type="text" name="mdp" />
-			</p>
-			<p>
-				<label for="couleur">COULEUR</label>
-				<input type="text" name="couleur" />
-			</p>
-			<p>
-				<input type="submit" value="Envoyer" />
-			</p>
-		</form>
                 </div>
             </div>
         </div>
