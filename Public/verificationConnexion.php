@@ -24,9 +24,7 @@ if (!$bUtilisateurConnecte) {
     }
 }
 
-if ($bUtilisateurConnecte) {
-    header("LOCATION: index.php");
-} else {
+if ($bUtilisateurConnecte == false) {
     // Si l'utilisateur n'est pas connecté, rediriger vers le formulaire de connexion.
     header("LOCATION: connexion.php");
 }

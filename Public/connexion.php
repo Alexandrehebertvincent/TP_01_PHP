@@ -4,13 +4,13 @@ session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Vérifier s'il y a eu une requête de connexion.
-    if (isset($_POST['pseudo']) && isset($_POST['mdp'])) {
+    if (isset($_POST['pseudo'], $_POST['mdp'])) {
         // Vérifier si les champs ne sont pas vides.
         if ($_POST['pseudo'] != '' && $_POST['mdp'] != '') {
             // Lancer la requête pour identifer l'utilisateur.
             try {
                 // Inclure le fichier de connexion.
-                include ("config.php");
+                require("config.php");
 
                 $cost = 10;
                 $salt = strtr(base64_encode(mcrypt_create_iv(16, MCRYPT_DEV_URANDOM)), '+', '.');
@@ -45,9 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 exit( "Erreur lors de l'exécution de la requête SQL :<br />\n" .  $e -> getMessage() . "<br />\nREQUÊTE = SELECT");
             }
         } else {
-            echo '
-                <div class="error error-orange"><h3>Vous devez remplir tous les champs du formulaire!</h3></div>
-                ';
+            echo '<div class="error error-orange"><h3>Vous devez remplir tous les champs du formulaire!</h3></div>';
         }
     }
 }
