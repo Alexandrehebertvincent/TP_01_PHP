@@ -12,6 +12,22 @@ html {
     background-image: url(../img/bg.jpg);
 }
 
+.error{
+    width: 100%;
+    color: white;
+    z-index: 99999;
+    position: absolute;
+    text-align: center;
+}
+
+.error-red{
+    background-color: red;
+}
+
+.error-orange{
+    background-color: orange;
+}
+
 .filter{
     position: absolute;
     left: 0;

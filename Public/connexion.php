@@ -18,10 +18,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $hash = crypt($_POST['mdp'], $salt);
 
                 $req = $connBD->prepare('SELECT * FROM users WHERE Nom =:nom');
-                $req->execute(array($_POST['pseudo']));
+                $req->execute(array("nom"=>$_POST['pseudo']));
 
-                // L'utilisateur est initialisé à NULL.
-                $_SESSION['utilisateur'] = NULL;
                 // Si les données existes, l'utilisateur est alors créé.
                 while ($donnees = $req->fetch()) {
                     if($donnees["Mot_de_Passe"] == crypt($_POST['mdp'], $donnees["Mot_de_Passe"])){
@@ -30,8 +28,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             "Nom" => $donnees["Nom"],
                             "Acces" => $donnees["Acces"]
                         );
+                        header("LOCATION: index.php");
                     } else {
                         $_SESSION = array();
+                        echo '<div class="error error-red"><h3>Utilisateur inexistant!</h3></div>';
                     }
                 }
 
@@ -40,12 +40,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             } catch (PDOException $e) {
                 exit( "Erreur lors de l'exécution de la requête SQL :<br />\n" .  $e -> getMessage() . "<br />\nREQUÊTE = SELECT");
             }
-
-            // Vérifier si l'utilisateur est créé.
-            // Si oui, rediriger vers la page d'accueil.
-            if ($_SESSION["utilisateur"] != NULL && isset($_SESSION["utilisateur"])) {
-                header("LOCATION: index.php");
-            }
+        } else {
+            echo '
+                <div class="error error-orange"><h3>Vous devez remplir tous les champs du formulaire!</h3></div>
+                ';
         }
     }
 }
@@ -116,7 +114,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <div class="sminputs">
                                 <div class="input full">
                                     <label class="string optional" for="pseudo">Pseudo</label>
-                                    <input class="string optional" maxlength="255" name="pseudo" placeholder="Pseudo" type="text" size="50" />
+                                    <input class="string optional" maxlength="255" name="pseudo" placeholder="Pseudo" type="text" size="50"
+                                    <?php
+                                        echo isset($_POST['pseudo']) == true ? 'value="'.$_POST['pseudo'].'"' : '';
+                                    ?>
+                                    />
                                 </div>
                             </div>
                             <div class="sminputs">
