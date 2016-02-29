@@ -31,8 +31,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         header("LOCATION: index.php");
                     } else {
                         $_SESSION = array();
-                        echo '<div class="error error-red"><h3>Utilisateur inexistant!</h3></div>';
+                        echo '<div class="error error-red"><h3>Le pseudo et le mot de passe ne concorde pas!</h3></div>';
                     }
+                }
+
+                if ($donnees == NULL){
+                    echo '<div class="error error-red"><h3>Utilisateur inexistant!</h3></div>';
                 }
 
                 $req->closeCursor();
@@ -56,17 +60,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <title>Connexion/Création d'un compte</title>
-
-
     <link rel="stylesheet" href="css/normalize.css">
-
     <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
-
     <link rel="stylesheet" href="css/style.css">
-
-
 </head>
-
 <body id="body-connexion">
 <div class="filter filter-noir"></div>
 <div class="logmod">
@@ -82,25 +79,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <span class="logmod__heading-subtitle">Entrez vos informations <strong>pour créer un compte</strong></span>
                     </div>
                     <div class="logmod__form">
-                        <form accept-charset="utf-8" action="#" class="simform">
+                        <form method="post" action="creation_compte.php" class="simform">
                             <div class="sminputs">
                                 <div class="input full">
-                                    <label class="string optional" for="user-name">Pseudo</label>
-                                    <input class="string optional" maxlength="255" id="user-email" placeholder="Pseudo" type="text" size="50" />
+                                    <label class="string" for="user-name">Pseudo</label>
+                                    <input class="string" maxlength="255" name="pseudo" placeholder="Pseudo" type="text" size="50" />
                                 </div>
                             </div>
                             <div class="sminputs">
-                                <div class="input string optional">
-                                    <label class="string optional" for="user-pw">Mot de passe</label>
-                                    <input class="string optional" maxlength="255" id="user-pw" placeholder="Mot de passe" type="text" size="50" />
+                                <div class="input string">
+                                    <label class="string" for="user-pw">Mot de passe</label>
+                                    <input class="string" maxlength="255" name="mdp" placeholder="Mot de passe" type="password" size="50" />
                                 </div>
-                                <div class="input string optional">
-                                    <label class="string optional" for="user-pw-repeat">Répétez</label>
-                                    <input class="string optional" maxlength="255" id="user-pw-repeat" placeholder="Répéter mot de passe" type="text" size="50" />
+                                <div class="input string">
+                                    <label class="string" for="user-pw-repeat">Répétez</label>
+                                    <input class="string" maxlength="255" name="mdpR" placeholder="Répéter mot de passe" type="password" size="50" />
                                 </div>
                             </div>
+                            <div class="sminputs sminputs-radio">
+                                    <input class="radio" type="radio" name="acces" value="admin">Administrateur
+                                    <input class="radio" type="radio" name="acces" value="user" checked>Utilisateur
+                            </div>
                             <div class="simform__actions">
-                                <input class="sumbit" name="commit" type="sumbit" value="Créer" />
+                                <input class="sumbit" type="submit" value="Créer" />
                             </div>
                         </form>
                     </div>
@@ -110,7 +111,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <span class="logmod__heading-subtitle">Entrez votre pseudo et votre mot de passe <strong>pour vous connecter</strong></span>
                     </div>
                     <div class="logmod__form">
-                        <form class="simform" method="post">
+                        <form class="simform" action="connexion.php" method="post">
                             <div class="sminputs">
                                 <div class="input full">
                                     <label class="string optional" for="pseudo">Pseudo</label>
@@ -139,10 +140,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
 </div>
 <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-
 <script src="js/index.js"></script>
-
 </body>
-
 </html>
 
