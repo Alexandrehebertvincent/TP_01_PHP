@@ -11,11 +11,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			$target_dir = "uploads/";
 			$target_file = $target_dir . basename($_FILES["monfichier"]["name"]);
 
-			if (move_uploaded_file($_FILES["monfichier"]['tmp_name'], $target_file)) {
-				echo "Le fichier est valide, et a été téléchargé avec succès.";
-			} else {
-				echo "Attaque potentielle par téléchargement de fichiers.";
-			}
+			// Désolé, j'ai mis ça en commentaire temporairement. 
+			// if (move_uploaded_file($_FILES["monfichier"]['tmp_name'], $target_file)) {
+				// echo "Le fichier est valide, et a été téléchargé avec succès.";
+			// } else {
+				// echo "Attaque potentielle par téléchargement de fichiers.";
+			// }
 
 			print_r($_FILES);
 
@@ -32,24 +33,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 				exit("Erreur lors de l'exécution de la requête SQL :<br />\n" . $e->getMessage() . "<br />\nREQUÊTE = INSERT");
 			}
 
-			echo "Voici tout ce qui se trouve dans la base de données: ";
-			try {
+			// echo "Voici tout ce qui se trouve dans la base de données: ";
+			// try {
 
-				$req = $connBD->prepare('SELECT * FROM films');
-				$req->execute();
+				// $req = $connBD->prepare('SELECT * FROM films');
+				// $req->execute();
 
-				echo '<ul>';
-				while ($donnees = $req->fetch()) {
-					echo '<li>' . "Id: " . $donnees['Id'] . ", " . "Nom: " . $donnees['Nom'] . ", " . "Description: " . $donnees['Description'] . ", " . "Image: " . $donnees['Image'] . ' </li>';
-				}
-				echo '</ul>';
+				// echo '<ul>';
+				// while ($donnees = $req->fetch()) {
+					// echo '<li>' . "Id: " . $donnees['Id'] . ", " . "Nom: " . $donnees['Nom'] . ", " . "Description: " . $donnees['Description'] . ", " . "Image: " . $donnees['Image'] . ' </li>';
+				// }
+				// echo '</ul>';
 
-				$req->closeCursor();
-				$connBD = null;
-			} catch (PDOException $e) {
-				exit("Erreur lors de l'exécution de la requête SQL :<br />\n" . $e->getMessage() . "<br />\nREQUÊTE = SELECT");
-			}
-
+				// $req->closeCursor();
+				// $connBD = null;
+			// } catch (PDOException $e) {
+				// exit("Erreur lors de l'exécution de la requête SQL :<br />\n" . $e->getMessage() . "<br />\nREQUÊTE = SELECT");
+			// }
+			
+			header('Location: index.php');
 		}
 	}
 }
