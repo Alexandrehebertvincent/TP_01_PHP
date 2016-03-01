@@ -12,11 +12,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			$target_file = $target_dir . basename($_FILES["monfichier"]["name"]);
 
 			// Désolé, j'ai mis ça en commentaire temporairement. 
-			// if (move_uploaded_file($_FILES["monfichier"]['tmp_name'], $target_file)) {
-				// echo "Le fichier est valide, et a été téléchargé avec succès.";
-			// } else {
+			if (move_uploaded_file($_FILES["monfichier"]['tmp_name'], $target_file)) {
+				 echo "Le fichier est valide, et a été téléchargé avec succès.";
+			 } else {
 				// echo "Attaque potentielle par téléchargement de fichiers.";
-			// }
+			 }
 
 			print_r($_FILES);
 
