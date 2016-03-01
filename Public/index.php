@@ -22,7 +22,6 @@ include ("verificationConnexion.php");
 		 <!-- Si l'utilisateur est connecté en tant qu'admin -->
         <?php
         if ($_SESSION['utilisateur']['Acces'] == "admin"){
-			echo "Connecté en tant que: (Admin)";
             echo '
                 <h2>Ajouter un film</h2>
                 <form method="post" id="frmajout" action="upload.php" enctype="multipart/form-data">
@@ -37,14 +36,15 @@ include ("verificationConnexion.php");
 		';
         }
 		else if (($_SESSION['utilisateur']['Acces'] == "user")) { // Si l'utilisateur est connecté comme simple utilisateur
-			echo "Connecté en tant que:(Admin)";
-			echo '<h2>Films disponibles</h2>';
-			require("affichageFilms.php");
+			
 		}
 		else
 		{
 			header('Location: connexion.php');
 		}
+		echo "Connecté en tant que: " . $_SESSION['utilisateur']['Nom'] . "(" . $_SESSION['utilisateur']['Acces'] . ")";
+			echo '<h2>Films disponibles</h2>';
+			require("affichageFilms.php");
         ?>
 	</div>
 </body>
