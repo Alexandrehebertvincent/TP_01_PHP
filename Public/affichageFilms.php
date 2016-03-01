@@ -2,7 +2,7 @@
 
 require("config.php");
 			
-echo "Voici tout ce qui se trouve dans la base de données: ";
+echo "Voici tout ce qui se trouve dans la base de donnÃ©es: ";
 			try {
 
 				$req = $connBD->prepare('SELECT * FROM films');
@@ -20,9 +20,13 @@ echo "Voici tout ce qui se trouve dans la base de données: ";
 				
 				echo ' <table style="width:60%">';
 
+				// <a href="film.php?film=[ID du film]"
+
+
 				while ($donnees = $req->fetch()) {
 					echo "<tr>";
 					echo "<td>";
+					echo '<a href="film.php?filmid='.$donnees['Id'].'">tyty</a>';
 					echo $donnees['Id'];
 					echo "</td>";
 					echo "<td>";
@@ -32,7 +36,7 @@ echo "Voici tout ce qui se trouve dans la base de données: ";
 					echo $donnees['Description'];
 					echo "</td>";
 					echo "<td>";
-					echo $donnees['Image'];
+					echo '<img src="'.$donnees['Image'].'" alt="Image du film">';
 					echo "</td>";
 					echo "</tr>";
 				}
@@ -44,6 +48,6 @@ echo "Voici tout ce qui se trouve dans la base de données: ";
 				$req->closeCursor();
 				$connBD = null;
 			} catch (PDOException $e) {
-				exit("Erreur lors de l'exécution de la requête SQL :<br />\n" . $e->getMessage() . "<br />\nREQUÊTE = SELECT");
+				exit("Erreur lors de l'exï¿½cution de la requï¿½te SQL :<br />\n" . $e->getMessage() . "<br />\nREQUï¿½TE = SELECT");
 			}
 			?>
