@@ -1,7 +1,6 @@
 <?php
 // Vérification
 include ("verificationConnexion.php");
-
 ?>
 
 <!DOCTYPE html>
@@ -22,6 +21,8 @@ include ("verificationConnexion.php");
 		 <!-- Si l'utilisateur est connecté en tant qu'admin -->
         <?php
         if ($_SESSION['utilisateur']['Acces'] == "admin"){
+			
+			
             echo '
                 <h2>Ajouter un film</h2>
                 <form method="post" id="frmajout" action="upload.php" enctype="multipart/form-data">
@@ -31,7 +32,7 @@ include ("verificationConnexion.php");
                     <textarea name="resume" id="resume" form="frmajout" cols="40" rows="9"></textarea>
                     <label for="image">Image: </label>
                     <input type="file" name="monfichier" id="monfichier" />
-                    <input type="submit" />
+                    <input type="submit" value="Ajouter"/>
                 </form>
 		';
         }

@@ -25,25 +25,25 @@ echo "Voici tout ce qui se trouve dans la base de données: ";
 
 				while ($donnees = $req->fetch()) {
 					echo "<tr>";
-					echo "<td>";
-					echo '<a href="film.php?filmid='.$donnees['Id'].'">tyty</a>';
-					echo $donnees['Id'];
+					// Si l'utilisateur est connecté en tant qu'admin, il voit un bouton pour supprimer le film
+					 if ($_SESSION['utilisateur']['Acces'] == "admin"){
+						 echo "<td>";
+						 echo '<a href="supprimer.php?filmid=' . $donnees['Id'] . '">Supprimer </a>';
+						 echo "</td>";
+					 }
+					 echo "<td>";
+					echo '<a href="film.php?filmid='.$donnees['Id'].'">Fiche du film</a>';
 					echo "</td>";
 					echo "<td>";
 					echo $donnees['Nom'];
 					echo "</td>";
 					echo "<td>";
-					echo $donnees['Description'];
-					echo "</td>";
-					echo "<td>";
-					echo '<img src="'.$donnees['Image'].'" alt="Image du film">';
+					echo '<img src="' . $donnees['Image'] . "\" height='400'width='400' alt='Image du film'>";
 					echo "</td>";
 					echo "</tr>";
 				}
 				echo '</tr>
 				</table>  ';
-				
-				
 
 				$req->closeCursor();
 				$connBD = null;
