@@ -12,12 +12,10 @@ include ("verificationConnexion.php");
     <link rel="icon" href="favicon.ico" />
 </head>
 <body>
-    <nav id="menu" role="navigation">
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li id="deconnexion"><a href="deconnexion.php">Déconnexion</a></li>
-        </ul>
-    </nav>
+
+    <!-- Menu -->
+    <?php include ("navbar_top.php"); ?>
+
 	<div id="page">
 		 <!-- Si l'utilisateur est connecté en tant qu'admin -->
         <?php
