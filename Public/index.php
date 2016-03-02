@@ -8,7 +8,8 @@ include ("verificationConnexion.php");
 <head>
     <meta charset="UTF-8">
     <title>Partage de films | Panama</title>
-	<link rel="stylesheet" type="text/css" href="css/styleIndex.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" media="all" />
+    <link rel="icon" href="favicon.ico" />
 </head>
 <body>
     <nav id="menu" role="navigation">

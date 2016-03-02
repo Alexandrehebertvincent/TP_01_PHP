@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8db83839-df97-4355-9d69-6c64222f3277" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Public/film.php" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/Public/uploads/2.jpg" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/affichageFilms.php" afterPath="$PROJECT_DIR$/Public/affichageFilms.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/css/style.css" afterPath="$PROJECT_DIR$/Public/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Public/index.php" afterPath="$PROJECT_DIR$/Public/index.php" />
     </list>
     <ignored path="TP_01_PHP.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,11 +30,22 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Public/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-20.26923">
-              <caret line="46" column="38" selection-start-line="46" selection-start-column="26" selection-end-line="46" selection-end-column="38" />
+            <state vertical-scroll-proportion="-12.423077">
+              <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
               <folding>
-                <marker date="1456853892863" expanded="true" signature="780:1280" placeholder="..." />
+                <marker date="1456931997567" expanded="true" signature="825:1340" placeholder="..." />
+                <marker date="1456931997567" expanded="true" signature="1315:1340" placeholder="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Public/css/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.4934688">
+              <caret line="44" column="27" selection-start-line="44" selection-start-column="27" selection-end-line="44" selection-end-column="27" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -52,17 +63,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="affichageFilms.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="affichageFilms.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Public/affichageFilms.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.41087613">
-              <caret line="16" column="53" selection-start-line="16" selection-start-column="53" selection-end-line="16" selection-end-column="53" />
+            <state vertical-scroll-proportion="-5.1320753">
+              <caret line="18" column="20" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
               <folding>
-                <marker date="1456854629878" expanded="true" signature="136:155" placeholder="SELECT * FRO... films" />
-                <marker date="1456854629878" expanded="true" signature="571:580" placeholder="..." />
-                <marker date="1456854629878" expanded="true" signature="833:855" placeholder="..." />
-                <marker date="1456854629878" expanded="true" signature="897:919" placeholder="..." />
-                <marker date="1456854629878" expanded="true" signature="969:1036" placeholder="..." />
+                <marker date="1456931476544" expanded="true" signature="136:155" placeholder="SELECT * FRO... films" />
+                <marker date="1456931476544" expanded="true" signature="571:580" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -71,8 +79,8 @@
       <file leaf-file-name="film.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Public/film.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.8846154">
-              <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+            <state vertical-scroll-proportion="-20.26923">
+              <caret line="31" column="2" selection-start-line="31" selection-start-column="2" selection-end-line="31" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -112,11 +120,11 @@
         <option value="$PROJECT_DIR$/Public/creation_compte.php" />
         <option value="$PROJECT_DIR$/Public/verificationConnexion.php" />
         <option value="$PROJECT_DIR$/Public/connexion.php" />
-        <option value="$PROJECT_DIR$/Public/css/style.css" />
-        <option value="$PROJECT_DIR$/Public/index.php" />
         <option value="$PROJECT_DIR$/Public/upload.php" />
         <option value="$PROJECT_DIR$/Public/film.php" />
         <option value="$PROJECT_DIR$/Public/affichageFilms.php" />
+        <option value="$PROJECT_DIR$/Public/index.php" />
+        <option value="$PROJECT_DIR$/Public/css/style.css" />
       </list>
     </option>
   </component>
@@ -189,6 +197,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TP_01_PHP" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TP_01_PHP" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -298,14 +324,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Public/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38316402">
-          <caret line="99" column="23" selection-start-line="99" selection-start-column="23" selection-end-line="99" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Public/config.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.59216255">
@@ -364,33 +382,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Public/film.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.8846154">
-          <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Public/index.php">
-      <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-20.26923">
-          <caret line="46" column="38" selection-start-line="46" selection-start-column="26" selection-end-line="46" selection-end-column="38" />
-          <folding>
-            <marker date="1456853892863" expanded="true" signature="780:1280" placeholder="..." />
-          </folding>
+          <caret line="31" column="2" selection-start-line="31" selection-start-column="2" selection-end-line="31" selection-end-column="2" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Public/affichageFilms.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.41087613">
-          <caret line="16" column="53" selection-start-line="16" selection-start-column="53" selection-end-line="16" selection-end-column="53" />
+        <state vertical-scroll-proportion="-5.1320753">
+          <caret line="18" column="20" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
           <folding>
-            <marker date="1456854629878" expanded="true" signature="136:155" placeholder="SELECT * FRO... films" />
-            <marker date="1456854629878" expanded="true" signature="571:580" placeholder="..." />
-            <marker date="1456854629878" expanded="true" signature="833:855" placeholder="..." />
-            <marker date="1456854629878" expanded="true" signature="897:919" placeholder="..." />
-            <marker date="1456854629878" expanded="true" signature="969:1036" placeholder="..." />
+            <marker date="1456931476544" expanded="true" signature="136:155" placeholder="SELECT * FRO... films" />
+            <marker date="1456931476544" expanded="true" signature="571:580" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Public/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.423077">
+          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+          <folding>
+            <marker date="1456931997567" expanded="true" signature="825:1340" placeholder="..." />
+            <marker date="1456931997567" expanded="true" signature="1315:1340" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Public/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4934688">
+          <caret line="44" column="27" selection-start-line="44" selection-start-column="27" selection-end-line="44" selection-end-column="27" />
+          <folding />
         </state>
       </provider>
     </entry>
