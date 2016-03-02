@@ -1,3 +1,4 @@
+
 <?php 
 
 require("config.php");
@@ -28,7 +29,10 @@ echo "Voici tout ce qui se trouve dans la base de données: ";
 					// Si l'utilisateur est connecté en tant qu'admin, il voit un bouton pour supprimer le film
 					 if ($_SESSION['utilisateur']['Acces'] == "admin"){
 						 echo "<td>";
-						 echo '<a href="supprimer.php?filmid=' . $donnees['Id'] . '">Supprimer </a>';
+						 echo '<a href="supprimer.php?filmid=' . $donnees['Id'] . ' class="button" "><button>Supprimer</button></a>';
+						 echo "</td>";
+						 echo "<td>";
+						 echo '<a href="modifier-film.php?filmid=' . $donnees['Id'] . ' class="button" "><button>Modifier</button></a>';
 						 echo "</td>";
 					 }
 					 echo "<td>";

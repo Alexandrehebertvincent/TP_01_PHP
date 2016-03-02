@@ -54,13 +54,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="UTF-8">
     <title>Connexion/Création d'un compte</title>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
     <link rel="stylesheet" href="css/style.css">
+	<link rel="icon" href="favicon.ico" />
 </head>
 <body id="body-connexion">
 <div class="filter filter-noir"></div>
@@ -77,7 +77,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <span class="logmod__heading-subtitle">Entrez vos informations <strong>pour créer un compte</strong></span>
                     </div>
                     <div class="logmod__form">
-                        <form method="post" action="creation_compte.php" class="simform">
+                        <form method="post" action="creation-compte.php" class="simform">
                             <div class="sminputs">
                                 <div class="input full">
                                     <label class="string" for="user-name">Pseudo</label>

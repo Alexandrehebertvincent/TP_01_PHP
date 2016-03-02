@@ -1,0 +1,54 @@
+/*  body	 
+{ 
+	background-color:black; 
+	color:yellow;  
+} */
+	
+h1		 
+{ 
+	text-align:center; 
+	border-bottom: 1px solid white; 
+}
+
+ul		 
+{ 
+	list-style-type:none; 
+	margin:6px; 
+}
+
+fieldset 
+{ 
+	width:200px; 
+	padding:0; 
+}
+
+#page	 
+{ 
+	width: 800px; 
+	margin:auto; 
+}
+	
+#blocAlign label
+{ 
+	display:inline-block;
+	width:150px;
+} 
+
+#submit {
+text-align: center;
+}
+
+legend	 
+{ 
+	color:#ff0; /* pour IE */
+} 
+
+
+/* a.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+
+    text-decoration: none;
+    color: initial;
+} */

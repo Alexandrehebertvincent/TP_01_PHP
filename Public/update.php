@@ -12,34 +12,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			$target_file = $target_dir . basename($_FILES["monfichier"]["name"]);
 
 			if (move_uploaded_file($_FILES["monfichier"]['tmp_name'], $target_file)) {
-				 echo "Le fichier est valide, et a Ã©tÃ© tÃ©lÃ©chargÃ© avec succÃ¨s.";
+				 echo "Le fichier est valide, et a été téléchargé avec succès.";
 			 } else {
-				// echo "Attaque potentielle par tÃ©lÃ©chargement de fichiers.";
+				// echo "Attaque potentielle par téléchargement de fichiers.";
 			 }
 
 			print_r($_FILES);
 
-			// ParamÃ¨tres de connexion Ã  la BD.
+			// Paramètres de connexion à la BD.
 			require("config.php");
 			try {
-				$req = $connBD->prepare('INSERT INTO films(Nom, Description, Image) VALUES(:nom, :description, :image)');
+				$req = $connBD->prepare('UPDATE films SET Nom=:nom, Description=:description, Image:image) WHERE Id=:id);
 				$req->execute(array(
 					'nom' => $titre,
 					'description' => $resume,
-					'image' => $target_file));
-					
-					// $req = $connBD->prepare('UPDATE films SET Nom=:nom, Description=:description, Image:image WHERE Id=:id');
-				// $req->execute(array(
-					// 'nom' => $titre,
-					// 'description' => $resume,
-					// 'image' => $target_file,
-					// 'id'=> $_GET['filmid']));
+					'image' => $target_file,
+					'id'=> $_GET['filmid']));
 
 			} catch (PDOException $e) {
-				exit("Erreur lors de l'exÃ©cution de la requÃªte SQL :<br />\n" . $e->getMessage() . "<br />\nREQUÃŠTE = INSERT");
+				exit("Erreur lors de l'exécution de la requête SQL :<br />\n" . $e->getMessage() . "<br />\nREQUÊTE = INSERT");
 			}
 
-			// echo "Voici tout ce qui se trouve dans la base de donnÃ©es: ";
+			// echo "Voici tout ce qui se trouve dans la base de données: ";
 			// try {
 
 				// $req = $connBD->prepare('SELECT * FROM films');
@@ -54,7 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 				// $req->closeCursor();
 				// $connBD = null;
 			// } catch (PDOException $e) {
-				// exit("Erreur lors de l'exÃ©cution de la requÃªte SQL :<br />\n" . $e->getMessage() . "<br />\nREQUÃŠTE = SELECT");
+				// exit("Erreur lors de l'exécution de la requête SQL :<br />\n" . $e->getMessage() . "<br />\nREQUÊTE = SELECT");
 			// }
 			
 			header('Location: index.php');
