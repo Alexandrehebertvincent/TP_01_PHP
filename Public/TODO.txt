@@ -1,0 +1,6 @@
+***********À FAIRE*********
+-Ajouter / supprimer / modifier des utilisateur
+
+-modifier des films
+
+-Plein d'autre petits trucs, voir l'énoncé

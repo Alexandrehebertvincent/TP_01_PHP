@@ -1,4 +1,5 @@
 <?php
+// Pour modifier un film
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	if (isset($_POST['titre'], $_POST['resume'], $_FILES['monfichier'])) {
