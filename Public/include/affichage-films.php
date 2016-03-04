@@ -36,13 +36,13 @@ echo "Voici tout ce qui se trouve dans la base de données: ";
 						 echo "</td>";
 					 }
 					 echo "<td>";
-					echo '<a href="film.php?filmid='.$donnees['Id'].'">Fiche du film</a>';
+					echo '<a href="include/film.php?filmid='.$donnees['Id'].'">Fiche du film</a>';
 					echo "</td>";
 					echo "<td>";
 					echo $donnees['Nom'];
 					echo "</td>";
 					echo "<td>";
-					echo '<img src="' . $donnees['Image'] . "\" height='400'width='400' alt='Image du film'>";
+					echo '<img src="../' . $donnees['Image'] . "\" height='400'width='400' alt='Image du film'>";
 					echo "</td>";
 					echo "</tr>";
 				}

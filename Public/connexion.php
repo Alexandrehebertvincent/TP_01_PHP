@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Lancer la requête pour identifer l'utilisateur.
             try {
                 // Inclure le fichier de connexion.
-                require("config.php");
+                require("include/config.php");
 
                 $cost = 10;
                 $salt = strtr(base64_encode(mcrypt_create_iv(16, MCRYPT_DEV_URANDOM)), '+', '.');

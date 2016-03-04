@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 			$titre = $_POST['titre'];
 			$resume = $_POST['resume'];
-			$target_dir = "uploads/";
+			$target_dir = "../uploads/";
 			$target_file = $target_dir . basename($_FILES["monfichier"]["name"]);
 
 			if (move_uploaded_file($_FILES["monfichier"]['tmp_name'], $target_file)) {
@@ -59,11 +59,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 				// exit("Erreur lors de l'exécution de la requête SQL :<br />\n" . $e->getMessage() . "<br />\nREQUÊTE = SELECT");
 			// }
 			
-			header('Location: index.php');
+			header('Location: ../index.php');
 		}
 	}
 }
 ?>
 <p>
-	<a href="index.php">index.php</a>
+	<a href="../index.php">index.php</a>
 </p>

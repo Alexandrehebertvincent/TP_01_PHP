@@ -1,6 +1,6 @@
 <?php
 // Vérification
-include ("verification-connexion.php");
+include ("include/verification-connexion.php");
 ?>
 
 <!DOCTYPE html>
@@ -25,7 +25,7 @@ include ("verification-connexion.php");
             echo '
 			<div id="blocAlign">
                 <h2>Ajouter un film</h2>
-                <form method="post" id="frmajout" action="upload.php" enctype="multipart/form-data">
+                <form method="post" id="frmajout" action="include/upload.php" enctype="multipart/form-data">
 					<p>
 						<label for="titreFilm">Titre du film: </label>
 						<input type="text" name="titre" id="titre" size="42"/>
@@ -53,7 +53,7 @@ include ("verification-connexion.php");
 			header('Location: connexion.php');
 		}
 			echo '<h2>Films disponibles</h2>';
-			require("affichage-films.php");
+			require("include/affichage-films.php");
         ?>
 	</div>
 </body>

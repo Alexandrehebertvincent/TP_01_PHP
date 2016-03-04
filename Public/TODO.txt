@@ -4,3 +4,21 @@
 -modifier des films
 
 -Plein d'autre petits trucs, voir l'énoncé
+
+-quand on change l'image d'un film, remplacer l'ancienne image pour la nouvelle localement... genre supprimer l'ancienne image.
+
+-Vérifier le ID quand on modifie un film
+
+-Page robot cassé film introuvé
+
+-unlink quand on modifie et quand on supprime
+
+-Boutons. Beaux.
+
+-COmpléter formulaire de modification d'image
+
+-fermer alert connexion
+
+**********DONE*************
+
+-Preview de l'image DONE
