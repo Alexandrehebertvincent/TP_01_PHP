@@ -40,7 +40,7 @@ include ("verification-connexion.php");
 
             echo '
 			<div id="blocAlign">
-                <form method="post" id="frmajout" action="update.php" enctype="multipart/form-data">
+                <form method="post" id="frmajout" action="update.php">
 					<p>
 						<label for="titreFilm">Titre du film: </label>
 						<input type="text" name="titre" id="titre" size="42" value="' . $donnees['Nom'] . '"> . 
@@ -53,6 +53,8 @@ include ("verification-connexion.php");
 						<label for="image">Image: </label>
 						<input type="file" name="monfichier" id="monfichier" />
 					</p>
+					<input type="hidden" name="filmid" id="hiddenField" value="' . $donnees['Id'] . '" />
+						
 					<p>
 						<input id="submit" type="submit" value="Mettre à jour le film - NE FONCTIONNE PAS ENCORE D: "/>
 					</p>
