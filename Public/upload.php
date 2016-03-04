@@ -1,5 +1,7 @@
 <?php
 
+var_dump($_POST['filmid']);
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	if (isset($_POST['titre'], $_POST['resume'], $_FILES['monfichier'])) {
 		echo "condition 1: OK! \n";
