@@ -40,25 +40,25 @@ include ("verification-connexion.php");
 
             echo '
 			<div id="blocAlign">
-                <h2>Ajouter un film</h2>
                 <form method="post" id="frmajout" action="update.php" enctype="multipart/form-data">
 					<p>
 						<label for="titreFilm">Titre du film: </label>
-						<input type="text" name="titre" id="titre" size="42" value="' . $donnees['Nom'] . '">' . '
+						<input type="text" name="titre" id="titre" size="42" value="' . $donnees['Nom'] . '"> . 
 					</p>
 					<p>
 						<label for="description">Description: </label>
-						<textarea name="resume" id="resume" form="frmajout" cols="40" rows="9"></textarea>
+						<textarea name="resume" id="resume" form="frmajout" cols="40" rows="9">' . $donnees['Description'] . '</textarea>
 					</p>
 					<p>
 						<label for="image">Image: </label>
 						<input type="file" name="monfichier" id="monfichier" />
 					</p>
 					<p>
-						<input id="submit" type="submit" value="Ajouter le film"/>
+						<input id="submit" type="submit" value="Mettre à jour le film - NE FONCTIONNE PAS ENCORE D: "/>
 					</p>
                 </form>
 			</div>
+			<img src="' . $donnees['Image'] . '" height="400" width="400" alt="Image du film">
 		';
 		}
 		catch (PDOException $e) {
