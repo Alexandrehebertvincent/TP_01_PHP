@@ -14,11 +14,11 @@
 
 <?php
 // Vérification
-include ("verification-connexion.php");
+include ("include/verification-connexion.php");
 $film = NULL;
 if (isset($_GET['filmid'])){
     // Inclure le fichier de connexion.
-    require("config.php");
+    require("include/config.php");
     //echo "<a href='index.php'>Retour à la liste des films</a>";
     try {
         $req = $connBD->prepare('SELECT * FROM films WHERE Id =:id');

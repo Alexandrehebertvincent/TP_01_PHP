@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $req = $connBD->prepare('SELECT * FROM users WHERE Nom =:nom');
                 $req->execute(array("nom"=>$_POST['pseudo']));
 
-                // Si les données existes, l'utilisateur est alors créé.
+                // Si les données existent, l'utilisateur est alors créé.
                 while ($donnees = $req->fetch()) {
                     if($donnees["Mot_de_Passe"] == crypt($_POST['mdp'], $donnees["Mot_de_Passe"])){
                         $_SESSION['utilisateur'] = array(

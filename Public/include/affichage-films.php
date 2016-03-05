@@ -5,46 +5,28 @@ require("config.php");
 			
 echo "Voici tout ce qui se trouve dans la base de données: ";
 			try {
-
 				$req = $connBD->prepare('SELECT * FROM films');
 				$req->execute();
-
-				// echo '<p>';
-				// while ($donnees = $req->fetch()) {
-					// echo '<li>' . "Id: " . $donnees['Id'] . ", " . "Nom: " . $donnees['Nom'] . ", " . "Description: " . $donnees['Description'] . ", " . "Image: " . $donnees['Image'] . ' </li>';
-				// }
-				// echo '</p>';
-				
-				// while ($donnees = $req->fetch()) {
-					// echo "$donnees['Id']";
-				// }
 				
 				echo ' <table style="width:60%">';
-
-				// <a href="film.php?film=[ID du film]"
-
-
 				while ($donnees = $req->fetch()) {
 					echo "<tr>";
-					// Si l'utilisateur est connecté en tant qu'admin, il voit un bouton pour supprimer le film
+					// Si l'utilisateur est connecté en tant qu'admin, il voit un bouton pour supprimer le film et un autre pour modifier
 					 if ($_SESSION['utilisateur']['Acces'] == "admin"){
 						 echo "<td>";
-						 echo '<a href="supprimer.php?filmid=' . $donnees['Id'] . ' class="button" "><button>Supprimer</button></a>';
+						 echo '<a href="include/supprimer.php?filmid=' . $donnees['Id'] . ' class="button" "><button>Supprimer</button></a>';
 						 echo "</td>";
 						 echo "<td>";
 						 echo '<a href="modifier-film.php?filmid=' . $donnees['Id'] . ' class="button" "><button>Modifier</button></a>';
 						 echo "</td>";
 					 }
 					 echo "<td>";
-					echo '<a href="../include/film.php?filmid='.$donnees['Id'].'">Fiche du film</a>';
+					echo '<a href="film.php?filmid='.$donnees['Id'].'">Fiche du film</a>';
 					echo "</td>";
 					echo "<td>";
 					echo $donnees['Nom'];
 					echo "</td>";
 					echo "<td>";
-										 echo 'Imageici....->';
-										 echo  $donnees['Image'] . " <-";
-										 var_dump($donnees['Image']);
 					echo '<img src="' . $donnees['Image'] . "\" height='400'width='400' alt='Image du film'>";
 					echo "</td>";
 					echo "</tr>";

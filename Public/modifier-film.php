@@ -28,6 +28,9 @@ echo "Connecté en tant que: " . $_SESSION['utilisateur']['Nom'] . " (" . $_SESSI
 			echo "Une erreur s'est produite. Vérifiez le 'Id' du film à modifier...";
 			$erreur = true;
 		}
+		
+		$req->closeCursor();
+				$connBD = null;
         ?>
 
 <!DOCTYPE html>
@@ -58,7 +61,7 @@ echo "Connecté en tant que: " . $_SESSION['utilisateur']['Nom'] . " (" . $_SESSI
 					</p>
 					<p>
 						<label for="image">Image: </label>
-						<input type="file" name="image" id="image" />
+						<input type="file" name="laimage" id="laimage" />
 					</p>
 					<p>
 						<input id="submit" type="submit" value="Mettre à jour le film - NE FONCTIONNE PAS ENCORE D: "/>

@@ -15,12 +15,13 @@ include ("include/verification-connexion.php");
 <body>
 
     <!-- Menu -->
-    <?php include ("navbar-top.php"); ?>
+    <?php include ("navbar-top.php"); 
+	echo "Connecté en tant que: " . $_SESSION['utilisateur']['Nom'] . " (" . $_SESSION['utilisateur']['Acces'] . ")";
+	?>
 	<h1> Accueil </h1>
 	<div id="page">
 		 <!-- Si l'utilisateur est connecté en tant qu'admin -->
         <?php
-		echo "Connecté en tant que: " . $_SESSION['utilisateur']['Nom'] . " (" . $_SESSION['utilisateur']['Acces'] . ")";
         if ($_SESSION['utilisateur']['Acces'] == "admin"){
             echo '
 			<div id="blocAlign">
