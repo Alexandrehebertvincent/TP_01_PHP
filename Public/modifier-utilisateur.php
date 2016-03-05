@@ -1,0 +1,76 @@
+<?php
+
+// Vérification connexion
+include ("include/verification-connexion.php");
+include ("include/fonctions.php");
+
+echo "Connecté en tant que: " . $_SESSION['utilisateur']['Nom'] . " (" . $_SESSION['utilisateur']['Acces'] . ")";
+
+		if (isset($_GET['userid']) AND $_GET['userid'] != "" AND VerifierIdUserExistant($_GET['userid'])) {
+		
+			require("include/config.php");
+		
+		try {
+			$req = $connBD->prepare('SELECT * FROM users WHERE Id=:id');
+				$req->execute(array(
+				'id'=> $_GET['userid'] ));
+		
+			$donnees = $req->fetch();
+			
+			$req->closeCursor();
+			$connBD = null;
+		}
+		catch (PDOException $e) {
+                exit( "Erreur lors de l'exécution de la requête SQL :<br />\n" .  $e -> getMessage() . "<br />\nREQUÊTE = SELECT");
+            }
+		}
+		else {
+			var_dump( VerifierIdFilmExistant($_GET['userid']));
+			echo "Une erreur s'est produite. Vérifiez le 'Id' de l'utilisateur à modifier...";
+			$erreur = true;
+		}
+        ?>
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Modifier utilisateur | <?php echo $donnees['Nom']; ?></title>
+	<link rel="stylesheet" type="text/css" href="css/styleIndex.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" media="all" />
+    <link rel="icon" href="favicon.ico" />
+</head>
+<body>
+
+    <!-- Menu -->
+    <?php include ("navbar-top-admin.php"); ?>
+	<h1> Modifier utilisateur | <?php echo $donnees['Nom']; ?></h1>
+	<div id="page">
+        <div id="blocAlign">
+                <form method="post" id="frmajout" action="include/update-utilisateur.php">
+					<p>
+						<label for="titreFilm">Nom d'utilisateur: </label>
+						<input type="text" name="pseudo" id="pseudo" size="30" value="<?php echo $donnees['Nom'] ?>"> . 
+					</p>
+					<p>
+						<label for="mdpuser">Mot de passe: </label>
+						<input name="mdp" id="mdp" size="30" type="password" value="<?php echo $donnees['Mot_de_Passe'] ?>">
+					</p>
+					<p>
+						<label for="mdpuser">Confirmez le mot de passe: </label>
+						<input name="mdpR" id="mdpR" size="30" type="password" value="<?php echo $donnees['Mot_de_Passe'] ?>">
+					</p>
+					<p>
+					<input class="radio" type="radio" name="acces" value="admin">Administrateur
+                    <input class="radio" type="radio" name="acces" value="user" checked>Utilisateur
+					</p>
+					<p>
+						<input type="submit" value="Sauvegarder modifications">
+					</p>
+					<input type="hidden" name="userid" id="userid" value="<?php echo $donnees['Id'] ?>" />
+					<input type="hidden" name="pagedorigine" id="pagedorigine" value="gestion" />
+                </form>
+			</div>
+	</div>
+</body>
+</html>	

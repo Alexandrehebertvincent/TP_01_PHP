@@ -1,14 +1,12 @@
 <?php
-
-session_start();
+// Pour modifier un utilisateur
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // VÃ©rifier s'il y a eu une requÃªte de connexion.
-    if (isset($_POST['pseudo']) && isset($_POST['mdp']) && isset($_POST['mdpR'])) {
-        // VÃ©rifier si les champs ne sont pas vides.
-        if ($_POST['pseudo'] != '' && $_POST['mdp'] != '' && $_POST['mdpR'] != '') {
-            if ($_POST['mdp'] == $_POST["mdpR"]){
-                try {
+	if (isset($_POST['pseudo'], $_POST['mdp'], $_POST['mdpR'])) { 
+		if (($_POST['pseudo'] != "" AND $_POST['mdp'] != "" AND  $_POST['mdpR'] != "")) {
+			if ($_POST['mdp'] == $_POST['mdpR']) {		
+
+				try {
                     // Inclure le fichier de connexion.
                     include ("config.php");
 
@@ -16,19 +14,37 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $salt = strtr(base64_encode(mcrypt_create_iv(16, MCRYPT_DEV_URANDOM)), '+', '.');
                     $salt = sprintf("$2a$%02d$", $cost) . $salt;
                     $hash = crypt($_POST['mdp'], $salt);
+					
+					// Si le mot de passe n'a pas été modifié
+					if ($hash == $_POST['mdp']) {
+						$req = $connBD->prepare('UPDATE users SET Nom=:nom, Acces=:acces WHERE Id=:userid');
+						$req->execute(array(
+						"nom"=>$_POST['pseudo'],
+						"acces"=>$_POST['acces'],
+						"userid"=>$_POST['userid']));
 
-                    $req = $connBD->prepare('INSERT INTO users(Nom, Mot_de_Passe, Acces) VALUES(:nom, :mdp, :acces)');
-                    $req->execute(array("nom"=>$_POST['pseudo'],"mdp"=>$hash,"acces"=>$_POST['acces']));
+						$req = $connBD->prepare('SELECT * FROM users WHERE Nom =:nom');
+						$req->execute(array("nom"=>$_POST['pseudo']));
+					}
+					else
+					{
+
+                    $req = $connBD->prepare('UPDATE users SET Nom=:nom, Mot_de_Passe=:mdp, Acces=:acces WHERE Id=:userid');
+                    $req->execute(array(
+					"nom"=>$_POST['pseudo'],
+					"mdp"=>$hash,
+					"acces"=>$_POST['acces'],
+					"userid"=>$_POST['userid']));
 
                     $req = $connBD->prepare('SELECT * FROM users WHERE Nom =:nom');
                     $req->execute(array("nom"=>$_POST['pseudo']));
-					
+					}
 					
 
-                    // Si les donnÃ©es existes, l'utilisateur est alors crÃ©Ã©.
+                    // Si les données existes, l'utilisateur est alors créé.
                     while ($donnees = $req->fetch()) {
                         if($donnees["Mot_de_Passe"] == crypt($_POST['mdp'], $donnees["Mot_de_Passe"])){
-							//Si le compte est crÃ©Ã© Ã  partir de la page "connexion"
+							//Si le compte est créé à partir de la page "connexion"
 							if ($_POST['pagedorigine'] == "connexion") {
                             $_SESSION['utilisateur'] = array(
                                 "Id" => $donnees["Id"],
@@ -41,7 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 								header("LOCATION: ../gestion-utilisateurs.php");
 							}
 							
-							//Sinon, le compte est crÃ©Ã© depuis la page d'administration d'un admin
+							//Sinon, le compte est créé depuis la page d'administration d'un admin
 							
                         } else {
                             $_SESSION = array();
@@ -51,9 +67,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                     $req->closeCursor();
                     $connBD = null;
+					
+					//header("Location:../gestion-utilisateurs.php");
+					
+					var_dump($_POST);
 
                 } catch (PDOException $e) {
-                    exit( "Erreur lors de l'exÃ©cution de la requÃªte SQL :<br />\n" .  $e -> getMessage() . "<br />\nREQUÃŠTE = SELECT");
+                    exit( "Erreur lors de l'exécution de la requête SQL :<br />\n" .  $e -> getMessage() . "<br />\nREQUÊTE = SELECT");
                 }
             } else {
                 echo '<div class="error error-orange"><h3>Les mots de passes ne concordent pas!</h3></div>';

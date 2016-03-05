@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -101,6 +100,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <div class="simform__actions">
                                 <input class="sumbit" type="submit" value="Créer" />
                             </div>
+							<input type="hidden" name="pagedorigine" id="hiddenField" value="connexion" >
                         </form>
                     </div>
                 </div>

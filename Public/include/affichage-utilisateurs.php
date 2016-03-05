@@ -2,7 +2,7 @@
 <?php 
 require("config.php");
 			try {
-				$req = $connBD->prepare('SELECT * FROM films');
+				$req = $connBD->prepare('SELECT * FROM users');
 				$req->execute();
 				
 				echo ' <table style="width:60%">';
@@ -11,20 +11,18 @@ require("config.php");
 					// Si l'utilisateur est connecté en tant qu'admin, il voit un bouton pour supprimer le film et un autre pour modifier
 					 if ($_SESSION['utilisateur']['Acces'] == "admin"){
 						 echo "<td>";
-						 echo '<a href="include/supprimer.php?filmid=' . $donnees['Id'] . ' class="button" "><button>Supprimer</button></a>';
+						 echo '<a href="include/supprimer-utilisateur.php?userid=' . $donnees['Id'] . '" class="button" "><button>Supprimer</button></a>';
 						 echo "</td>";
 						 echo "<td>";
-						 echo '<a href="modifier-film.php?filmid=' . $donnees['Id'] . ' class="button" "><button>Modifier</button></a>';
+						 echo '<a href="modifier-utilisateur.php?userid=' . $donnees['Id'] . ' class="button" "><button>Modifier</button></a>';
 						 echo "</td>";
 					 }
-					 echo "<td>";
-					echo '<a href="film.php?filmid='.$donnees['Id'].'">Fiche du film</a>';
+					echo "<td>";
+					echo "Id: ";
+					echo $donnees['Id'];
 					echo "</td>";
 					echo "<td>";
-					echo $donnees['Nom'];
-					echo "</td>";
-					echo "<td>";
-					echo '<img src="' . $donnees['Image'] . "\" height='400'width='400' alt='Image du film'>";
+					echo "Nom d'utilisateur: " . $donnees['Nom'];
 					echo "</td>";
 					echo "</tr>";
 				}

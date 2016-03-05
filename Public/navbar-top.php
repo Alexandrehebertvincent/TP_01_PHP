@@ -1,5 +1,4 @@
 <?php
-
 echo '
 <nav id="menu" role="navigation">
     <ul>
