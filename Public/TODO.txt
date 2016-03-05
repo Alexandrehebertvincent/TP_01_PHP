@@ -5,13 +5,13 @@
 
 -Plein d'autre petits trucs, voir l'énoncé
 
--quand on change l'image d'un film, remplacer l'ancienne image pour la nouvelle localement... genre supprimer l'ancienne image.
-
 -Vérifier le ID quand on modifie un film
 
 -Page robot cassé film introuvé
 
 -unlink quand on modifie et quand on supprime
+
+-quand on change l'image d'un film, remplacer l'ancienne image pour la nouvelle localement... genre supprimer l'ancienne image.
 
 -Boutons. Beaux.
 
