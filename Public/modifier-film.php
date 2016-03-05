@@ -50,7 +50,7 @@ echo "Connecté en tant que: " . $_SESSION['utilisateur']['Nom'] . " (" . $_SESSI
 	<div id="page">
 	<?php if (!isset($erreur)) { ?>
         <div id="blocAlign">
-                <form method="post" id="frmajout" action="include/update.php" enctype="multipart/form-data>
+                <form method="post" id="frmajout" action="include/update.php" enctype="multipart/form-data">
 					<p>
 						<label for="titreFilm">Titre du film: </label>
 						<input type="text" name="titre" id="titre" size="42" value="<?php echo $donnees['Nom'] ?>"> . 
@@ -61,14 +61,14 @@ echo "Connecté en tant que: " . $_SESSION['utilisateur']['Nom'] . " (" . $_SESSI
 					</p>
 					<p>
 						<label for="image">Image: </label>
-						<input type="file" name="laimage" id="laimage" />
+						<input type="file" name="image" id="image" />
 					</p>
 					<p>
-						<input id="submit" type="submit" value="Mettre à jour le film - NE FONCTIONNE PAS ENCORE D: "/>
+						<input id="submit" type="submit" value="Mettre à jour le film"/>
 					</p>
 					<input type="hidden" name="filmid" id="hiddenField" value=" <?php echo $donnees['Id'] ?>" />
 					
-				<div class="file-upload">
+				<!-- <div class="file-upload">
 					<button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add Image</button>
 
 					<div class="image-upload-wrap">
@@ -83,9 +83,8 @@ echo "Connecté en tant que: " . $_SESSION['utilisateur']['Nom'] . " (" . $_SESSI
 					  <button type="button" onclick="removeUpload()" class="remove-image">Remove <span class="image-title">Uploaded Image</span></button>
 					</div>
 				  </div>
-				</div>
-					
-					
+				</div> -->
+				
                 </form>
 			</div>
 			<img src="' . $donnees['Image'] . '" height="400" width="400" alt="Image du film">

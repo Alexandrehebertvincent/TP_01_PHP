@@ -77,7 +77,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <span class="logmod__heading-subtitle">Entrez vos informations <strong>pour créer un compte</strong></span>
                     </div>
                     <div class="logmod__form">
-                        <form method="post" action="creation-compte.php" class="simform">
+                        <form method="post" action="include/creation-compte.php" class="simform">
                             <div class="sminputs">
                                 <div class="input full">
                                     <label class="string" for="user-name">Pseudo</label>

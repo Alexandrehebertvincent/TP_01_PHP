@@ -1,5 +1,8 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+	echo "1 ok";
+	 var_dump($_POST);
+	 var_dump($_FILES);
 	if (isset($_POST['titre'], $_POST['resume'], $_FILES['monfichier'])) {
 		if (($_POST['titre'] != "" AND $_POST['resume'] != "" AND $_FILES['monfichier']['error'] == 0)) {
 

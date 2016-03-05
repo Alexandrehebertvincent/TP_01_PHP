@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 "Nom" => $donnees["Nom"],
                                 "Acces" => $donnees["Acces"]
                             );
-                            header("LOCATION: index.php");
+                            header("LOCATION: ../index.php");
                         } else {
                             $_SESSION = array();
                             echo '<div class="error error-red"><h3>Le pseudo et le mot de passe ne concorde pas!</h3></div>';
