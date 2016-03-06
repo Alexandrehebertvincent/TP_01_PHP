@@ -29,3 +29,18 @@ function VerifierIdUserExistant($userid) {
 	}
 	return false;
 }
+
+function VerifierPseudoUserExistant($pseudo) {
+	include("config.php");
+	
+	$req = $connBD->prepare('SELECT COUNT(*) AS userTrouve FROM users WHERE Nom=:pseudo');
+	$req->execute(array(
+	'pseudo'=>$pseudo));
+	$connBD = null;
+	
+	if ($req->fetch()['userTrouve'] > 0)
+	{
+		return true;
+	}
+	return false;
+}

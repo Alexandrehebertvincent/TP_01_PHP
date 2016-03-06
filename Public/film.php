@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -9,12 +8,17 @@
     <link rel="icon" href="favicon.ico" />
 </head>
 <body>
-<!-- Menu -->
-<?php include ("navbar-top.php"); ?>
-
-<?php
+<?php 
 // Vérification
 include ("include/verification-connexion.php");
+
+if ($_SESSION['utilisateur']['Acces'] == 'admin') {
+		include ("navbar-top-admin.php"); 
+	}
+	else {
+		include ("navbar-top.php"); 
+	} 
+
 $film = NULL;
 if (isset($_GET['filmid'])){
     // Inclure le fichier de connexion.

@@ -4,7 +4,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	 var_dump($_POST);
 	if (isset($_POST['Nom'], $_POST['resume'], $_FILES['monfichier'])) {
 		if (($_POST['titre'] != "" AND $_POST['resume'] != "" AND $_FILES['monfichier']['error'] == 0)) {
-
 			// Paramètres de connexion à la BD.
 			require("config.php");
 			try {

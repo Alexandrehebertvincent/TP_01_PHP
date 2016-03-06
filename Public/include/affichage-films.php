@@ -24,7 +24,7 @@ require("config.php");
 					echo $donnees['Nom'];
 					echo "</td>";
 					echo "<td>";
-					echo '<img src="' . $donnees['Image'] . "\" height='400'width='400' alt='Image du film'>";
+					echo '<img src="' . $donnees['Image'] . "\" height='350'width='350' alt='Image du film'>";
 					echo "</td>";
 					echo "</tr>";
 				}

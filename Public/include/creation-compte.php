@@ -1,5 +1,5 @@
 <?php
-
+include("fonctions.php");
 session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -16,6 +16,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $salt = strtr(base64_encode(mcrypt_create_iv(16, MCRYPT_DEV_URANDOM)), '+', '.');
                     $salt = sprintf("$2a$%02d$", $cost) . $salt;
                     $hash = crypt($_POST['mdp'], $salt);
+					
+					// Vérifie que ce nom d'utilisateur n'est pas déjà utilisé
+					if (!VerifierPseudoUserExistant($_POST['pseudo'])) {
 
                     $req = $connBD->prepare('INSERT INTO users(Nom, Mot_de_Passe, Acces) VALUES(:nom, :mdp, :acces)');
                     $req->execute(array("nom"=>$_POST['pseudo'],"mdp"=>$hash,"acces"=>$_POST['acces']));
@@ -23,11 +26,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $req = $connBD->prepare('SELECT * FROM users WHERE Nom =:nom');
                     $req->execute(array("nom"=>$_POST['pseudo']));
 					
-					
-
-                    // Si les données existes, l'utilisateur est alors créé.
+                    // Si les données existent, l'utilisateur est alors créé.
                     while ($donnees = $req->fetch()) {
                         if($donnees["Mot_de_Passe"] == crypt($_POST['mdp'], $donnees["Mot_de_Passe"])){
+							echo 'condition1';
 							//Si le compte est créé à partir de la page "connexion"
 							if ($_POST['pagedorigine'] == "connexion") {
                             $_SESSION['utilisateur'] = array(
@@ -35,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 "Nom" => $donnees["Nom"],
                                 "Acces" => $donnees["Acces"]
                             );
-                            header("LOCATION: ../index.php");
+								header("LOCATION: ../index.php");
 							}
 							else if ($_POST['pagedorigine'] == "gestion") {
 								header("LOCATION: ../gestion-utilisateurs.php");
@@ -47,21 +49,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             $_SESSION = array();
                             echo '<div class="error error-red"><h3>Le pseudo et le mot de passe ne concorde pas!</h3></div>';
                         }
-                    }
 
                     $req->closeCursor();
                     $connBD = null;
-
+					}
+					}
+					else {
+					echo "Ce nom d'utilisateur est déjà utilisé";
+					}
                 } catch (PDOException $e) {
                     exit( "Erreur lors de l'exécution de la requête SQL :<br />\n" .  $e -> getMessage() . "<br />\nREQUÊTE = SELECT");
                 }
-            } else {
-                echo '<div class="error error-orange"><h3>Les mots de passes ne concordent pas!</h3></div>';
-            }
+            // } 
+			// else {
+                // // echo '<div class="error error-orange"><h3>Les mots de passes ne concordent pas!</h3></div>';
+            // // }
         } else {
             echo '
                 <div class="error error-orange"><h3>Vous devez remplir tous les champs du formulaire!</h3></div>
                 ';
         }
+			}
+			else {
+				echo 'Cet utilisateur existe déjà';
     }
+}
 }

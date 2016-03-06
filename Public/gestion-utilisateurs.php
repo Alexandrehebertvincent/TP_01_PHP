@@ -17,7 +17,13 @@ echo "Connecté en tant que: " . $_SESSION['utilisateur']['Nom'] . " (" . $_SESSI
     <link rel="icon" href="favicon.ico" />
 </head>
 <body>
-    <?php include ("navbar-top.php"); ?>
+     <?php if ($_SESSION['utilisateur']['Acces'] == 'admin') {
+		include ("navbar-top-admin.php"); 
+	}
+	else {
+		include ("navbar-top.php"); 
+	}
+	?>
 	<h1> Créer un nouvel utilisateur</h1>
 	<div id="page">
         <div id="blocAlign">
@@ -41,7 +47,7 @@ echo "Connecté en tant que: " . $_SESSION['utilisateur']['Nom'] . " (" . $_SESSI
 					<p>
 						<input id="submit" type="submit" value="Créer l'utilisateur"/>
 					</p>
-					<input type="hidden" name="pagedorigine" id="hiddenField" value="gestion" />
+					<input type="hidden" name="pagedorigine" id="pagedorigine" value="gestion" />
                 </form>
 			</div>
 

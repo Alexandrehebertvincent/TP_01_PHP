@@ -7,17 +7,12 @@ include ("include/fonctions.php");
 echo "Connecté en tant que: " . $_SESSION['utilisateur']['Nom'] . " (" . $_SESSION['utilisateur']['Acces'] . ")";
 
 		if (isset($_GET['filmid']) AND $_GET['filmid'] != "" AND VerifierIdFilmExistant($_GET['filmid'])) {
-			
-		
 			require("include/config.php");
-		
 		try {
 			$req = $connBD->prepare('SELECT * FROM films WHERE Id=:id');
 				$req->execute(array(
 				'id'=> $_GET['filmid'] ));
-		
 			$donnees = $req->fetch();
-
 		}
 		catch (PDOException $e) {
                 exit( "Erreur lors de l'exécution de la requête SQL :<br />\n" .  $e -> getMessage() . "<br />\nREQUÊTE = SELECT");
@@ -59,20 +54,15 @@ echo "Connecté en tant que: " . $_SESSION['utilisateur']['Nom'] . " (" . $_SESSI
 						<label for="description">Description: </label>
 						<textarea name="resume" id="resume" form="frmajout" cols="40" rows="9"> <?php echo $donnees['Description']; ?></textarea>
 					</p>
-					<p>
+					<!-- <p>
 						<label for="image">Image: </label>
 						<input type="file" name="image" id="image" />
-					</p>
-					<p>
-						<input id="submit" type="submit" value="Mettre à jour le film"/>
-					</p>
-					<input type="hidden" name="filmid" id="hiddenField" value=" <?php echo $donnees['Id'] ?>" />
-					
-				<!-- <div class="file-upload">
+					</p> -->
+					<div class="file-upload">
 					<button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add Image</button>
 
 					<div class="image-upload-wrap">
-						<input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+						<input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" name="image" id="image" value="<?php echo $donnees['Image'] ?>"/>
 					<div class="drag-text">
 					  <h3>Drag and drop a file or select add Image</h3>
 				</div>
@@ -83,11 +73,14 @@ echo "Connecté en tant que: " . $_SESSION['utilisateur']['Nom'] . " (" . $_SESSI
 					  <button type="button" onclick="removeUpload()" class="remove-image">Remove <span class="image-title">Uploaded Image</span></button>
 					</div>
 				  </div>
-				</div> -->
-				
+				</div> 
+				<input type="hidden" name="filmid" id="hiddenField" value=" <?php echo $donnees['Id'] ?>" />
+				<p>
+					<input id="submit" type="submit" value="Mettre à jour le film"/>
+				</p>
                 </form>
 			</div>
-			<img src="' . $donnees['Image'] . '" height="400" width="400" alt="Image du film">
+				
 			
 	<?php } ?>
 	</div>

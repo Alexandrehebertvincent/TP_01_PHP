@@ -3,6 +3,8 @@
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	if (isset($_POST['titre'], $_POST['resume'], $_FILES['image'])) {
+		var_dump($_POST);
+		var_dump($_FILES);
 		if (($_POST['titre'] != "" AND $_POST['resume'] != "" AND $_FILES['image']['error'] == 0)) {		
 
 			$titre = $_POST['titre'];
@@ -32,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			$req->closeCursor();
 			$connBD = null;
 			
-			header('Location: ../index.php');
+			//header('Location: ../index.php');
 		}
 	}
 }

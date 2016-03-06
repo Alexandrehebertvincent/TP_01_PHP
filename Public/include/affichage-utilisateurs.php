@@ -8,7 +8,7 @@ require("config.php");
 				echo ' <table style="width:60%">';
 				while ($donnees = $req->fetch()) {
 					echo "<tr>";
-					// Si l'utilisateur est connecté en tant qu'admin, il voit un bouton pour supprimer le film et un autre pour modifier
+						// Si l'utilisateur est connecté en tant qu'admin, il voit un bouton pour supprimer le film et un autre pour modifier
 					 if ($_SESSION['utilisateur']['Acces'] == "admin"){
 						 echo "<td>";
 						 echo '<a href="include/supprimer-utilisateur.php?userid=' . $donnees['Id'] . '" class="button" "><button>Supprimer</button></a>';
@@ -18,11 +18,14 @@ require("config.php");
 						 echo "</td>";
 					 }
 					echo "<td>";
-					echo "Id: ";
+					echo "Id:";
 					echo $donnees['Id'];
 					echo "</td>";
 					echo "<td>";
 					echo "Nom d'utilisateur: " . $donnees['Nom'];
+					echo "</td>";
+					echo "<td>";
+					echo "Type d'utilisateur: " . $donnees['Acces'];
 					echo "</td>";
 					echo "</tr>";
 				}

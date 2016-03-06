@@ -1,5 +1,5 @@
 ***********À FAIRE*********
--Ajouter / supprimer / modifier des utilisateur
+-Quand on modifie un film, si on ne choisit pas d'image, ça plante. Ça considère que le film n'aura aucune image...
 
 -modifier des films
 
@@ -22,3 +22,5 @@
 **********DONE*************
 
 -Preview de l'image DONE
+
+-Ajouter / supprimer / modifier des utilisateur DONE (mais ya peut-être encore des bugs)
