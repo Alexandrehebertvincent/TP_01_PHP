@@ -1,3 +1,16 @@
+<?php
+// Vérification
+include ("include/verification-connexion.php");
+
+if ($_SESSION['utilisateur']['Acces'] == 'admin') {
+		include ("navbar-top-admin.php"); 
+	}
+	else {
+		include ("navbar-top.php"); 
+	} 
+	
+	
+?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -9,17 +22,8 @@
 </head>
 <body>
 <?php 
-// Vérification
-include ("include/verification-connexion.php");
-
-if ($_SESSION['utilisateur']['Acces'] == 'admin') {
-		include ("navbar-top-admin.php"); 
-	}
-	else {
-		include ("navbar-top.php"); 
-	} 
-
 $film = NULL;
+// //echo '<img src=" . $donnees['Image'] . "\" height='450'width='450' alt='Image du film'>";
 if (isset($_GET['filmid'])){
     // Inclure le fichier de connexion.
     require("include/config.php");
@@ -30,14 +34,14 @@ if (isset($_GET['filmid'])){
 
         while ($donnees = $req->fetch()) {
             $film = $donnees;
-            echo "<h1>";
-            echo $donnees['Nom'];
-            echo "</h1>";
-            //echo '<img src="' . $donnees['Image'] . "\" alt='Image du film' >";
-            echo '<img src="' . $donnees['Image'] . "\" height='450'width='450' alt='Image du film'>";
-            echo "<p>";
-            echo $donnees['Description'];
-            echo "</p>";
+            echo "
+			<h1>
+            " . $donnees['Nom'] . "
+            </h1>
+           <img src=\"" . $donnees['Image'] . "\" alt='Image du film' height='450'width='450'>
+            <p>
+            " . $donnees['Description'] . "
+            </p>";
         }
         $connBD = NULL;
     }

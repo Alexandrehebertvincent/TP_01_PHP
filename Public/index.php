@@ -1,6 +1,14 @@
 <?php
 // Vérification
 include ("include/verification-connexion.php");
+
+if ($_SESSION['utilisateur']['Acces'] == 'admin') {
+		include ("navbar-top-admin.php"); 
+	}
+	else {
+		include ("navbar-top.php"); 
+	}
+	echo "Connecté en tant que: " . $_SESSION['utilisateur']['Nom'] . " (" . $_SESSION['utilisateur']['Acces'] . ")";
 ?>
 
 <!DOCTYPE html>
@@ -13,18 +21,9 @@ include ("include/verification-connexion.php");
     <link rel="icon" href="favicon.ico" />
 </head>
 <body>
-
-    <!-- Menu -->
-    <?php if ($_SESSION['utilisateur']['Acces'] == 'admin') {
-		include ("navbar-top-admin.php"); 
-	}
-	else {
-		include ("navbar-top.php"); 
-	}
-	echo "Connecté en tant que: " . $_SESSION['utilisateur']['Nom'] . " (" . $_SESSION['utilisateur']['Acces'] . ")";
-	?>
 	<h1> Accueil </h1>
-	<div id="page">     
+	<div id="page">   
+    <!-- Menu -->
 		<h2>Films disponibles</h2>
 		<?php require("include/affichage-films.php"); ?>
 	</div>

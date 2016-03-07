@@ -1,4 +1,6 @@
 ***********À FAIRE*********
+-Permettre à n'importe qui de créer un compte administrateur... c'est ptetre pas l'idéal :P
+
 -Quand on modifie un film, si on ne choisit pas d'image, ça plante. Ça considère que le film n'aura aucune image...
 
 -modifier des films
@@ -18,6 +20,8 @@
 -COmpléter formulaire de modification d'image
 
 -fermer alert connexion
+
+-Une belle page "Nom d'utilisateur déjà utilisé", ou un message d'erreur
 
 **********DONE*************
 

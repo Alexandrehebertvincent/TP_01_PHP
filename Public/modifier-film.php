@@ -1,5 +1,4 @@
 <?php
-
 // Vérification connexion
 include ("include/verification-connexion.php");
 include ("include/fonctions.php");
@@ -23,9 +22,8 @@ echo "Connecté en tant que: " . $_SESSION['utilisateur']['Nom'] . " (" . $_SESSI
 			echo "Une erreur s'est produite. Vérifiez le 'Id' du film à modifier...";
 			$erreur = true;
 		}
-		
 		$req->closeCursor();
-				$connBD = null;
+		$connBD = null;
         ?>
 
 <!DOCTYPE html>
@@ -38,7 +36,6 @@ echo "Connecté en tant que: " . $_SESSION['utilisateur']['Nom'] . " (" . $_SESSI
     <link rel="icon" href="favicon.ico" />
 </head>
 <body>
-
     <!-- Menu -->
     <?php include ("navbar-top.php"); ?>
 	<h1> Modifier un film | <?php echo $donnees['Nom']; ?></h1>
