@@ -24,7 +24,7 @@ function GetUserSelonId($userid){
 		'userid'=>$userid));
 	$connBD = null;
 	$donnees = $req->fetch();
-	return $donnees == null ? false : $donnees;
+	return $donnees == null || $donnees == "" ? false : $donnees;
 }
 
 /**
@@ -166,6 +166,12 @@ function GetErreur($noErreur, $infoSupplementaire = 0){
 		case 16:
 			echo '<div class="message message-red"><h3>Veuillez s\'il vous plaît ne pas injecter de code html/javascript dans les champs d\'entrée.</h3></div>';
 			break;
+
+		// Utilisateur existant
+		case 17:
+			echo '<div class="message message-vert"><h3>L\'utilisateur a été créé avec succès!</h3></div>';
+			break;
+
 		default:
 			break;
 	}

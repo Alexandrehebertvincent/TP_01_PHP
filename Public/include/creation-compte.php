@@ -40,6 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 								header("LOCATION: ../index.php");
 							}
 							else if ($_POST['pagedorigine'] == "gestion") {
+                                $_SESSION["messages"][] = 17;
 								header("LOCATION: ../gestion-utilisateurs.php");
 							}
 							

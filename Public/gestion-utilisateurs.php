@@ -45,11 +45,11 @@
 					</p>
 					<p>
 						<label for="description">Mot de passe: </label>
-						<input type="text" name="mdp" id="mdp">
+						<input type="password" name="mdp" id="mdp">
 					</p>
 					<p>
 						<label for="description">Confirmer le mot de passe: </label>
-						<input type="text" name="mdpR" id="mdpR">
+						<input type="password" name="mdpR" id="mdpR">
 					</p>
 					<p>
 						<label class="string" for="admin_radio" style="width: auto;">Administrateur</label>
