@@ -1,4 +1,6 @@
 ***********À FAIRE*********
+-Vérifier les 93 points/exigences dans l'énoncé
+
 -Permettre à n'importe qui de créer un compte administrateur... c'est ptetre pas l'idéal :P
 
 -Quand on modifie un film, si on ne choisit pas d'image, ça plante. Ça considère que le film n'aura aucune image...
