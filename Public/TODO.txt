@@ -1,4 +1,11 @@
+<<<<<<< HEAD
 ***********À FAIRE********
+=======
+***********À FAIRE*********
+-Vérifier les 93 points/exigences dans l'énoncé
+
+-Permettre à n'importe qui de créer un compte administrateur... c'est ptetre pas l'idéal :P
+>>>>>>> origin/master
 
 -Plein d'autre petits trucs, voir l'énoncé
 
