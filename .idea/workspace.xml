@@ -52,25 +52,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="film.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="film.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Public/film.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.230769">
-              <caret line="67" column="157" selection-start-line="67" selection-start-column="157" selection-end-line="67" selection-end-column="157" />
+            <state vertical-scroll-proportion="0.34542817">
+              <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
               <folding>
-                <marker date="1457317873208" expanded="true" signature="1314:1323" placeholder="..." />
-                <marker date="1457317873208" expanded="true" signature="1314:1353" placeholder="..." />
-                <marker date="1457317873208" expanded="true" signature="1314:1515" placeholder="..." />
-                <marker date="1457317873208" expanded="true" signature="1384:1513" placeholder="..." />
-                <marker date="1457317873208" expanded="true" signature="1522:1557" placeholder="..." />
-                <marker date="1457317873208" expanded="true" signature="1594:2491" placeholder="..." />
-                <marker date="1457317873208" expanded="true" signature="1601:1979" placeholder="..." />
-                <marker date="1457317873208" expanded="true" signature="1986:2483" placeholder="..." />
-                <marker date="1457317873208" expanded="true" signature="2057:2112" placeholder="..." />
-                <marker date="1457317873208" expanded="true" signature="2128:2177" placeholder="..." />
-                <marker date="1457317873208" expanded="true" signature="2217:2367" placeholder="..." />
-                <marker date="1457317873208" expanded="true" signature="2387:2475" placeholder="..." />
-                <marker date="1457317873208" expanded="true" signature="2399:2464" placeholder="..." />
+                <marker date="1457318382337" expanded="true" signature="392:425" placeholder="SELECT * FRO... films" />
               </folding>
             </state>
           </provider>
@@ -115,10 +103,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="modifier-film.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="modifier-film.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Public/modifier-film.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state vertical-scroll-proportion="-0.0">
               <caret line="0" column="5" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
               <folding>
                 <marker date="1457318241987" expanded="true" signature="377:409" placeholder="SELECT * FRO... films" />
@@ -160,7 +148,6 @@
         <option value="$PROJECT_DIR$/Public/include/creation-compte.php" />
         <option value="$PROJECT_DIR$/Public/navbar-top.php" />
         <option value="$PROJECT_DIR$/Public/connexion.php" />
-        <option value="$PROJECT_DIR$/Public/film.php" />
         <option value="$PROJECT_DIR$/Public/gestion-utilisateurs.php" />
         <option value="$PROJECT_DIR$/Public/modifier-utilisateur.php" />
         <option value="$PROJECT_DIR$/Public/css/style.css" />
@@ -168,6 +155,7 @@
         <option value="$PROJECT_DIR$/Public/index.php" />
         <option value="$PROJECT_DIR$/Public/ajouter-film.php" />
         <option value="$PROJECT_DIR$/Public/modifier-film.php" />
+        <option value="$PROJECT_DIR$/Public/film.php" />
       </list>
     </option>
   </component>
@@ -411,19 +399,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="43" column="2" selection-start-line="43" selection-start-column="2" selection-end-line="43" selection-end-column="2" />
           <folding>
-            <marker date="1457317873208" expanded="true" signature="1314:1323" placeholder="..." />
-            <marker date="1457317873208" expanded="true" signature="1314:1353" placeholder="..." />
-            <marker date="1457317873208" expanded="true" signature="1314:1515" placeholder="..." />
-            <marker date="1457317873208" expanded="true" signature="1384:1513" placeholder="..." />
-            <marker date="1457317873208" expanded="true" signature="1522:1557" placeholder="..." />
-            <marker date="1457317873208" expanded="true" signature="1594:2491" placeholder="..." />
-            <marker date="1457317873208" expanded="true" signature="1601:1979" placeholder="..." />
-            <marker date="1457317873208" expanded="true" signature="1986:2483" placeholder="..." />
-            <marker date="1457317873208" expanded="true" signature="2057:2112" placeholder="..." />
-            <marker date="1457317873208" expanded="true" signature="2128:2177" placeholder="..." />
-            <marker date="1457317873208" expanded="true" signature="2217:2367" placeholder="..." />
-            <marker date="1457317873208" expanded="true" signature="2387:2475" placeholder="..." />
-            <marker date="1457317873208" expanded="true" signature="2399:2464" placeholder="..." />
+            <marker date="1457318382337" expanded="true" signature="392:425" placeholder="SELECT * FRO... films" />
           </folding>
         </state>
       </provider>
@@ -562,28 +538,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Public/film.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.230769">
-          <caret line="67" column="157" selection-start-line="67" selection-start-column="157" selection-end-line="67" selection-end-column="157" />
-          <folding>
-            <marker date="1457317873208" expanded="true" signature="1314:1323" placeholder="..." />
-            <marker date="1457317873208" expanded="true" signature="1314:1353" placeholder="..." />
-            <marker date="1457317873208" expanded="true" signature="1314:1515" placeholder="..." />
-            <marker date="1457317873208" expanded="true" signature="1384:1513" placeholder="..." />
-            <marker date="1457317873208" expanded="true" signature="1522:1557" placeholder="..." />
-            <marker date="1457317873208" expanded="true" signature="1594:2491" placeholder="..." />
-            <marker date="1457317873208" expanded="true" signature="1601:1979" placeholder="..." />
-            <marker date="1457317873208" expanded="true" signature="1986:2483" placeholder="..." />
-            <marker date="1457317873208" expanded="true" signature="2057:2112" placeholder="..." />
-            <marker date="1457317873208" expanded="true" signature="2128:2177" placeholder="..." />
-            <marker date="1457317873208" expanded="true" signature="2217:2367" placeholder="..." />
-            <marker date="1457317873208" expanded="true" signature="2387:2475" placeholder="..." />
-            <marker date="1457317873208" expanded="true" signature="2399:2464" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Public/modifier-utilisateur.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.4528303">
@@ -624,6 +578,16 @@
           <caret line="0" column="5" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
           <folding>
             <marker date="1457318241987" expanded="true" signature="377:409" placeholder="SELECT * FRO... films" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Public/film.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34542817">
+          <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
+          <folding>
+            <marker date="1457318382337" expanded="true" signature="392:425" placeholder="SELECT * FRO... films" />
           </folding>
         </state>
       </provider>
