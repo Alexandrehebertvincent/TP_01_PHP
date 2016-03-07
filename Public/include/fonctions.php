@@ -1,76 +1,90 @@
 <?php
 
+/**
+ * @param $filmid -> Vérifier l'existence d'un film.
+ * @return bool -> Vrai s'il existe.
+ */
 function VerifierIdFilmExistant($filmid) {
 	include("config.php");
-	
 	$req = $connBD->prepare('SELECT COUNT(*) AS filmTrouve FROM films WHERE Id=:filmid');
 	$req->execute(array(
 	'filmid'=>$filmid));
 	$connBD = null;
-	
-	if ($req->fetch()['filmTrouve'] > 0)
-	{
-		return true;
-	}
-	return false;
+	return $req->fetch()['filmTrouve'] > 0 ? true : false;
 }
 
+/**
+ * @param $userid -> Obtenir les informations d'un utilisateur selon son id.
+ * @return bool -> False si l'id n'existe pas.
+ */
 function GetUserSelonId($userid){
 	include("config.php");
-
 	$req = $connBD->prepare('SELECT * FROM users WHERE Id=:userid');
 	$req->execute(array(
 		'userid'=>$userid));
 	$connBD = null;
-
 	$donnees = $req->fetch();
-
 	return $donnees == null ? false : $donnees;
 }
 
+/**
+ * @param $userid -> Id à vérifier dans la base de données.
+ * @return bool -> Vrai si l'id existe déjà.
+ */
 function VerifierIdUserExistant($userid) {
 	include("config.php");
-	
 	$req = $connBD->prepare('SELECT COUNT(*) AS userTrouve FROM users WHERE Id=:userid');
 	$req->execute(array(
 	'userid'=>$userid));
 	$connBD = null;
-	
-	if ($req->fetch()['userTrouve'] > 0)
-	{
-		return true;
-	}
-	return false;
+	return $req->fetch()['userTrouve'] > 0 ? true : false;
 }
 
+/**
+ * @param $pseudo -> Pseudo à vérifier dans la base de données.
+ * @return bool -> Vrai si le pseudo existe déjà.
+ */
 function VerifierPseudoUserExistant($pseudo) {
 	include("config.php");
-	
 	$req = $connBD->prepare('SELECT COUNT(*) AS userTrouve FROM users WHERE Nom=:pseudo');
 	$req->execute(array(
 	'pseudo'=>$pseudo));
 	$connBD = null;
-	
-	if ($req->fetch()['userTrouve'] > 0)
-	{
-		return true;
-	}
-	return false;
+	return $req->fetch()['userTrouve'] > 0 ? true : false;
 }
 
+/**
+ * @param $filmid -> Identifiant du film dont on veut obtenir le chemin de l'image.
+ * @return mixed -> Valeur du chemain.
+ */
 function ObtenirCheminImageFilm($filmid){
 	include("config.php");
-
 	$req = $connBD->prepare('SELECT * FROM films WHERE Id=:filmid');
-	$req->execute(array(
-		'filmid'=>$filmid));
+	$req->execute(array('filmid'=>$filmid));
 	$connBD = null;
-
 	$donnees = $req->fetch();
-
 	return $donnees["Image"];
 }
 
+/**
+ * @param $texte -> Texte à approuver.
+ * @return bool
+ */
+function VerifierContreInjection($texte){
+	$valide = true;
+	$motsNonValides = array("<script>", "</script>", "<style>", "</style>", "<html>", "</html>", "<body>", "</body>", "$.", "<!--", "-->");
+	foreach ($motsNonValides as $mot){
+		if (strpos($texte, $mot) || $texte == $mot){
+			$valide = false;
+		}
+	}
+	return $valide;
+}
+
+/**
+ * @param $noErreur -> Le numéro associé à l'erreur ou au message.
+ * @param int $infoSupplementaire -> Information supplémentaire à propos de l'erreur ou du message.
+ */
 function GetErreur($noErreur, $infoSupplementaire = 0){
 	switch ($noErreur){
 		// Déconnexion
@@ -148,6 +162,10 @@ function GetErreur($noErreur, $infoSupplementaire = 0){
 			echo '<div class="message message-orange"><h3>Il s\'est produite une erreur lors de l\'enregistrement de l\'utilisateur. Veuillez réésayer...</h3></div>';
 			break;
 
+		// Injection
+		case 16:
+			echo '<div class="message message-red"><h3>Veuillez s\'il vous plaît ne pas injecter de code html/javascript dans les champs d\'entrée.</h3></div>';
+			break;
 		default:
 			break;
 	}

@@ -1368,6 +1368,7 @@ fieldset
 #page
 {
     width: 80%;
+    padding: 25px 0 35px 0;
     margin:auto;
 }
 

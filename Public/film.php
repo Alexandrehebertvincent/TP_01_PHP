@@ -35,6 +35,7 @@ else{
     <title>Fiche de film | <?php echo $film['Nom']; ?></title>
     <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic|Lato:400,100,300,700,900:latin' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="css/style.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
     <link rel="icon" href="favicon.ico" />
 </head>
 <body>

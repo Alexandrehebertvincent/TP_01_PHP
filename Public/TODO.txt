@@ -1,20 +1,21 @@
 
-***********À FAIRE********
--Vérifier les 93 points/exigences dans l'énoncé
+***********ï¿½ FAIRE********
 
--Permettre à n'importe qui de créer un compte administrateur... c'est ptetre pas l'idéal :P
-
--Plein d'autre petits trucs, voir l'énoncé
-
--Page robot cassé film introuvé
+-Permettre ï¿½ n'importe qui de crï¿½er un compte administrateur... c'est ptetre pas l'idï¿½al :P
 
 **********DONE*************
 
+-Plein d'autre petits trucs, voir l'ï¿½noncï¿½
+
+-Vï¿½rifier les 93 points/exigences dans l'ï¿½noncï¿½
+
+-Page robot cassï¿½ film introuvï¿½
+
 -Preview de l'image DONE
 
--Ajouter / supprimer / modifier des utilisateur DONE (mais ya peut-être encore des bugs)
+-Ajouter / supprimer / modifier des utilisateur DONE (mais ya peut-ï¿½tre encore des bugs)
 
--Vérifier le ID quand on modifie un film
+-Vï¿½rifier le ID quand on modifie un film
 
 -unlink quand on modifie et quand on supprime
 
@@ -22,10 +23,10 @@
 
 -Boutons. Beaux.
 
--COmpléter formulaire de modification d'image
+-COmplï¿½ter formulaire de modification d'image
 
 -fermer alert connexion
 
 -modifier des films
 
--Quand on modifie un film, si on ne choisit pas d'image, ça plante. Ça considère que le film n'aura aucune image...
+-Quand on modifie un film, si on ne choisit pas d'image, ï¿½a plante. ï¿½a considï¿½re que le film n'aura aucune image...

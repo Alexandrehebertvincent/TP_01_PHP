@@ -18,6 +18,7 @@
             </div><?php } ?>
             <div class="section">
                 <a href="/TP_01_PHP/Public/include/deconnexion.php"><h3>Se déconnecter</h3></a>
+                <a href="#">Connecté en tant que <?php echo $_SESSION['utilisateur']["Nom"]; ?></a>
             </div>
         </div>
     </div>

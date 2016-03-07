@@ -2,16 +2,6 @@
 // Vérification
 include ("include/verification-connexion.php");
 
-// Vérification s'il y a un message.
-if ($_SERVER["REQUEST_METHOD"] == "GET"){
-	if (isset($_GET["erreur"])){
-		include_once("include/fonctions.php");
-		if ($_GET["erreur"] != ""){
-			GetErreur($_GET["erreur"]);
-		}
-	}
-}
-
 if (isset($_SESSION["messages"])) {
 	foreach ($_SESSION["messages"] as $mess) {
 		GetErreur($mess);
@@ -28,6 +18,7 @@ if (isset($_SESSION["messages"])) {
     <title>Ajouter un film | Panama</title>
 	<link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic|Lato:400,100,300,700,900:latin' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="css/style.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
     <link rel="icon" href="favicon.ico" />
 </head>
 <body>

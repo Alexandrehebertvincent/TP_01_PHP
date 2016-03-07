@@ -19,7 +19,7 @@
 
     <div class="warning">
         <p class="sign alert">Alerte misère!</p>
-        <p>La page que vous cherchez a peut être été retirée, changée de nom, ou temporairement indisponible.</p>
+        <p>La page que vous cherchez a peut être été retirée, a changée de nom, ou est temporairement indisponible.</p>
     </div>
 
 

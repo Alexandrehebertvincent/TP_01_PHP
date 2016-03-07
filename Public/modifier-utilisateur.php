@@ -37,6 +37,7 @@ else {
     <title>Modifier utilisateur | <?php echo $donnees['Nom']; ?></title>
 	<link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic|Lato:400,100,300,700,900:latin' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="css/style.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
     <link rel="icon" href="favicon.ico" />
 </head>
 <body>
@@ -51,14 +52,14 @@ else {
 	<section id="contenu">
 		<header id="banner-ajout-film">
 			<h1>Modifier utilisateur | <?php echo $donnees['Nom']; ?></h1>
-			<img src="http://btckstorage.blob.core.windows.net/site761/Film%20Club/filmreelLEFT.png">
+			<img src="http://englooks.com/assets/img/users.png">
 		</header>
 		<div id="page">
 			<div id="blocAlign">
 					<form method="post" id="frmajout" action="include/update-utilisateur.php">
 						<p>
 							<label for="titreFilm">Nom d'utilisateur: </label>
-							<input type="text" name="pseudo" id="pseudo" size="30" value="<?php echo $donnees['Nom'] ?>"> .
+							<input type="text" name="pseudo" id="pseudo" size="30" value="<?php echo $donnees['Nom'] ?>">
 						</p>
 						<p>
 							<label for="mdpuser">Mot de passe: </label>
