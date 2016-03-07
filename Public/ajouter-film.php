@@ -1,6 +1,7 @@
 <?php
 // Vérification
 include ("include/verification-connexion.php");
+include_once "include/fonctions.php";
 
 if (isset($_SESSION["messages"])) {
 	foreach ($_SESSION["messages"] as $mess) {
