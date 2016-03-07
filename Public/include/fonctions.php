@@ -99,6 +99,11 @@ function GetErreur($noErreur, $infoSupplementaire = 0){
 		case 8:
 			echo '<div class="message message-vert"><h3>La collection comporte '.($infoSupplementaire > 1 ? $infoSupplementaire . " films": $infoSupplementaire . " film").'. Bonne visite!</h3></div>';
 			break;
+
+		// Aucun film trouvé.
+		case 9:
+			echo '<div class="message message-orange"><h3>Aucun film correspondant n\'a été trouvé.</h3></div>';
+			break;
 		default:
 			break;
 	}

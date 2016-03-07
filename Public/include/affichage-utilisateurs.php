@@ -18,10 +18,6 @@ require("config.php");
 						 echo "</td>";
 					 }
 					echo "<td>";
-					echo "Id:";
-					echo $donnees['Id'];
-					echo "</td>";
-					echo "<td>";
 					echo "Nom d'utilisateur: " . $donnees['Nom'];
 					echo "</td>";
 					echo "<td>";

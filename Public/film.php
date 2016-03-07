@@ -19,6 +19,9 @@ if (isset($_GET['filmid'])){
     catch (PDOException $e) {
         exit( "Erreur lors de l'exécution de la requête SQL :<br />\n" .  $e -> getMessage() . "<br />\nREQUÊTE = SELECT");
     }
+    if ($film == null){
+        header("LOCATION:index.php?message=9");
+    }
 }
 else{
     header("LOCATION:index.php");

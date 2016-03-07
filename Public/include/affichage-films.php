@@ -19,27 +19,27 @@
 ?>
 
 <?php if (count($films) > 0 && $films[0] != NULL) { ?>
-	<table>
+	<div class="film-afficheur">
 		<?php foreach ($films as $film){ ?>
-			<tr>
-				<?php if ($_SESSION['utilisateur']['Acces'] == "admin"){ ?>
-					<td>
+			<div class="film-div">
+				<a href="film.php?filmid=<?php echo $film['Id']; ?>"><div class="film-section-image" style="background-image: url(<?php echo $film['Image']; ?>);"></div></a>
+				<h3><?php echo $film['Nom']; ?></h3>
+				<div class="film-section-bouton">
+					<?php if ($_SESSION['utilisateur']['Acces'] == "admin"){ ?>
 						<a href="include/supprimer.php?filmid=<?php echo $film['Id']; ?>" class="button file-upload-btn btn-auto btn-red">Supprimer</a>
-					</td>
-					<td>
 						<a href="modifier-film.php?filmid=<?php echo $film['Id']; ?>" class="button file-upload-btn btn-auto btn-orange">Modifier</a>
-					</td>
-				<?php } ?>
-				<td>
-					<a href="include/film.php?filmid=<?php echo $film['Id']; ?>" class="button file-upload-btn btn-auto">Fiche du film</a>
-				</td>
-				<td>
-					<?php echo $film['Nom']; ?>
-				</td>
-				<td>
-					<img src="<?php echo $film['Image']; ?>" height='350'width='350' alt='Image du film'>
-				</td>
-			</tr>
-		<?php GetErreur(8, count($films));} ?>
-	</table>
+					<?php } ?>
+					<a href="film.php?filmid=<?php echo $film['Id']; ?>" class="button file-upload-btn btn-auto">Fiche du film</a>
+				</div>
+			</div>
+		<?php } ?>
+		<div class="film-div">
+			<div class="film-section-image">
+				<a href="ajouter-film.php">
+					<i class="fa fa-plus-circle fa-6"></i>
+				</a>
+				<h6>Nouveau film</h6>
+			</div>
+		</div>
+	</div>
 <?php }else{GetErreur(7);} ?>

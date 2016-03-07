@@ -45,8 +45,10 @@
 						<input type="text" name="mdpR" id="mdpR">
 					</p>
 					<p>
-					<input class="radio" type="radio" name="acces" value="admin">Administrateur
-                    <input class="radio" type="radio" name="acces" value="user" checked>Utilisateur
+						<label class="string" for="admin_radio">Administrateur</label>
+						<input title="Administrateur" id="admin_radio" class="radio" type="radio" name="acces" value="admin">
+						<label class="string" for="user_radio">Utilisateur</label>
+						<input title="Utilisateur" id="user_radio" class="radio" type="radio" name="acces" value="user" checked>
 					</p>
 					<p>
 						<input id="submit" class="button file-upload-btn btn-auto" type="submit" value="Créer l'utilisateur"/>
