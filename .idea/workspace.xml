@@ -21,7 +21,116 @@
     <favorites_list name="TP_01_PHP" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Public/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-2.6153846">
+              <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="10" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="gestion-utilisateurs.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Public/gestion-utilisateurs.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-12.769231">
+              <caret line="55" column="83" selection-start-line="55" selection-start-column="83" selection-end-line="55" selection-end-column="83" />
+              <folding>
+                <element signature="n#style#0;n#label#0;n#p#3;n#form#0;n#div#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#label#1;n#p#3;n#form#0;n#div#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="navbar-top-admin.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Public/include/navbar-top-admin.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-1.3076923">
+              <caret line="2" column="52" selection-start-line="2" selection-start-column="52" selection-end-line="2" selection-end-column="52" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Public/css/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-22.576923">
+              <caret line="1726" column="1" selection-start-line="1726" selection-start-column="1" selection-end-line="1726" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="modifier-utilisateur.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Public/modifier-utilisateur.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.6676737">
+              <caret line="68" column="112" selection-start-line="68" selection-start-column="112" selection-end-line="68" selection-end-column="112" />
+              <folding>
+                <marker date="1457341947008" expanded="true" signature="423:459" placeholder="SELECT * FRO... users" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="update-utilisateur.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Public/include/update-utilisateur.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-29.115385">
+              <caret line="86" column="78" selection-start-line="86" selection-start-column="78" selection-end-line="86" selection-end-column="78" />
+              <folding>
+                <marker date="1457341890275" expanded="true" signature="761:817" placeholder="UPDATE users... " />
+                <marker date="1457341890275" expanded="true" signature="979:1014" placeholder="SELECT * FRO... users" />
+                <marker date="1457341890275" expanded="true" signature="1141:1216" placeholder="UPDATE users... " />
+                <marker date="1457341890275" expanded="true" signature="1422:1457" placeholder="SELECT * FRO... users" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fonctions.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Public/include/fonctions.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-10.245283">
+              <caret line="147" column="113" selection-start-line="147" selection-start-column="113" selection-end-line="147" selection-end-column="113" />
+              <folding>
+                <marker date="1457341627703" expanded="true" signature="102:159" placeholder="SELECT COUNT... films" />
+                <marker date="1457341627703" expanded="true" signature="388:424" placeholder="SELECT * FRO... users" />
+                <marker date="1457341627703" expanded="true" signature="662:719" placeholder="SELECT COUNT... users" />
+                <marker date="1457341627703" expanded="true" signature="962:1020" placeholder="SELECT COUNT... users" />
+                <marker date="1457341627703" expanded="true" signature="1257:1293" placeholder="SELECT * FRO... films" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="modifier-film.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Public/modifier-film.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-21.23077">
+              <caret line="78" column="50" selection-start-line="78" selection-start-column="50" selection-end-line="78" selection-end-column="77" />
+              <folding>
+                <marker date="1457339989568" expanded="true" signature="377:409" placeholder="SELECT * FRO... films" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="navbar-top.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Public/include/navbar-top.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-1.3076923">
+              <caret line="2" column="52" selection-start-line="2" selection-start-column="52" selection-end-line="2" selection-end-column="52" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -50,26 +159,26 @@
         <option value="$PROJECT_DIR$/Public/include/upload.php" />
         <option value="$PROJECT_DIR$/Public/include/supprimer.php" />
         <option value="$PROJECT_DIR$/Public/include/supprimer-utilisateur.php" />
-        <option value="$PROJECT_DIR$/Public/include/update-utilisateur.php" />
-        <option value="$PROJECT_DIR$/Public/include/fonctions.php" />
         <option value="$PROJECT_DIR$/Public/include/verification-connexion.php" />
         <option value="$PROJECT_DIR$/Public/include/deconnexion.php" />
         <option value="$PROJECT_DIR$/Public/.htaccess" />
         <option value="$PROJECT_DIR$/Public/css/404.css" />
         <option value="$PROJECT_DIR$/Public/404_introuvable.php" />
         <option value="$PROJECT_DIR$/Public/connexion.php" />
-        <option value="$PROJECT_DIR$/Public/css/style.css" />
         <option value="$PROJECT_DIR$/Public/ajouter-film.php" />
         <option value="$PROJECT_DIR$/Public/film.php" />
-        <option value="$PROJECT_DIR$/Public/gestion-utilisateurs.php" />
         <option value="$PROJECT_DIR$/Public/index.php" />
         <option value="$PROJECT_DIR$/Public/modifier-film.php" />
-        <option value="$PROJECT_DIR$/Public/modifier-utilisateur.php" />
-        <option value="$PROJECT_DIR$/Public/include/navbar-top-admin.php" />
-        <option value="$PROJECT_DIR$/Public/include/navbar-top.php" />
         <option value="$PROJECT_DIR$/Public/include/footer.php" />
         <option value="$PROJECT_DIR$/Public/include/affichage-films.php" />
         <option value="$PROJECT_DIR$/Public/include/affichage-utilisateurs.php" />
+        <option value="$PROJECT_DIR$/Public/include/navbar-top.php" />
+        <option value="$PROJECT_DIR$/Public/include/navbar-top-admin.php" />
+        <option value="$PROJECT_DIR$/Public/css/style.css" />
+        <option value="$PROJECT_DIR$/Public/include/fonctions.php" />
+        <option value="$PROJECT_DIR$/Public/gestion-utilisateurs.php" />
+        <option value="$PROJECT_DIR$/Public/include/update-utilisateur.php" />
+        <option value="$PROJECT_DIR$/Public/modifier-utilisateur.php" />
       </list>
     </option>
   </component>
@@ -164,6 +273,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TP_01_PHP" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TP_01_PHP" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
@@ -242,10 +369,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25642672" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25642672" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32974428" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -351,19 +478,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Public/include/update-utilisateur.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.384615">
-          <caret line="70" column="69" selection-start-line="70" selection-start-column="69" selection-end-line="70" selection-end-column="69" />
-          <folding>
-            <marker date="1457335709989" expanded="true" signature="762:818" placeholder="UPDATE users... " />
-            <marker date="1457335709989" expanded="true" signature="980:1015" placeholder="SELECT * FRO... users" />
-            <marker date="1457335709989" expanded="true" signature="1142:1217" placeholder="UPDATE users... " />
-            <marker date="1457335709989" expanded="true" signature="1423:1458" placeholder="SELECT * FRO... users" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Public/include/upload.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="6.1923075">
@@ -380,20 +494,6 @@
           <caret line="23" column="35" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
           <folding>
             <marker date="1457335709969" expanded="true" signature="299:329" placeholder="DELETE FROM " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Public/include/fonctions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="18.924528">
-          <caret line="25" column="29" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="29" />
-          <folding>
-            <marker date="1457337178809" expanded="true" signature="102:159" placeholder="SELECT COUNT... films" />
-            <marker date="1457337178809" expanded="true" signature="388:424" placeholder="SELECT * FRO... users" />
-            <marker date="1457337178809" expanded="true" signature="662:719" placeholder="SELECT COUNT... users" />
-            <marker date="1457337178809" expanded="true" signature="962:1020" placeholder="SELECT COUNT... users" />
-            <marker date="1457337178809" expanded="true" signature="1257:1293" placeholder="SELECT * FRO... films" />
           </folding>
         </state>
       </provider>
@@ -430,14 +530,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Public/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.0384617">
-          <caret line="1012" column="19" selection-start-line="1012" selection-start-column="19" selection-end-line="1012" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Public/img/bg.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -469,14 +561,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Public/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.8846154">
-          <caret line="26" column="4" selection-start-line="26" selection-start-column="4" selection-end-line="32" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Public/include/affichage-films.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.46072507">
@@ -495,37 +579,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Public/modifier-film.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.27140784">
-          <caret line="42" column="25" selection-start-line="42" selection-start-column="25" selection-end-line="42" selection-end-column="25" />
-          <folding>
-            <marker date="1457339989568" expanded="true" signature="377:409" placeholder="SELECT * FRO... films" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Public/modifier-utilisateur.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3701016">
-          <caret line="48" column="25" selection-start-line="48" selection-start-column="25" selection-end-line="48" selection-end-column="25" />
-          <folding>
-            <marker date="1457339989496" expanded="true" signature="410:442" placeholder="SELECT * FRO... users" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Public/favicon.ico">
       <provider selected="true" editor-type-id="images">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Public/gestion-utilisateurs.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5674891">
-          <caret line="29" column="25" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Public/film.php">
@@ -535,22 +591,6 @@
           <folding>
             <marker date="1457339989619" expanded="true" signature="392:425" placeholder="SELECT * FRO... films" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Public/include/navbar-top-admin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1233672">
-          <caret line="5" column="62" selection-start-line="5" selection-start-column="62" selection-end-line="5" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Public/include/navbar-top.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.07402032">
-          <caret line="3" column="63" selection-start-line="3" selection-start-column="63" selection-end-line="3" selection-end-column="63" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -581,6 +621,96 @@
         <state vertical-scroll-proportion="0.2467344">
           <caret line="10" column="36" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Public/include/navbar-top.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3076923">
+          <caret line="2" column="52" selection-start-line="2" selection-start-column="52" selection-end-line="2" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Public/include/navbar-top-admin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3076923">
+          <caret line="2" column="52" selection-start-line="2" selection-start-column="52" selection-end-line="2" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Public/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-22.576923">
+          <caret line="1726" column="1" selection-start-line="1726" selection-start-column="1" selection-end-line="1726" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Public/modifier-film.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-21.23077">
+          <caret line="78" column="50" selection-start-line="78" selection-start-column="50" selection-end-line="78" selection-end-column="77" />
+          <folding>
+            <marker date="1457339989568" expanded="true" signature="377:409" placeholder="SELECT * FRO... films" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Public/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.6153846">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="10" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Public/include/fonctions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.245283">
+          <caret line="147" column="113" selection-start-line="147" selection-start-column="113" selection-end-line="147" selection-end-column="113" />
+          <folding>
+            <marker date="1457341627703" expanded="true" signature="102:159" placeholder="SELECT COUNT... films" />
+            <marker date="1457341627703" expanded="true" signature="388:424" placeholder="SELECT * FRO... users" />
+            <marker date="1457341627703" expanded="true" signature="662:719" placeholder="SELECT COUNT... users" />
+            <marker date="1457341627703" expanded="true" signature="962:1020" placeholder="SELECT COUNT... users" />
+            <marker date="1457341627703" expanded="true" signature="1257:1293" placeholder="SELECT * FRO... films" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Public/gestion-utilisateurs.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.769231">
+          <caret line="55" column="83" selection-start-line="55" selection-start-column="83" selection-end-line="55" selection-end-column="83" />
+          <folding>
+            <element signature="n#style#0;n#label#0;n#p#3;n#form#0;n#div#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#1;n#p#3;n#form#0;n#div#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Public/include/update-utilisateur.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-29.115385">
+          <caret line="86" column="78" selection-start-line="86" selection-start-column="78" selection-end-line="86" selection-end-column="78" />
+          <folding>
+            <marker date="1457341890275" expanded="true" signature="761:817" placeholder="UPDATE users... " />
+            <marker date="1457341890275" expanded="true" signature="979:1014" placeholder="SELECT * FRO... users" />
+            <marker date="1457341890275" expanded="true" signature="1141:1216" placeholder="UPDATE users... " />
+            <marker date="1457341890275" expanded="true" signature="1422:1457" placeholder="SELECT * FRO... users" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Public/modifier-utilisateur.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6676737">
+          <caret line="68" column="112" selection-start-line="68" selection-start-column="112" selection-end-line="68" selection-end-column="112" />
+          <folding>
+            <marker date="1457341947008" expanded="true" signature="423:459" placeholder="SELECT * FRO... users" />
+          </folding>
         </state>
       </provider>
     </entry>

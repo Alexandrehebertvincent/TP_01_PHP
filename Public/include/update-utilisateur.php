@@ -1,11 +1,13 @@
 <?php
-// Pour modifier un utilisateur
+
+session_start();
+
+$message = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	if (isset($_POST['pseudo'], $_POST['mdp'], $_POST['mdpR'])) { 
 		if (($_POST['pseudo'] != "" AND $_POST['mdp'] != "" AND  $_POST['mdpR'] != "")) {
-			if ($_POST['mdp'] == $_POST['mdpR']) {		
-
+			if ($_POST['mdp'] == $_POST['mdpR']) {
 				try {
                     // Inclure le fichier de connexion.
                     include ("config.php");
@@ -77,7 +79,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 echo '<div class="error error-orange"><h3>Les mots de passes ne concordent pas!</h3></div>';
             }
         } else {
-            echo '<div class="error error-orange"><h3>Vous devez remplir tous les champs du formulaire!</h3></div>';
+            $_SESSION["messages"][] = 14;
+            header("LOCATION:../modifier-utilisateur.php?userid=".$_POST['userid']);
         }
+    } else {
+        $_SESSION["messages"][] = 2;
+        header("LOCATION:../modifier-utilisateur.php?userid=".$_POST['userid']);
     }
 }

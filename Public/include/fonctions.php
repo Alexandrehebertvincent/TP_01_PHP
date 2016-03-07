@@ -138,6 +138,16 @@ function GetErreur($noErreur, $infoSupplementaire = 0){
 			echo '<div class="message message-vert"><h3>L\'utilisateur à été supprimé avec succès.</h3></div>';
 			break;
 
+		// Champs vide
+		case 14:
+			echo '<div class="message message-orange"><h3>Aucun champ du formulaire ne peut être vide.</h3></div>';
+			break;
+
+		// Erreur lors de l'affichage d'un usager.
+		case 15:
+			echo '<div class="message message-orange"><h3>Il s\'est produite une erreur lors de l\'enregistrement de l\'utilisateur. Veuillez réésayer...</h3></div>';
+			break;
+
 		default:
 			break;
 	}

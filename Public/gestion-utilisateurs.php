@@ -51,9 +51,9 @@
 						<input type="text" name="mdpR" id="mdpR">
 					</p>
 					<p>
-						<label class="string" for="admin_radio">Administrateur</label>
+						<label class="string" for="admin_radio" style="width: auto;">Administrateur</label>
 						<input title="Administrateur" id="admin_radio" class="radio" type="radio" name="acces" value="admin">
-						<label class="string" for="user_radio">Utilisateur</label>
+						<label class="string" for="user_radio" style="width: auto;">Utilisateur</label>
 						<input title="Utilisateur" id="user_radio" class="radio" type="radio" name="acces" value="user" checked>
 					</p>
 					<p>
