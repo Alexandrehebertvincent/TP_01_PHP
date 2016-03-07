@@ -1,10 +1,10 @@
 <?php
 
-// Vérification connexion
+// Vï¿½rification connexion
 include ("include/verification-connexion.php");
 include ("include/fonctions.php");
 
-echo "Connecté en tant que: " . $_SESSION['utilisateur']['Nom'] . " (" . $_SESSION['utilisateur']['Acces'] . ")";
+echo "Connectï¿½ en tant que: " . $_SESSION['utilisateur']['Nom'] . " (" . $_SESSION['utilisateur']['Acces'] . ")";
 
 		if (isset($_GET['userid']) AND $_GET['userid'] != "" AND VerifierIdUserExistant($_GET['userid'])) {
 		
@@ -21,12 +21,12 @@ echo "Connecté en tant que: " . $_SESSION['utilisateur']['Nom'] . " (" . $_SESSI
 			$connBD = null;
 		}
 		catch (PDOException $e) {
-                exit( "Erreur lors de l'exécution de la requête SQL :<br />\n" .  $e -> getMessage() . "<br />\nREQUÊTE = SELECT");
+                exit( "Erreur lors de l'exï¿½cution de la requï¿½te SQL :<br />\n" .  $e -> getMessage() . "<br />\nREQUï¿½TE = SELECT");
             }
 		}
 		else {
 			var_dump( VerifierIdFilmExistant($_GET['userid']));
-			echo "Une erreur s'est produite. Vérifiez le 'Id' de l'utilisateur à modifier...";
+			echo "Une erreur s'est produite. Vï¿½rifiez le 'Id' de l'utilisateur ï¿½ modifier...";
 			$erreur = true;
 		}
         ?>
@@ -36,6 +36,7 @@ echo "Connecté en tant que: " . $_SESSION['utilisateur']['Nom'] . " (" . $_SESSI
 <head>
     <meta charset="UTF-8">
     <title>Modifier utilisateur | <?php echo $donnees['Nom']; ?></title>
+	<link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic|Lato:400,100,300,700,900:latin' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="css/styleIndex.css" media="all" />
 	<link rel="stylesheet" type="text/css" href="css/style.css" media="all" />
     <link rel="icon" href="favicon.ico" />

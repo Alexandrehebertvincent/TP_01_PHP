@@ -8,7 +8,7 @@ include ("include/verification-connexion.php");
 <head>
     <meta charset="UTF-8">
     <title>Partage de films | Panama</title>
-	<link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic|Pacifico' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic|Lato:400,100,300,700,900:latin' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="css/style.css" media="all" />
     <link rel="icon" href="favicon.ico" />
 </head>
@@ -21,7 +21,6 @@ include ("include/verification-connexion.php");
 	else {
 		include ("navbar-top.php"); 
 	}
-	echo "Connecté en tant que: " . $_SESSION['utilisateur']['Nom'] . " (" . $_SESSION['utilisateur']['Acces'] . ")";
 	?>
 	<header id="accueil-banner">
 		<h1> Accueil </h1>

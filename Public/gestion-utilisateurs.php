@@ -13,6 +13,7 @@
     <meta charset="UTF-8">
     <title>Cr�er un utilisateur</title>
 	<!--<link rel="stylesheet" type="text/css" href="css/styleIndex.css" media="all" />-->
+	<link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic|Lato:400,100,300,700,900:latin' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="css/style.css" media="all" />
     <link rel="icon" href="favicon.ico" />
 </head>
@@ -48,7 +49,7 @@
                     <input class="radio" type="radio" name="acces" value="user" checked>Utilisateur
 					</p>
 					<p>
-						<input id="submit" type="submit" value="Cr�er l'utilisateur"/>
+						<input id="submit" class="button file-upload-btn btn-auto" type="submit" value="Créer l'utilisateur"/>
 					</p>
 					<input type="hidden" name="pagedorigine" id="pagedorigine" value="gestion" />
                 </form>

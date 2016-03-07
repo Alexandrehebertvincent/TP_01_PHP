@@ -33,18 +33,23 @@ echo "Connect� en tant que: " . $_SESSION['utilisateur']['Nom'] . " (" . $_SES
 <head>
     <meta charset="UTF-8">
     <title>Modifier film <?php echo $donnees['nom']; ?></title>
-	<link rel="stylesheet" type="text/css" href="css/styleIndex.css" media="all" />
+	<link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic|Lato:400,100,300,700,900:latin' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="css/style.css" media="all" />
     <link rel="icon" href="favicon.ico" />
 </head>
 <body>
-
-    <!-- Menu -->
-    <?php include ("navbar-top.php"); ?>
-	<header>
-
+	<!-- Menu -->
+	<?php if ($_SESSION['utilisateur']['Acces'] == 'admin') {
+		include ("navbar-top-admin.php");
+	}
+	else {
+		include ("navbar-top.php");
+	}
+	?>
+	<header id="banner-ajout-film">
+		<h1>Modifier un film | <?php echo $donnees['Nom']; ?></h1>
+		<img src="http://btckstorage.blob.core.windows.net/site761/Film%20Club/filmreelLEFT.png">
 	</header>
-	<h1> Modifier un film | <?php echo $donnees['Nom']; ?></h1>
 	<div id="page">
 	<?php if (!isset($erreur)) { ?>
 		<div id="blocAlign">
@@ -68,7 +73,7 @@ echo "Connect� en tant que: " . $_SESSION['utilisateur']['Nom'] . " (" . $_SES
 					<div class="file-upload-content">
 						<img class="file-upload-image" src="#" alt="your image" />
 						<div class="image-title-wrap">
-							<button type="button" onclick="removeUpload()" class="remove-image">Remove <span class="image-title">Uploaded Image</span></button>
+							<button type="button" onclick="removeUpload()" class="remove-image">Enlever <span class="image-title">cette image</span></button>
 						</div>
 					</div>
 					<input type="hidden" name="filmid" id="hiddenField" value=" <?php echo $donnees['Id'] ?>" />
