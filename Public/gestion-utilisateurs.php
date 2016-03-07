@@ -1,18 +1,18 @@
 <?php
 
-// Vérification connexion
-include ("include/verification-connexion.php");
-include ("include/fonctions.php");
+	// Vï¿½rification connexion
+	include ("include/verification-connexion.php");
+	include ("include/fonctions.php");
 
-echo "Connecté en tant que: " . $_SESSION['utilisateur']['Nom'] . " (" . $_SESSION['utilisateur']['Acces'] . ")";			
-        ?>
+	//echo "Connectï¿½ en tant que: " . $_SESSION['utilisateur']['Nom'] . " (" . $_SESSION['utilisateur']['Acces'] . ")";
+?>
 
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Créer un utilisateur</title>
-	<link rel="stylesheet" type="text/css" href="css/styleIndex.css" media="all" />
+    <title>Crï¿½er un utilisateur</title>
+	<!--<link rel="stylesheet" type="text/css" href="css/styleIndex.css" media="all" />-->
 	<link rel="stylesheet" type="text/css" href="css/style.css" media="all" />
     <link rel="icon" href="favicon.ico" />
 </head>
@@ -24,7 +24,10 @@ echo "Connecté en tant que: " . $_SESSION['utilisateur']['Nom'] . " (" . $_SESSI
 		include ("navbar-top.php"); 
 	}
 	?>
-	<h1> Créer un nouvel utilisateur</h1>
+	 <header id="gestion-user">
+		 <h1>Utilisateurs existants</h1>
+		 <img src="http://simpleicon.com/wp-content/uploads/multy-user.png">
+	 </header>
 	<div id="page">
         <div id="blocAlign">
                 <form method="post" id="frmajout" action="include/creation-compte.php">
@@ -45,7 +48,7 @@ echo "Connecté en tant que: " . $_SESSION['utilisateur']['Nom'] . " (" . $_SESSI
                     <input class="radio" type="radio" name="acces" value="user" checked>Utilisateur
 					</p>
 					<p>
-						<input id="submit" type="submit" value="Créer l'utilisateur"/>
+						<input id="submit" type="submit" value="Crï¿½er l'utilisateur"/>
 					</p>
 					<input type="hidden" name="pagedorigine" id="pagedorigine" value="gestion" />
                 </form>

@@ -19,6 +19,9 @@ include ("include/verification-connexion.php");
 		include ("navbar-top-admin.php"); 
 		echo "Connecté en tant que: " . $_SESSION['utilisateur']['Nom'] . " (" . $_SESSION['utilisateur']['Acces'] . ")";
 	?>
+	<header>
+
+	</header>
 	<h1> Ajouter un film </h1>
 	<div id="page">
 			<div id="blocAlign">
@@ -29,14 +32,14 @@ include ("include/verification-connexion.php");
 					</p>
 					<p>
 						<label for="description">Description: </label>
-						<textarea name="resume" id="resume" form="frmajout" cols="40" rows="9"></textarea>
+						<textarea  name="resume" id="resume" form="frmajout" cols="40" rows="9"></textarea>
 					</p>
 					<p>
 						<label for="image">Image: </label>
-						<input type="file" name="monfichier" id="monfichier" />
+						<input class="file-upload-btn btn-auto" type="file" name="monfichier" id="monfichier" />
 					</p>
 					<p>
-						<input id="submit" type="submit" value="Ajouter le film"/>
+						<input class="file-upload-btn btn-auto" id="submit" type="submit" value="Ajouter le film"/>
 					</p>
                 </form>
 			</div>
