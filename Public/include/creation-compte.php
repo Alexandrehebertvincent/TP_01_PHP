@@ -47,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 							
                         } else {
                             $_SESSION = array();
-                            echo '<div class="error error-red"><h3>Le pseudo et le mot de passe ne concorde pas!</h3></div>';
+                            header("LOCATION:../connexion.php?erreur=3");
                         }
 
                     $req->closeCursor();
@@ -55,7 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 					}
 					}
 					else {
-					echo "Ce nom d'utilisateur est déjà utilisé";
+                        header("LOCATION:../connexion.php?erreur=4");
 					}
                 } catch (PDOException $e) {
                     exit( "Erreur lors de l'exécution de la requête SQL :<br />\n" .  $e -> getMessage() . "<br />\nREQUÊTE = SELECT");
@@ -65,13 +65,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 // // echo '<div class="error error-orange"><h3>Les mots de passes ne concordent pas!</h3></div>';
             // // }
         } else {
-            echo '
-                <div class="error error-orange"><h3>Vous devez remplir tous les champs du formulaire!</h3></div>
-                ';
+                header("LOCATION:../connexion.php?erreur=2");
         }
 			}
 			else {
-				echo 'Cet utilisateur existe déjà';
+                header("LOCATION:../connexion.php?erreur=2");
     }
 }
 }

@@ -3,8 +3,6 @@ html {
 }
 
 body {
-    padding-top: 64px;
-    width: 80%;
     margin: auto;
 }
 
@@ -34,6 +32,10 @@ body {
     background-color: orange;
 }
 
+.error-vert{
+    background-color: green;
+}
+
 .filter{
     position: absolute;
     left: 0;
@@ -58,8 +60,9 @@ nav {
     top: 0;
     left: 0;
     width: 100%;
-    background: #ff9800;
+    background: #4499D7;
     display: block;
+    z-index: 999;
 }
 
 nav, ul, li {
@@ -78,23 +81,29 @@ nav ul {
 }
 nav li {
     display: table-cell;
-    border-left: 2px solid #fff;
-    border-right: 2px solid #fff;
+    /*border-left: 2px solid #fff;*/
+    /*border-right: 2px solid #fff;*/
 }
 
 nav li:first-child {
     font-weight: bold;
     margin-left: 10%;
-    border-right: none;
+   /* border-left: 2px solid #fff;*/
 }
 
 nav ul li a {
     display: block;
     padding: 20px 30px;
-    background: #ff9800;
+    background: #4499D7;
     font-size: 18px;
     color: #fff;
     text-decoration: none;
+}
+
+#deconnexion{
+    position: absolute;
+    right: 10%;
+    top:0;
 }
 
 .a_button {
@@ -140,7 +149,7 @@ nav ul li a {
 }
 
 .a_button:hover {
-    color: #ff9800;
+    color: #4EB0F7;
 }
 
 .a_button:hover:after {
@@ -501,7 +510,7 @@ nav ul li a {
 html {
     font-size: 16px;
     line-height: 24px;
-    font-family: "Lato", sans-serif;
+    font-family: 'PT Sans', sans-serif;
 }
 
 .btn,
@@ -984,7 +993,7 @@ html {
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 
 html {
-    font-family: sans-serif;
+    font-family:'PT Sans', sans-serif;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%
 }
@@ -1318,3 +1327,161 @@ th {
   border: 0;
   transition: all .2s ease;
 }
+
+#checkbox_rester{
+    width: auto;!important;
+    vertical-align: sub;
+}
+
+/*  body
+{
+	background-color:black;
+	color:yellow;
+} */
+
+fieldset
+{
+    width:200px;
+    padding:0;
+}
+
+#page
+{
+    width: 80%;
+    margin:auto;
+}
+
+#blocAlign label
+{
+    display:inline-block;
+    width:150px;
+}
+
+#submit {
+    text-align: center;
+}
+
+legend
+{
+    color:#ff0; /* pour IE */
+}
+
+header{
+    margin-top: 64px;
+    background-color: #2B70A1;
+    color: white;
+    padding: 35px 10%;
+    width: 100%;
+    position: relative;
+}
+
+.btn-auto{
+    width: auto;
+    text-decoration: none;
+}
+
+.btn-dernier{
+    margin-top: 20px;
+}
+
+.champs-max-largeur{
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.champs-titre{
+    height: 50px;
+    font-size: 30;
+}
+
+header h1 {
+    font-weight: 100;
+}
+
+header img {
+    height: 100%;
+    position: absolute;
+    right: 10%;
+    top: 0;
+}
+
+.error{
+    opacity:0;
+    animation-name: cacher5s;
+    animation-duration: 4s;
+}
+
+@keyframes cacher5s {
+    0%   {opacity: 1;}
+    90%  {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+#accueil-banner{
+    height:400px;
+    margin-top:32px;
+    overflow: hidden;
+}
+
+#accueil-banner img{
+    right:0;
+    -webkit-transition: transform 0.8s;
+    -moz-transition: transform 0.8s;
+    -ms-transition: transform 0.8s;
+    -o-transition: transform 0.8s;
+    transition: transform 0.8s;
+}
+
+#header-fleche{
+    position: absolute;
+    right:35%;
+    content:'';
+    bottom:-50%;
+    height:180%;
+    width: 800px;
+    background-color: #2B70A1;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    -webkit-transition: all 0.8s;
+    -moz-transition: all 0.8s;
+    -ms-transition: all 0.8s;
+    -o-transition: all 0.8s;
+    transition: all 0.8s;
+    z-index:1;
+}
+
+#accueil-banner>img:hover ~ #header-fleche{
+    right: 40%;
+}
+
+#accueil-banner>img:hover{
+    -webkit-transform: scale(1.5);
+    -moz-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    -o-transform: scale(1.5);
+    transform: scale(1.5);
+}
+
+#accueil-banner h1{
+    vertical-align: inherit;
+    font-weight: 100;
+    font-size: 1000%;
+    position: absolute;
+    bottom: 50px;
+    font-family: 'Pacifico', cursive;
+    margin-bottom: 0;
+    z-index: 2;
+}
+
+
+/* a.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+
+    text-decoration: none;
+    color: initial;
+} */

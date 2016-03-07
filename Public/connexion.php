@@ -1,6 +1,16 @@
 <?php
 session_start();
 
+// Vérification s'il y a un message.
+if ($_SERVER["REQUEST_METHOD"] == "GET"){
+    if (isset($_GET["erreur"])){
+        include_once("include/fonctions.php");
+        if ($_GET["erreur"] != ""){
+            GetErreur($_GET["erreur"]);
+        }
+    }
+}
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Vérifier s'il y a eu une requête de connexion.
     if (isset($_POST['pseudo'], $_POST['mdp'])) {
@@ -33,6 +43,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         echo '<div class="error error-red"><h3>Le pseudo et le mot de passe ne concorde pas!</h3></div>';
                     }
                 }
+
+                // Option de rester connecté
+                $_SESSION['rester'] = $_POST["rester"] == 'on' ? true : false;
 
                 if ($donnees == NULL){
                     echo '<div class="error error-red"><h3>Utilisateur inexistant!</h3></div>';
@@ -73,7 +86,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="logmod__tab-wrapper">
                 <div class="logmod__tab lgm-1">
                     <div class="logmod__heading">
-                        <span class="logmod__heading-subtitle">Entrez vos informations <strong>pour créer un compte</strong></span>
+                        <span class="logmod__heading-subtitle">Entrez vos informations <strong>pour créer un compte.</strong></span>
                     </div>
                     <div class="logmod__form">
                         <form method="post" action="include/creation-compte.php" class="simform">
@@ -94,8 +107,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 </div>
                             </div>
                             <div class="sminputs sminputs-radio">
-                                    <input class="radio" type="radio" name="acces" value="admin">Administrateur
-                                    <input class="radio" type="radio" name="acces" value="user" checked>Utilisateur
+                                <label class="string" for="admin_radio">Administrateur</label>
+                                <input title="Administrateur" id="admin_radio" class="radio" type="radio" name="acces" value="admin">
+                                <label class="string" for="user_radio">Utilisateur</label>
+                                <input title="Utilisateur" id="user_radio" class="radio" type="radio" name="acces" value="user" checked>
                             </div>
                             <div class="simform__actions">
                                 <input class="sumbit" type="submit" value="Créer" />
@@ -106,7 +121,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
                 <div class="logmod__tab lgm-2">
                     <div class="logmod__heading">
-                        <span class="logmod__heading-subtitle">Entrez votre pseudo et votre mot de passe <strong>pour vous connecter</strong></span>
+                        <span class="logmod__heading-subtitle">Entrez votre pseudo et votre mot de passe <strong>pour vous connecter.</strong></span>
                     </div>
                     <div class="logmod__form">
                         <form class="simform" action="connexion.php" method="post">
@@ -128,6 +143,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 </div>
                             </div>
                             <div class="simform__actions">
+                                <label class="string" for="checkbox_rester">Restez connecté</label>
+                                <input class="string" id="checkbox_rester" type="checkbox" name="rester">
 							<input class="sumbit" type="submit" value="Connexion" >
                             </div>
                         </form>

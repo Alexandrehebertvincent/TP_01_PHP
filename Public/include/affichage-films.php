@@ -11,10 +11,10 @@ require("config.php");
 					// Si l'utilisateur est connecté en tant qu'admin, il voit un bouton pour supprimer le film et un autre pour modifier
 					 if ($_SESSION['utilisateur']['Acces'] == "admin"){
 						 echo "<td>";
-						 echo '<a href="include/supprimer.php?filmid=' . $donnees['Id'] . ' class="button" "><button>Supprimer</button></a>';
+						 echo '<a href="include/supprimer.php?filmid=' . $donnees['Id'] . '" class="button file-upload-btn btn-auto">Supprimer</a>';
 						 echo "</td>";
 						 echo "<td>";
-						 echo '<a href="modifier-film.php?filmid=' . $donnees['Id'] . ' class="button" "><button>Modifier</button></a>';
+						 echo '<a href="modifier-film.php?filmid=' . $donnees['Id'] . '" class="button file-upload-btn btn-auto">Modifier</a>';
 						 echo "</td>";
 					 }
 					 echo "<td>";
