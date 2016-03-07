@@ -31,7 +31,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			$req->closeCursor();
 				$connBD = null;
 			header('Location: ../index.php');
+		}else{
+			header("LOCATION:../ajouter-film.php?erreur=2");
 		}
+	}else{
+		header("LOCATION:../ajouter-film.php?erreur=2");
 	}
 }
 ?>

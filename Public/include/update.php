@@ -1,42 +1,60 @@
 <?php
-// Pour modifier un film
 
+// Pour modifier un film
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	if (isset($_POST['titre'], $_POST['resume'], $_FILES['image'])) {
-		var_dump($_POST);
-		var_dump($_FILES);
-		if (($_POST['titre'] != "" AND $_POST['resume'] != "" AND $_FILES['image']['error'] == 0)) {		
+		if ($_POST['titre'] != "" AND $_POST['resume'] != "") {
 
 			$titre = $_POST['titre'];
 			$resume = $_POST['resume'];
-			$target_dir = "uploads/";
-			$target_file = $target_dir . basename($_FILES["image"]["name"]);
-			
-			if (move_uploaded_file($_FILES["image"]['tmp_name'], "../" . $target_file)) {
-				 echo "Le fichier est valide, et a été téléchargé avec succès.";
-			 } else {
-				// echo "Attaque potentielle par téléchargement de fichiers.";
-			 }
 
-			// Paramètres de connexion à la BD.
-			require("config.php");
-			try {
-					$req = $connBD->prepare('UPDATE films SET Nom=:nom, Description=:description, Image=:image WHERE Id=:filmid');
+			if ($_FILES['image']['error'] == 0){
+				$target_dir = "uploads/";
+				$target_file = $target_dir . basename($_FILES["image"]["name"]);
+
+				// Si une nouvelle image est demandÃ©e
+				if ($_FILES["image"]["name"] != ""){
+					include_once ("fonctions.php");
+					unlink("../".ObtenirCheminImageFilm($_POST["filmid"]));
+					move_uploaded_file($_FILES["image"]['tmp_name'], "../" . $target_file);
+
+					// Paramï¿½tres de connexion ï¿½ la BD.
+					require("config.php");
+					try {
+						$req = $connBD->prepare('UPDATE films SET Nom=:nom, Description=:description, Image=:image WHERE Id=:filmid');
+						$req->execute(array(
+							'nom' => $titre,
+							'description' => $resume,
+							'filmid' => $_POST['filmid'],
+							'image' =>$target_file));
+					} catch (PDOException $e) {
+						exit("Erreur lors de l'exï¿½cution de la requï¿½te SQL :<br />\n" . $e->getMessage() . "<br />\nREQUï¿½TE = UPDATE");
+					}
+				}
+			}else{
+				// Paramï¿½tres de connexion ï¿½ la BD.
+				require("config.php");
+				try {
+					$req = $connBD->prepare('UPDATE films SET Nom=:nom, Description=:description WHERE Id=:filmid');
 					$req->execute(array(
-					'nom' => $titre,
-					'description' => $resume,
-					'filmid' => $_POST['filmid'],
-					'image' =>$target_file));
-			} catch (PDOException $e) {
-				exit("Erreur lors de l'exécution de la requête SQL :<br />\n" . $e->getMessage() . "<br />\nREQUÊTE = UPDATE");
+						'nom' => $titre,
+						'description' => $resume,
+						'filmid' => $_POST['filmid']));
+				} catch (PDOException $e) {
+					exit("Erreur lors de l'exï¿½cution de la requï¿½te SQL :<br />\n" . $e->getMessage() . "<br />\nREQUï¿½TE = UPDATE");
+				}
 			}
-			
 			$req->closeCursor();
 			$connBD = null;
+
+			header("LOCATION:../index.php?message=5");
 			
 			//header('Location: ../index.php');
+		} else{
+			header("LOCATION:../index.php?message=6");
 		}
+	} else{
+		header("LOCATION:../index.php?message=6");
 	}
 }
-echo "C'est pas normal que tu puisse lire ça! ;) Ya une erreur..";
 ?>

@@ -45,7 +45,20 @@ function VerifierPseudoUserExistant($pseudo) {
 	return false;
 }
 
-function GetErreur($noErreur){
+function ObtenirCheminImageFilm($filmid){
+	include("config.php");
+
+	$req = $connBD->prepare('SELECT * FROM films WHERE Id=:filmid');
+	$req->execute(array(
+		'filmid'=>$filmid));
+	$connBD = null;
+
+	$donnees = $req->fetch();
+
+	return $donnees["Image"];
+}
+
+function GetErreur($noErreur, $infoSupplementaire = 0){
 	switch ($noErreur){
 		// Déconnexion
 		case 1:
@@ -64,6 +77,29 @@ function GetErreur($noErreur){
 		// Utilisateur existant
 		case 4:
 			echo '<div class="error error-orange"><h3>Cet utilisateur existe déjà!</h3></div>';
+			break;
+
+		// Modifications effectuées avec succès
+		case 5:
+			echo '<div class="message message-vert message-important"><h3>Modifications effectuées avec succès!</h3></div>';
+			break;
+
+		// Erreur lors de la modification
+		case 6:
+			echo '<div class="message message-red"><h3>Il est malheureusement arrivé quelque chose lors de la modification... Veuillez réésayer.</h3></div>';
+			break;
+
+		// Si aucun film n'est dans la BD
+		case 7:
+			echo '<div class="message message-orange"><h3>Il n\'y a pas encore de film dans la collection!</h3></div>';
+			break;
+
+		// Obtenir le nombre de film dans la bd
+		// Si aucun film n'est dans la BD
+		case 8:
+			echo '<div class="message message-vert"><h3>La collection comporte '.($infoSupplementaire > 1 ? $infoSupplementaire . " films": $infoSupplementaire . " film").'. Bonne visite!</h3></div>';
+			break;
+		default:
 			break;
 	}
 }

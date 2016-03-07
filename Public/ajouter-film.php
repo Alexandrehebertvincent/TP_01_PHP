@@ -1,8 +1,17 @@
 <?php
 // Vérification
 include ("include/verification-connexion.php");
-include ("navbar-top-admin.php"); 
-echo "Connecté en tant que: " . $_SESSION['utilisateur']['Nom'] . " (" . $_SESSION['utilisateur']['Acces'] . ")";
+
+// Vérification s'il y a un message.
+if ($_SERVER["REQUEST_METHOD"] == "GET"){
+	if (isset($_GET["erreur"])){
+		include_once("include/fonctions.php");
+		if ($_GET["erreur"] != ""){
+			GetErreur($_GET["erreur"]);
+		}
+	}
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -15,13 +24,13 @@ echo "Connecté en tant que: " . $_SESSION['utilisateur']['Nom'] . " (" . $_SESS
     <link rel="icon" href="favicon.ico" />
 </head>
 <body>
-<<<<<<< HEAD
-=======
-
-    <!-- Menu -->
-    <?php 
-		include ("navbar-top-admin.php"); 
-		echo "Connecté en tant que: " . $_SESSION['utilisateur']['Nom'] . " (" . $_SESSION['utilisateur']['Acces'] . ")";
+	<!-- Menu -->
+	<?php if ($_SESSION['utilisateur']['Acces'] == 'admin') {
+		include ("navbar-top-admin.php");
+	}
+	else {
+		include ("navbar-top.php");
+	}
 	?>
 	<header id="banner-ajout-film">
 		<h1>Ajouter un film</h1>
@@ -30,15 +39,15 @@ echo "Connecté en tant que: " . $_SESSION['utilisateur']['Nom'] . " (" . $_SESS
 	<div id="page">
 			<div id="blocAlign">
                 <form method="post" id="frmajout" action="include/upload.php" enctype="multipart/form-data">
-					<p>
-						<label for="titreFilm">Titre du film: </label>
-						<input type="text" name="titre" id="titre" size="42"/>
-					</p>
-					<p>
-						<label for="description">Description: </label>
-						<textarea  name="resume" id="resume" form="frmajout" cols="40" rows="9"></textarea>
-					</p>
 					<div class="file-upload">
+						<div>
+							<label for="titreFilm">Titre du film: </label>
+							<input class="champs-max-largeur champs-titre" type="text" name="titre" id="titre" size="42" placeholder="Titre du film">
+						</div>
+						<div>
+							<label for="description">Description: </label>
+							<textarea class="champs-max-largeur" name="resume" id="resume" form="frmajout" cols="40" rows="9"></textarea>
+						</div>
 						<button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Ajouter une image</button>
 						<div class="image-upload-wrap">
 							<input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" name="monfichier" id="image"/>
@@ -52,10 +61,8 @@ echo "Connecté en tant que: " . $_SESSION['utilisateur']['Nom'] . " (" . $_SESS
 								<button type="button" onclick="removeUpload()" class="remove-image">Enlever <span class="image-title">cette image</span></button>
 							</div>
 						</div>
+						<input id="submit" class="file-upload-btn btn-dernier" type="submit" value="Ajouter le film"/>
 					</div>
-					<p>
-						<input class="file-upload-btn btn-auto" id="submit" type="submit" value="Ajouter le film"/>
-					</p>
                 </form>
 			</div>
 	</div>

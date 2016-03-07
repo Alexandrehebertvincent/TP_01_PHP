@@ -1,15 +1,16 @@
-***********À FAIRE*********
--Permettre à n'importe qui de créer un compte administrateur... c'est ptetre pas l'idéal :P
-
--Quand on modifie un film, si on ne choisit pas d'image, ça plante. Ça considère que le film n'aura aucune image...
-
--modifier des films
+***********À FAIRE********
 
 -Plein d'autre petits trucs, voir l'énoncé
 
--Vérifier le ID quand on modifie un film
-
 -Page robot cassé film introuvé
+
+**********DONE*************
+
+-Preview de l'image DONE
+
+-Ajouter / supprimer / modifier des utilisateur DONE (mais ya peut-être encore des bugs)
+
+-Vérifier le ID quand on modifie un film
 
 -unlink quand on modifie et quand on supprime
 
@@ -21,10 +22,6 @@
 
 -fermer alert connexion
 
--Une belle page "Nom d'utilisateur déjà utilisé", ou un message d'erreur
+-modifier des films
 
-**********DONE*************
-
--Preview de l'image DONE
-
--Ajouter / supprimer / modifier des utilisateur DONE (mais ya peut-être encore des bugs)
+-Quand on modifie un film, si on ne choisit pas d'image, ça plante. Ça considère que le film n'aura aucune image...

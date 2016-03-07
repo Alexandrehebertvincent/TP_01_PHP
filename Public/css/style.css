@@ -16,24 +16,33 @@ body {
     background-image: url(../img/bg.jpg);
 }
 
-.error{
+.message, .error{
     width: 100%;
     color: white;
     z-index: 99999;
-    position: absolute;
+    position: fixed;
     text-align: center;
+    bottom:0;
+    left:0;
 }
 
-.error-red{
+.error-red, .message-red{
     background-color: red;
+    z-index: 999;
 }
 
-.error-orange{
+.error-orange, .message-orange{
     background-color: orange;
+    z-index: 99;
 }
 
-.error-vert{
+.error-vert, .message-vert{
     background-color: green;
+    z-index:9;
+}
+
+.message-important{
+    z-index:9999;
 }
 
 .filter{
@@ -1406,7 +1415,7 @@ header img {
     top: 0;
 }
 
-.error{
+.error, .message{
     opacity:0;
     animation-name: cacher5s;
     animation-duration: 4s;
@@ -1482,6 +1491,23 @@ header img {
     margin-top: 32px;
 }
 
+.btn-red{
+    background: #f44336;
+    border-bottom: 4px solid #b52f1f;
+}
+
+.btn-red:hover{
+    background: #d03b32;
+}
+
+.btn-orange{
+    background: #F49636;
+    border-bottom: 4px solid #B5721F;
+}
+
+.btn-orange:hover{
+    background: #e28b32;
+}
 
 /* a.button {
     -webkit-appearance: button;
