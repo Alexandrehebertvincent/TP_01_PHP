@@ -2,6 +2,11 @@ html {
     box-sizing: border-box;
 }
 
+*::selection{
+    background-color: #044573;
+    color: white;
+}
+
 body {
     margin: auto;
 }
@@ -29,6 +34,7 @@ body {
 .error-red, .message-red{
     background-color: red;
     z-index: 999;
+    animation-duration: 2s;
 }
 
 .error-orange, .message-orange{
@@ -39,6 +45,7 @@ body {
 .error-vert, .message-vert{
     background-color: green;
     z-index:9;
+    animation-duration: 6s;
 }
 
 .message-important{
@@ -223,6 +230,10 @@ nav ul li a {
     clear: both;
     content: "";
     display: table;
+}
+
+.film-desc{
+    padding: 25px 0 45px 0;
 }
 
 .logmod__tab {
@@ -999,7 +1010,7 @@ html {
 }
 
 
-/*! normalize.css v3.0.2 | MIT License | git.io/normalize */
+/* Normalisation */
 
 html {
     font-family:'PT Sans', sans-serif;
@@ -1583,10 +1594,10 @@ header img {
 
 .film-section-image{
     width: 100%;
-    height: 350px;
+    height: 370px;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 140%;
+    background-size: cover;
     text-align: center;
 }
 
@@ -1698,4 +1709,19 @@ footer{
     font-size: 10pt;
     line-height: 2em;
     padding: 20px 0 20px 0;
+}
+
+#accueil-banner #film-titre{
+    vertical-align: inherit;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 400%;
+    position: absolute;
+    text-align: left;
+    width: 60%;
+    line-height: 100px;
+    top: 0;
+    font-family: 'Lato', serif;
+    margin: 4% 0 0 4%;
+    z-index: 99;
 }

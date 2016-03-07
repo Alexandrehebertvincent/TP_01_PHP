@@ -40,21 +40,26 @@ else{
 <body>
     <?php
         if ($_SESSION['utilisateur']['Acces'] == 'admin') {
-            include ("navbar-top-admin.php");
+            include("include/navbar-top-admin.php");
         }
         else {
-            include ("navbar-top.php");
+            include("include/navbar-top.php");
         }
     ?>
-    <header id="accueil-banner">
-        <h1><?php echo $film['Nom']; ?></h1>
-        <img src="<?php echo $film['Image']; ?>">
-        <span id="header-fleche"></span>
-    </header>
-    <div id="page">
-        <p>
-                <?php echo $film['Description']; ?>
-        </p>
+    <section id="contenu">
+        <header id="accueil-banner">
+            <span id="fleche-gauche"></span>
+            <h1 id="film-titre"><?php echo $film['Nom']; ?></h1>
+            <img src="<?php echo $film['Image']; ?>" style="right: 10%;">
+            <span id="header-fleche"></span>
+            <span id="fleche-out"></span>
+        </header>
+        <div id="page">
+            <p class="film-desc">
+                    <?php echo $film['Description']; ?>
+            </p>
     </div>
+    </section>
+    <?php include "include/footer.php"; ?>
 </body>
 </html>

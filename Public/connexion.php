@@ -1,14 +1,18 @@
 <?php
+
 session_start();
 
+// Libère les cookies existants.
+unset($_COOKIE["resterConnId"]);
+setcookie("resterConnId", '', time()-3600);
+
 // Vérification s'il y a un message.
-if ($_SERVER["REQUEST_METHOD"] == "GET"){
-    if (isset($_GET["erreur"])){
-        include_once("include/fonctions.php");
-        if ($_GET["erreur"] != ""){
-            GetErreur($_GET["erreur"]);
-        }
+if (isset($_SESSION["messages"])) {
+    include_once("include/fonctions.php");
+    foreach ($_SESSION["messages"] as $mess) {
+        GetErreur($mess);
     }
+    $_SESSION["messages"] = array();
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -26,26 +30,34 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $salt = sprintf("$2a$%02d$", $cost) . $salt;
                 $hash = crypt($_POST['mdp'], $salt);
 
+                // Option de rester connecté
+                $_SESSION['rester'] = (isset($_POST["resterL"]) == true ? true : false);
+
                 $req = $connBD->prepare('SELECT * FROM users WHERE Nom =:nom');
                 $req->execute(array("nom"=>$_POST['pseudo']));
 
                 // Si les données existent, l'utilisateur est alors créé.
                 while ($donnees = $req->fetch()) {
-                    if($donnees["Mot_de_Passe"] == crypt($_POST['mdp'], $donnees["Mot_de_Passe"])){
-                        $_SESSION['utilisateur'] = array(
-                            "Id" => $donnees["Id"],
-                            "Nom" => $donnees["Nom"],
-                            "Acces" => $donnees["Acces"]
-                        );
-                        header("LOCATION: index.php");
-                    } else {
-                        $_SESSION = array();
-                        echo '<div class="error error-red"><h3>Le pseudo et le mot de passe ne concorde pas!</h3></div>';
+                    if ($donnees != null){
+                        if($donnees["Mot_de_Passe"] == crypt($_POST['mdp'], $donnees["Mot_de_Passe"])){
+                            $_SESSION['utilisateur'] = array(
+                                "Id" => $donnees["Id"],
+                                "Nom" => $donnees["Nom"],
+                                "Acces" => $donnees["Acces"]
+                            );
+
+                            // Création du cookie
+                            if ($_SESSION["rester"] == true){
+                                setcookie("resterConnId", $donnees["Id"], time()+3600);
+                            }
+
+                            header("LOCATION: index.php");
+                        } else {
+                            $_SESSION = array();
+                            echo '<div class="error error-red"><h3>Le pseudo et le mot de passe ne concorde pas!</h3></div>';
+                        }
                     }
                 }
-
-                // Option de rester connecté
-                $_SESSION['rester'] = $_POST["rester"] == 'on' ? true : false;
 
                 if ($donnees == NULL){
                     echo '<div class="error error-red"><h3>Utilisateur inexistant!</h3></div>';
@@ -69,7 +81,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <title>Connexion/Création d'un compte</title>
-    <link rel="stylesheet" href="css/normalize.css">
     <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic|Lato:400,100,300,700,900:latin' rel='stylesheet' type='text/css'>
     <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
     <link rel="stylesheet" href="css/style.css">
@@ -145,7 +156,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             </div>
                             <div class="simform__actions">
                                 <label class="string" for="checkbox_rester">Restez connecté</label>
-                                <input class="string" id="checkbox_rester" type="checkbox" name="rester">
+                                <input class="string" id="checkbox_rester" type="checkbox" value="" name="resterL" />
 							<input class="sumbit" type="submit" value="Connexion" >
                             </div>
                         </form>

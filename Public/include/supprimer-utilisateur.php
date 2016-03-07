@@ -1,7 +1,10 @@
 <?php
+
+session_start();
+
 if (isset($_GET['userid'])) {
 	if ($_GET['userid'] != "") {
-            // Lancer la requête pour identifer l'utilisateur.
+            // Lancer la requï¿½te pour identifer l'utilisateur.
             try {
                 // Inclure le fichier de connexion.
                 require("config.php");
@@ -11,13 +14,14 @@ if (isset($_GET['userid'])) {
 
                 $req->closeCursor();
                 $connBD = null;
+
+                $_SESSION["messages"][] = 13;
 				
             } catch (PDOException $e) {
-                exit( "Erreur lors de l'exécution de la requête SQL :<br />\n" .  $e -> getMessage() . "<br />\nREQUÊTE = SELECT");
+                exit( "Erreur lors de l'exï¿½cution de la requï¿½te SQL :<br />\n" .  $e -> getMessage() . "<br />\nREQUï¿½TE = SELECT");
             }
         } else {
-            echo '<div class="error-orange"><h3>Vous devez remplir tous les champs du formulaire!</h3></div>';
+            $_SESSION["messages"][] = 2;
         }
     }
 	header("Location:../gestion-utilisateurs.php");
-?>

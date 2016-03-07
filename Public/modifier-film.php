@@ -37,53 +37,53 @@ echo "Connect� en tant que: " . $_SESSION['utilisateur']['Nom'] . " (" . $_SES
 <body>
 	<!-- Menu -->
 	<?php if ($_SESSION['utilisateur']['Acces'] == 'admin') {
-		include ("navbar-top-admin.php");
+		include("include/navbar-top-admin.php");
 	}
 	else {
-		include ("navbar-top.php");
+		include("include/navbar-top.php");
 	}
 	?>
-	<header id="banner-ajout-film">
-		<h1>Modifier un film | <?php echo $donnees['Nom']; ?></h1>
-		<img src="http://btckstorage.blob.core.windows.net/site761/Film%20Club/filmreelLEFT.png">
-	</header>
-	<div id="page">
-	<?php if (!isset($erreur)) { ?>
-		<div id="blocAlign">
-			<form method="post" id="frmajout" action="include/update.php" enctype="multipart/form-data">
-				<div class="file-upload">
-					<div>
-						<label for="titreFilm">Titre du film: </label>
-						<input class="champs-max-largeur champs-titre" type="text" name="titre" id="titre" size="42" value="<?php echo $donnees['Nom'] ?>">
-					</div>
-					<div>
-						<label for="description">Description: </label>
-						<textarea class="champs-max-largeur" name="resume" id="resume" form="frmajout" cols="40" rows="9"> <?php echo $donnees['Description']; ?></textarea>
-					</div>
-					<button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Ajouter une image</button>
-					<div class="image-upload-wrap">
-						<input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" name="image" id="image" value="<?php echo $donnees['Image'] ?>"/>
-						<div class="drag-text">
-							<h3>Déposer une image ici ou parcourir</h3>
+	<section id="contenu">
+		<header id="banner-ajout-film">
+			<h1>Modifier un film | <?php echo $donnees['Nom']; ?></h1>
+			<img src="http://btckstorage.blob.core.windows.net/site761/Film%20Club/filmreelLEFT.png">
+		</header>
+		<div id="page">
+		<?php if (!isset($erreur)) { ?>
+			<div id="blocAlign">
+				<form method="post" id="frmajout" action="include/update.php" enctype="multipart/form-data">
+					<div class="file-upload">
+						<div>
+							<label for="titreFilm">Titre du film: </label>
+							<input class="champs-max-largeur champs-titre" type="text" name="titre" id="titre" size="42" value="<?php echo $donnees['Nom'] ?>">
 						</div>
-					</div>
-					<div class="file-upload-content">
-						<img class="file-upload-image" src="#" alt="your image" />
-						<div class="image-title-wrap">
-							<button type="button" onclick="removeUpload()" class="remove-image">Enlever <span class="image-title">cette image</span></button>
+						<div>
+							<label for="description">Description: </label>
+							<textarea class="champs-max-largeur" name="resume" id="resume" form="frmajout" cols="40" rows="9"> <?php echo $donnees['Description']; ?></textarea>
 						</div>
+						<button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Ajouter une image</button>
+						<div class="image-upload-wrap">
+							<input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" name="image" id="image" value="<?php echo $donnees['Image'] ?>"/>
+							<div class="drag-text">
+								<h3>Déposer une image ici ou parcourir</h3>
+							</div>
+						</div>
+						<div class="file-upload-content">
+							<img class="file-upload-image" src="#" alt="your image" />
+							<div class="image-title-wrap">
+								<button type="button" onclick="removeUpload()" class="remove-image">Enlever <span class="image-title">cette image</span></button>
+							</div>
+						</div>
+						<input type="hidden" name="filmid" id="hiddenField" value=" <?php echo $donnees['Id'] ?>" />
+						<hr>
+						<input id="submit" class="file-upload-btn btn-dernier" type="submit" value="Mettre à jour le film"/>
 					</div>
-					<input type="hidden" name="filmid" id="hiddenField" value=" <?php echo $donnees['Id'] ?>" />
-					<hr>
-					<input id="submit" class="file-upload-btn btn-dernier" type="submit" value="Mettre à jour le film"/>
-				</div>
-			</form>
+				</form>
+			</div>
+		<?php } ?>
 		</div>
-				
-			
-	<?php } ?>
-	</div>
-	
+	</section>
+	<?php include "include/footer.php"; ?>
 	<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 	<script>
 	function readURL(input) {

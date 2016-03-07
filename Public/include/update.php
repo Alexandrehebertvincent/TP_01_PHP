@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 // Pour modifier un film
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	if (isset($_POST['titre'], $_POST['resume'], $_FILES['image'])) {
@@ -46,15 +48,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			}
 			$req->closeCursor();
 			$connBD = null;
-
-			header("LOCATION:../index.php?message=5");
+			$_SESSION["messages"][] = 5;
+			header("LOCATION:../index.php");
 			
 			//header('Location: ../index.php');
 		} else{
-			header("LOCATION:../index.php?message=6");
+			$_SESSION["messages"][] = 6;
+			header("LOCATION:../index.php");
 		}
 	} else{
-		header("LOCATION:../index.php?message=6");
+		$_SESSION["messages"][] = 6;
+		header("LOCATION:../index.php");
 	}
 }
-?>

@@ -1,4 +1,7 @@
 <?php
+
+session_start();
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	echo "1 ok";
 	 var_dump($_POST);
@@ -30,12 +33,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			}
 			$req->closeCursor();
 				$connBD = null;
+			$_SESSION["messages"][] = 12;
 			header('Location: ../index.php');
 		}else{
-			header("LOCATION:../ajouter-film.php?erreur=2");
+			$_SESSION["messages"][] = 2;
+			header("LOCATION:../ajouter-film.php");
 		}
 	}else{
-		header("LOCATION:../ajouter-film.php?erreur=2");
+		$_SESSION["messages"][] = 2;
+		header("LOCATION:../ajouter-film.php");
 	}
 }
 ?>

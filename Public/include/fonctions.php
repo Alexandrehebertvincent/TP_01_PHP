@@ -15,6 +15,19 @@ function VerifierIdFilmExistant($filmid) {
 	return false;
 }
 
+function GetUserSelonId($userid){
+	include("config.php");
+
+	$req = $connBD->prepare('SELECT * FROM users WHERE Id=:userid');
+	$req->execute(array(
+		'userid'=>$userid));
+	$connBD = null;
+
+	$donnees = $req->fetch();
+
+	return $donnees == null ? false : $donnees;
+}
+
 function VerifierIdUserExistant($userid) {
 	include("config.php");
 	
@@ -104,6 +117,27 @@ function GetErreur($noErreur, $infoSupplementaire = 0){
 		case 9:
 			echo '<div class="message message-orange"><h3>Aucun film correspondant n\'a été trouvé.</h3></div>';
 			break;
+
+		// Suppresion OK
+		case 10:
+			echo '<div class="message message-vert"><h3>La supression à été effectué avec succès!</h3></div>';
+			break;
+
+		// Suppression film ""
+		case 11:
+			echo '<div class="message message-orange"><h3>Impossible de supprimer. un film non identifié. Veuillez réessayer.</h3></div>';
+			break;
+
+		// Création film OK
+		case 12:
+			echo '<div class="message message-vert"><h3>La création du film est un succès!</h3></div>';
+			break;
+
+		// Suppression user OK
+		case 13:
+			echo '<div class="message message-vert"><h3>L\'utilisateur à été supprimé avec succès.</h3></div>';
+			break;
+
 		default:
 			break;
 	}

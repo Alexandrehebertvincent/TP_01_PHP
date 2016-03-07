@@ -47,7 +47,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 							
                         } else {
                             $_SESSION = array();
-                            header("LOCATION:../connexion.php?erreur=3");
+                            $_SESSION["messages"][] = 3;
+                            header("LOCATION:../connexion.php?");
                         }
 
                     $req->closeCursor();
@@ -55,7 +56,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 					}
 					}
 					else {
-                        header("LOCATION:../connexion.php?erreur=4");
+                        $_SESSION["messages"][] = 4;
+                        header("LOCATION:../connexion.php");
 					}
                 } catch (PDOException $e) {
                     exit( "Erreur lors de l'exécution de la requête SQL :<br />\n" .  $e -> getMessage() . "<br />\nREQUÊTE = SELECT");
@@ -65,11 +67,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 // // echo '<div class="error error-orange"><h3>Les mots de passes ne concordent pas!</h3></div>';
             // // }
         } else {
-                header("LOCATION:../connexion.php?erreur=2");
+                $_SESSION["messages"][] = 2;
+                header("LOCATION:../connexion.php");
         }
 			}
 			else {
-                header("LOCATION:../connexion.php?erreur=2");
+                $_SESSION["messages"][] = 2;
+                header("LOCATION:../connexion.php");
     }
 }
 }

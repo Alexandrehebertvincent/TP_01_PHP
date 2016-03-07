@@ -2,9 +2,14 @@
 
 	// V�rification connexion
 	include ("include/verification-connexion.php");
-	include ("include/fonctions.php");
+	include_once ("include/fonctions.php");
 
-	//echo "Connect� en tant que: " . $_SESSION['utilisateur']['Nom'] . " (" . $_SESSION['utilisateur']['Acces'] . ")";
+	if (isset($_SESSION["messages"])) {
+		foreach ($_SESSION["messages"] as $mess) {
+			GetErreur($mess);
+		}
+		$_SESSION["messages"] = array();
+	}
 ?>
 
 <!DOCTYPE html>
@@ -19,19 +24,20 @@
 </head>
 <body>
      <?php if ($_SESSION['utilisateur']['Acces'] == 'admin') {
-		include ("navbar-top-admin.php"); 
+		include("include/navbar-top-admin.php");
 	}
 	else {
-		include ("navbar-top.php"); 
+		include("include/navbar-top.php");
 	}
 	?>
-	 <header id="gestion-user">
-		 <h1>Utilisateurs existants</h1>
-		 <img src="http://simpleicon.com/wp-content/uploads/multy-user.png">
-	 </header>
-	<div id="page">
-        <div id="blocAlign">
-                <form method="post" id="frmajout" action="include/creation-compte.php">
+	<section id="contenu">
+		<header id="gestion-user">
+			<h1>Utilisateurs existants</h1>
+			<img src="http://simpleicon.com/wp-content/uploads/multy-user.png">
+		</header>
+		<div id="page">
+			<div id="blocAlign">
+				<form method="post" id="frmajout" action="include/creation-compte.php">
 					<p>
 						<label for="titreFilm">Nom d'utilisateur: </label>
 						<input type="text" name="pseudo" id="pseudo" size="42">
@@ -54,11 +60,12 @@
 						<input id="submit" class="button file-upload-btn btn-auto" type="submit" value="Créer l'utilisateur"/>
 					</p>
 					<input type="hidden" name="pagedorigine" id="pagedorigine" value="gestion" />
-                </form>
+				</form>
 			</div>
-
-			<h2> Utilisateurs existants </h2>
+			<h2>Utilisateurs existants</h2>
 			<?php include("include/affichage-utilisateurs.php"); ?>
-	</div>
+		</div>
+		<?php include "include/footer.php"; ?>
+	</section>
 </body>
 </html>	

@@ -1,1 +1,3 @@
-ErrorDocument 404 /404_NOT_FOUND.html
+RewriteEngine on
+Options +FollowSymLinks
+ErrorDocument 404 http://localhost/TP_01_PHP/Public/404_introuvable.php

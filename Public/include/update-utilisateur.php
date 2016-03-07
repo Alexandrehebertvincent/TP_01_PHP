@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $salt = sprintf("$2a$%02d$", $cost) . $salt;
                     $hash = crypt($_POST['mdp'], $salt);
 					
-					// Si le mot de passe n'a pas été modifié
+					// Si le mot de passe n'a pas Ã©tÃ© modifiÃ©
 					if ($hash == $_POST['mdp']) {
 						$req = $connBD->prepare('UPDATE users SET Nom=:nom, Acces=:acces WHERE Id=:userid');
 						$req->execute(array(
@@ -41,10 +41,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 					}
 					
 
-                    // Si les données existes, l'utilisateur est alors créé.
+                    // Si les donnï¿½es existes, l'utilisateur est alors crï¿½ï¿½.
                     while ($donnees = $req->fetch()) {
                         if($donnees["Mot_de_Passe"] == crypt($_POST['mdp'], $donnees["Mot_de_Passe"])){
-							//Si le compte est créé à partir de la page "connexion"
+							//Si le compte est crï¿½ï¿½ ï¿½ partir de la page "connexion"
 							if ($_POST['pagedorigine'] == "connexion") {
                             $_SESSION['utilisateur'] = array(
                                 "Id" => $donnees["Id"],
@@ -57,7 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 								header("LOCATION: ../gestion-utilisateurs.php");
 							}
 							
-							//Sinon, le compte est créé depuis la page d'administration d'un admin
+							//Sinon, le compte est crï¿½ï¿½ depuis la page d'administration d'un admin
 							
                         } else {
                             $_SESSION = array();
@@ -69,19 +69,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $connBD = null;
 					
 					//header("Location:../gestion-utilisateurs.php");
-					
-					var_dump($_POST);
 
                 } catch (PDOException $e) {
-                    exit( "Erreur lors de l'exécution de la requête SQL :<br />\n" .  $e -> getMessage() . "<br />\nREQUÊTE = SELECT");
+                    exit( "Erreur lors de l'exï¿½cution de la requï¿½te SQL :<br />\n" .  $e -> getMessage() . "<br />\nREQUï¿½TE = SELECT");
                 }
             } else {
                 echo '<div class="error error-orange"><h3>Les mots de passes ne concordent pas!</h3></div>';
             }
         } else {
-            echo '
-                <div class="error error-orange"><h3>Vous devez remplir tous les champs du formulaire!</h3></div>
-                ';
+            echo '<div class="error error-orange"><h3>Vous devez remplir tous les champs du formulaire!</h3></div>';
         }
     }
 }

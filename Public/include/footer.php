@@ -9,13 +9,13 @@
         <div id="section-foot">
             <div class="section">
                 <h3>Films</h3>
-                <a href="/TP_01_PHP/Public/index.php">Liste des films</a>
-                <a href="/TP_01_PHP/Public/ajouter-film.php">Nouveau film</a>
+                <a href="/TP_01_PHP/Public/index.php#page">Liste des films</a>
+                <?php if ($_SESSION['utilisateur']['Acces'] == 'admin') {?><a href="/TP_01_PHP/Public/ajouter-film.php">Nouveau film</a><?php } ?>
             </div>
-            <div class="section">
+            <?php if ($_SESSION['utilisateur']['Acces'] == 'admin') {?><div class="section">
                 <h3>Utilisateurs</h3>
                 <a href="/TP_01_PHP/Public/gestion-utilisateurs.php">Liste des utilisateurs</a>
-            </div>
+            </div><?php } ?>
             <div class="section">
                 <a href="/TP_01_PHP/Public/include/deconnexion.php"><h3>Se déconnecter</h3></a>
             </div>
