@@ -1,6 +1,4 @@
 <?php
-
-// V�rification connexion
 include ("include/verification-connexion.php");
 include ("include/fonctions.php");
 
@@ -23,9 +21,8 @@ echo "Connect� en tant que: " . $_SESSION['utilisateur']['Nom'] . " (" . $_SES
 			echo "Une erreur s'est produite. V�rifiez le 'Id' du film � modifier...";
 			$erreur = true;
 		}
-		
 		$req->closeCursor();
-				$connBD = null;
+		$connBD = null;
         ?>
 
 <!DOCTYPE html>

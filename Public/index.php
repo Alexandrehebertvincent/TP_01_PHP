@@ -1,6 +1,14 @@
 <?php
 // Vérification
 include ("include/verification-connexion.php");
+
+if ($_SESSION['utilisateur']['Acces'] == 'admin') {
+		include ("navbar-top-admin.php"); 
+	}
+	else {
+		include ("navbar-top.php"); 
+	}
+	echo "Connecté en tant que: " . $_SESSION['utilisateur']['Nom'] . " (" . $_SESSION['utilisateur']['Acces'] . ")";
 ?>
 
 <!DOCTYPE html>
@@ -13,7 +21,6 @@ include ("include/verification-connexion.php");
     <link rel="icon" href="favicon.ico" />
 </head>
 <body>
-
     <!-- Menu -->
     <?php if ($_SESSION['utilisateur']['Acces'] == 'admin') {
 		include ("navbar-top-admin.php"); 
@@ -27,7 +34,7 @@ include ("include/verification-connexion.php");
 		<img src="http://thefilmstage.com/wp-content/uploads/2015/09/the_revenant_header-620x330.png">
 		<span id="header-fleche"></span>
 	</header>
-	<div id="page">     
+	<div id="page">
 		<h2>Films disponibles</h2>
 		<?php require("include/affichage-films.php"); ?>
 	</div>

@@ -1,6 +1,8 @@
 <?php
 // Vérification
 include ("include/verification-connexion.php");
+include ("navbar-top-admin.php"); 
+echo "Connecté en tant que: " . $_SESSION['utilisateur']['Nom'] . " (" . $_SESSION['utilisateur']['Acces'] . ")";
 ?>
 
 <!DOCTYPE html>
@@ -13,6 +15,8 @@ include ("include/verification-connexion.php");
     <link rel="icon" href="favicon.ico" />
 </head>
 <body>
+<<<<<<< HEAD
+=======
 
     <!-- Menu -->
     <?php 

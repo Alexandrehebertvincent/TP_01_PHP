@@ -2,7 +2,31 @@
 // Vérification
 include ("include/verification-connexion.php");
 
+<<<<<<< HEAD
+if ($_SESSION['utilisateur']['Acces'] == 'admin') {
+		include ("navbar-top-admin.php"); 
+	}
+	else {
+		include ("navbar-top.php"); 
+	} 
+	
+	
+?>
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Fiche de film | <?php echo $film['Nom']; ?></title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" media="all" />
+    <link rel="icon" href="favicon.ico" />
+</head>
+<body>
+<?php 
+=======
+>>>>>>> origin/master
 $film = NULL;
+// //echo '<img src=" . $donnees['Image'] . "\" height='450'width='450' alt='Image du film'>";
 if (isset($_GET['filmid'])){
     // Inclure le fichier de connexion.
     require("include/config.php");
@@ -13,6 +37,17 @@ if (isset($_GET['filmid'])){
 
         while ($donnees = $req->fetch()) {
             $film = $donnees;
+<<<<<<< HEAD
+            echo "
+			<h1>
+            " . $donnees['Nom'] . "
+            </h1>
+           <img src=\"" . $donnees['Image'] . "\" alt='Image du film' height='450'width='450'>
+            <p>
+            " . $donnees['Description'] . "
+            </p>";
+=======
+>>>>>>> origin/master
         }
         $connBD = NULL;
     }
