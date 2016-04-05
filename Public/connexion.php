@@ -107,6 +107,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     <label class="string" for="user-name">Pseudo</label>
                                     <input class="string" maxlength="255" name="pseudo" placeholder="Pseudo" type="text" size="50" />
                                 </div>
+                                <div class="input full">
+                                    <label class="string" for="user-name">Date de naissance</label>
+                                    <input class="string" maxlength="255" name="dateNaissance" placeholder="Date de naissance" type="date" size="50" />
+                                </div>
+                                <div class="input full">
+                                    <label class="string" for="user-name">Adresse</label>
+                                    <input class="string" maxlength="255" name="adresse" placeholder="Adresse" type="text" size="100" />
+                                </div>
+                                <div class="input full">
+                                    <label class="string" for="user-name">Numéro de téléphone</label>
+                                    <input class="string" maxlength="255" name="telephone" placeholder="Téléphone" type="text" size="50" />
+                                </div>
+                                <div class="input full">
+                                    <label class="string" for="user-name">Email</label>
+                                    <input class="string" maxlength="255" name="email" placeholder="Email" type="email" size="50" />
+                                </div>
                             </div>
                             <div class="sminputs">
                                 <div class="input string">
