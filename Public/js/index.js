@@ -52,6 +52,31 @@ var LoginModalController = {
         return base;
     },
 
+    deleteWhiteSpaces: function () {
+        $("input").each(function(){
+            $(this).val($(this).val().trim());
+        });
+    },
+
+    verifierSiNomUtilisateurValide: function () {
+        var nom = $("#nouveau_nom").val();
+        $.ajax({
+            method: "POST",
+            url: "include/verifier-nom-utilisateur.php",
+            dataType: "JSON",
+            data: { pseudo: nom }
+        })
+        .done(function( msg ) {
+            if (msg["Valide"] == "0"){
+                // Nom valide
+                
+            }else{
+                // Nom non valide
+
+            }
+        });
+    },
+
     addClickEvents: function () {
         var base = this;
 
@@ -104,4 +129,8 @@ var LoginModalController = {
 
 $(document).ready(function() {
     LoginModalController.initialize();
+
+    $(".input").focusout(function(){
+        LoginModalController.deleteWhiteSpaces();
+    });
 });

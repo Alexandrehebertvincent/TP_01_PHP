@@ -2,7 +2,17 @@
 <?php
 	require("config.php");
 	include_once("fonctions.php");
-
+try {
+	$req = $connBD->prepare('SELECT * FROM films ORDER BY Nom');
+	$req->execute();
+	while ($donnees = $req->fetch()) {
+		$films[] = $donnees;
+	}
+	$req->closeCursor();
+	$connBD = null;
+} catch (PDOException $e) {
+	exit("Erreur lors de l'exécution de la requête SQL :<br />\n" . $e->getMessage() . "<br />\nREQUËTE = SELECT");
+}
 	$films = null;
 	try {
 		$req = $connBD->prepare('SELECT * FROM films ORDER BY Nom');

@@ -105,7 +105,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <div class="sminputs">
                                 <div class="input full">
                                     <label class="string" for="user-name">Pseudo</label>
-                                    <input class="string" maxlength="255" name="pseudo" placeholder="Pseudo" type="text" size="50" />
+                                    <input class="string" maxlength="255" id="nouveau_nom" name="pseudo" placeholder="Pseudo" type="text" size="50" />
+                                    <span class="input-info"></span>
+                                    <div class="input-message"></div>
                                 </div>
                                 <div class="input full">
                                     <label class="string" for="user-name">Date de naissance</label>
