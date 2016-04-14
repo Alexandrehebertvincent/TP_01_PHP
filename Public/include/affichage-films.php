@@ -9,7 +9,7 @@ try {
 		$films[] = $donnees;
 	}
 	$req->closeCursor();
-	$connBD = null;
+	//$connBD = null;
 } catch (PDOException $e) {
 	exit("Erreur lors de l'exécution de la requête SQL :<br />\n" . $e->getMessage() . "<br />\nREQUËTE = SELECT");
 }
