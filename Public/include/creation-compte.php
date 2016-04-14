@@ -20,16 +20,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 					// Vérifie que ce nom d'utilisateur n'est pas déjà utilisé
 					if (!VerifierPseudoUserExistant($_POST['pseudo'])) {
 
-                    $req = $connBD->prepare('INSERT INTO users(Nom, Date_Naissance, Adresse, Telephone, Email, Mot_de_Passe, Acces) VALUES(:nom, :dateNaissance, :adresse, :telephone, :email, :mdp, :acces)');
-                    $req->execute(array(
-                        "nom"=>$_POST['pseudo'],
-                        "dateNaissance"=>$_POST['dateNaissance'],
-                        "adresse"=>$_POST['adresse'],
-                        "telephone"=>$_POST['telephone'],
-                        "email"=>$_POST['email'],
-                        "mdp"=>$hash,
-                        "acces"=>$_POST['acces']
-                    ));
+                    $req = $connBD->prepare('INSERT INTO users(Nom, Mot_de_Passe, Acces) VALUES(:nom, :mdp, :acces)');
+                    $req->execute(array("nom"=>$_POST['pseudo'],"mdp"=>$hash,"acces"=>$_POST['acces']));
 
                     $req = $connBD->prepare('SELECT * FROM users WHERE Nom =:nom');
                     $req->execute(array("nom"=>$_POST['pseudo']));
@@ -43,10 +35,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             $_SESSION['utilisateur'] = array(
                                 "Id" => $donnees["Id"],
                                 "Nom" => $donnees["Nom"],
-                                "DateNaissance" => $donnees["Date_Naissance"],
-                                "Adresse" => $donnees["Adresse"],
-                                "Telephone" => $donnees["Telephone"],
-                                "Email" => $donnees["Email"],
                                 "Acces" => $donnees["Acces"]
                             );
 								header("LOCATION: ../index.php");
