@@ -32,7 +32,7 @@ try {
 <?php if (count($films) > 0 && $films[0] != NULL) { ?>
 	<?php foreach ($films as $film){ ?>
 		<div class="film-div">
-			<a class="lien-film" href="film.php?filmid=<?php echo $film['Id']; ?>"><div class="film-section-image" style="background-image: url(<?php echo $film['Image']; ?>);"></div></a>
+			<a href="film.php?filmid=<?php echo $film['Id']; ?>"><div class="film-section-image" style="background-image: url(<?php echo $film['Image']; ?>);"></div></a>
 			<h3><?php echo $film['Nom']; ?></h3>
 			<div class="film-section-bouton">
 				<?php if ($_SESSION['utilisateur']['Acces'] == "admin"){ ?>
