@@ -46,6 +46,7 @@ if (isset($_SESSION["messages"])) {
 				<a><img id="grande-image-visionneuse" src="uploads/patriot.jpg" height="370" width="290" /> </a>
 					<div id="div-vignettes">
 						<ul id="liste-vignettes">
+						<?php require("include/visionneuse.php"); ?>
 						</ul>
 					</div>
 			</div>
