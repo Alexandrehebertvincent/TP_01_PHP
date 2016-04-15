@@ -40,11 +40,25 @@ if (isset($_SESSION["messages"])) {
             <span id="fleche-out"></span>
         </header>
         <div id="page">
-            <?php require("include/affichage-films.php"); ?>
+			<!-- Visionneuse! -->
+			<h2 id="ajouts-recents"> Ajouts récents </h2>
+			<div>
+				<a><img id="grande-image-visionneuse" src="uploads/patriot.jpg" height="370" width="290" /> </a>
+					<div id="div-vignettes">
+						<ul id="liste-vignettes">
+						</ul>
+					</div>
+			</div>
+			<div id="affichage-films">
+				<!-- Affichage des films. -->
+				<?php require("include/affichage-films.php"); ?>
+			</div>
         </div>
     </section>
     <?php include "include/footer.php"; ?>
 	<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<script type="text/javascript" src="js/visionneuse.js"></script>
+
 <script>
 	$(document).ready(function(){
 		$(window).scroll(function(){
