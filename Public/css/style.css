@@ -175,10 +175,12 @@ nav ul li a {
 
 .logmod {
     display: block;
+    overflow-x: hidden;
     position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
+    height: 100%;
     left: 0;
     opacity: 1;
     background: rgba(0, 0, 0, 0.2);
@@ -1872,4 +1874,60 @@ footer{
 	margin: auto;
 	width: 100%;
 	text-align: center;
+}
+.input-info{
+    z-index: 99999999;
+    height: auto;
+    position: relative;
+    background-color: #fdfcf8;
+    border: 1px solid #adaaa5;
+    border-radius: 2.5px;
+    padding: 6px 15px;
+    font-size: 8pt;
+    font-weight: 800;
+    text-transform: uppercase;
+    visibility: hidden;
+    -webkit-box-shadow: 2px 2px 0 1px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 2px 2px 0 1px rgba(0, 0, 0, 0.1);
+    box-shadow: 2px 2px 0 1px rgba(0, 0, 0, 0.1);
+}
+
+.input-info i{
+    color: orange;
+}
+
+.input-info::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 10px;
+    margin-top: -6px;
+    width: 10px;
+    height: 10px;
+    background-color: #fdfcf8;
+    border-left: 1px solid #adaaa5;
+    border-top: 1px solid #adaaa5;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.validee{
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    padding: 7px 7px;
+    font-size: 14px;
+    overflow: hidden;
+    color: #3fc835;
+    visibility: hidden;
+}
+
+.input-invalid{
+    background: -webkit-repeating-linear-gradient(45deg, #bc4248, #bc3334 10px, #982f3e 10px, #982229 20px);
+    background: repeating-linear-gradient(45deg, #bc4248, #bc3334 10px, #982f3e 10px, #982229 20px);
+    color: #ffffff;
 }
