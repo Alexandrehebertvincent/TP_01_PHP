@@ -90,13 +90,18 @@ function ConfirmationSupprimer(e) {
 	var hrefDuBtnSupprimer = e.target.href
 	var posSigneEgal = hrefDuBtnSupprimer.lastIndexOf("=")
 	var filmId = hrefDuBtnSupprimer.substring(posSigneEgal+1, hrefDuBtnSupprimer.length);
-	var titreFilm = "(Film inconnu)";
+	var titreFilm = lesFilms[e.target.index]["Nom"];
 	
-	for(var i = 0; i < lesFilms.length; i++) {
-		if (lesFilms[i].Id == filmId) {
-			titreFilm = lesFilms[i].Nom;
-		}
-	}
+	// alert(btnsSupprimer.length);
+	
+	// e.preventDefault();
+	
+	// for(var i = 0; i < btnsSupprimer.length; i++) {
+		// alert( lesFilms[i].Id + " et " + filmId);
+		// if (lesFilms[i].Id == filmId) {
+			// titreFilm = lesFilms[i].Nom;
+		// }
+	// }
 		
 	response = confirm("Voulez-vous vraiment supprimer le film " + titreFilm + " ?");
 	if (response != true) {

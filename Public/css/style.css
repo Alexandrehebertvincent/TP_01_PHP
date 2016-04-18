@@ -1846,11 +1846,8 @@ footer{
 	text-align: center;
 }
 .imgVignette {
-	xxheight: 100%;
 	width: 100%;
-	align: center;
 	max-height: 100%;
-    widdth: auto;
 	text-align: center;
 }
 
@@ -1871,7 +1868,7 @@ footer{
 
 #conteneur-image {
 	height: 370px;
-	width: 290px;
+	width: 280px;
 	margin: auto;
 	width: 100%;
 	text-align: center;
