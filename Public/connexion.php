@@ -101,39 +101,39 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <span class="logmod__heading-subtitle">Entrez vos informations <strong>pour créer un compte.</strong></span>
                     </div>
                     <div class="logmod__form">
-                        <form method="post" action="include/creation-compte.php" class="simform">
+                        <form method="post" id="new-user-form" action="include/creation-compte.php" class="simform">
                             <div class="sminputs">
                                 <div class="input full">
                                     <label class="string" for="user-name">Pseudo</label>
-                                    <input class="string" maxlength="255" id="nouveau_nom" name="pseudo" placeholder="Pseudo" type="text" size="50" />
+                                    <input class="string" maxlength="255" id="nouveau_nom" name="pseudo" placeholder="Pseudo" type="text" size="50" required/>
                                     <span class="input-info"></span>
                                     <div class="input-message"></div>
                                 </div>
                                 <div class="input full">
                                     <label class="string" for="user-name">Date de naissance</label>
-                                    <input class="string" maxlength="255" name="dateNaissance" placeholder="Date de naissance" type="date" size="50" />
+                                    <input class="string" maxlength="255" name="dateNaissance" placeholder="Date de naissance" type="date" size="50" required/>
                                 </div>
                                 <div class="input full">
                                     <label class="string" for="user-name">Adresse</label>
-                                    <input class="string" maxlength="255" name="adresse" placeholder="Adresse" type="text" size="100" />
+                                    <input class="string" maxlength="255" name="adresse" placeholder="Adresse" type="text" size="100" required/>
                                 </div>
                                 <div class="input full">
                                     <label class="string" for="user-name">Numéro de téléphone</label>
-                                    <input class="string" maxlength="255" name="telephone" placeholder="Téléphone" type="text" size="50" />
+                                    <input class="string" maxlength="255" name="telephone" placeholder="Téléphone" type="text" size="50" required/>
                                 </div>
                                 <div class="input full">
                                     <label class="string" for="user-name">Email</label>
-                                    <input class="string" maxlength="255" name="email" placeholder="Email" type="email" size="50" />
+                                    <input class="string" maxlength="255" name="email" placeholder="Email" type="email" size="50" required/>
                                 </div>
                             </div>
                             <div class="sminputs">
                                 <div class="input string">
                                     <label class="string" for="user-pw">Mot de passe</label>
-                                    <input class="string" maxlength="255" name="mdp" placeholder="Mot de passe" type="password" size="50" />
+                                    <input class="string" maxlength="255" name="mdp" placeholder="Mot de passe" type="password" size="50" required/>
                                 </div>
                                 <div class="input string">
                                     <label class="string" for="user-pw-repeat">Répétez</label>
-                                    <input class="string" maxlength="255" name="mdpR" placeholder="Répéter mot de passe" type="password" size="50" />
+                                    <input class="string" maxlength="255" id="mdpR" name="mdpR" placeholder="Répéter mot de passe" type="password" size="50" required/>
                                 </div>
                             </div>
                             <div class="sminputs sminputs-radio">
@@ -158,7 +158,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <div class="sminputs">
                                 <div class="input full">
                                     <label class="string optional" for="pseudo">Pseudo</label>
-                                    <input class="string optional" maxlength="255" name="pseudo" placeholder="Pseudo" type="text" size="50"
+                                    <input required class="string optional" maxlength="255" name="pseudo" placeholder="Pseudo" type="text" size="50"
                                     <?php
                                         echo isset($_POST['pseudo']) == true ? 'value="'.$_POST['pseudo'].'"' : '';
                                     ?>
@@ -168,7 +168,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <div class="sminputs">
                                 <div class="input full">
                                     <label class="string optional" for="mdp">Mot de passe</label>
-                                    <input class="string optional" maxlength="255" name="mdp" placeholder="Mot de passe" type="password" size="50" />
+                                    <input required class="string optional" maxlength="255" name="mdp" placeholder="Mot de passe" type="password" size="50" />
                                     <span class="hide-password">Voir</span>
                                 </div>
                             </div>

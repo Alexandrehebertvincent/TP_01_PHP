@@ -69,10 +69,12 @@ var LoginModalController = {
         .done(function( msg ) {
             if (msg["Valide"] == "0"){
                 // Nom valide
-                
+                console.log("valide");
+                return true;
             }else{
                 // Nom non valide
-
+                console.log("Non valide");
+                return false;
             }
         });
     },
@@ -133,4 +135,9 @@ $(document).ready(function() {
     $(".input").focusout(function(){
         LoginModalController.deleteWhiteSpaces();
     });
+
+    $("#nouveau_nom").focusout(function(){
+        console.log($(LoginModalController.verifierSiNomUtilisateurValide()));
+    });
 });
+
