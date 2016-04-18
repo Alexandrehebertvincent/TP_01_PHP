@@ -3,7 +3,7 @@
 require("config.php");
 
 try {
-    $req = $connBD->prepare('SELECT * FROM users WHERE Nom LIKE :nom');
+    $req = $connBD->prepare('SELECT * FROM users WHERE Nom LIKE :nom ORDER BY Acces,Nom');
     $req->execute(array("nom"=>"%".$_POST['pseudo']."%"));
     $result = array();
     while ($donnees = $req->fetch()) {
