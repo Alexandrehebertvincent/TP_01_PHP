@@ -42,17 +42,20 @@ if (isset($_SESSION["messages"])) {
         <div id="page">
 			<!-- Visionneuse! -->
 			<h2 id="ajouts-recents"> Ajouts récents </h2>
-			<div id="conteneur-image">
-				<a id="aGrandeImage" href=""><img id="grande-image-visionneuse" src="" height="370" width="290" /> </a>
+			<div>
+				<a><img id="grande-image-visionneuse" src="uploads/patriot.jpg" height="370" width="290" /> </a>
+					<div id="div-vignettes">
+						<ul id="ul-vignettes">
+						
+						</ul>
+					</div>
 			</div>
-
-			<!----->
-			<div id="vignettes-visionneuse">
-				<ul id="ul-visionneuse">
-
-				</ul> 
+			
+			<div class="vfilm-afficheur">
+				<ul id="ul=vignette">
+				
+				</ul>
 			</div>
-			<!----->
 			
 			<div id="affichage-films">
 				<!-- Affichage des films. -->
