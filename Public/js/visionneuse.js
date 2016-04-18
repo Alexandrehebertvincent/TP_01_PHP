@@ -41,7 +41,11 @@ function DemarrerTimer() {
 	if (null == timer) {
 		arretDefilement();
 	}
+<<<<<<< HEAD
+	timer = setInterval(demarrerDefilement, 2000);
+=======
 	timer = setInterval(demarrerDefilement, 2500);
+>>>>>>> refs/remotes/origin/master
 }
 
 function demarrerDefilement() {
@@ -65,12 +69,21 @@ function demarrerDefilement() {
 			liVignettes[indexVignette - 2].id = "";
 		}
 	}
+<<<<<<< HEAD
 }
 
 function arretDefilement() {
 	clearInterval(timer);
 }
 
+=======
+}
+
+function arretDefilement() {
+	clearInterval(timer);
+}
+
+>>>>>>> refs/remotes/origin/master
 function choisirImage(e)  {
 	grandeImage.src = e.target.src;
 	aGrandeImage.href = "film.php?filmid=" + lesFilms[e.target.index]["Id"];
@@ -90,6 +103,10 @@ function ConfirmationSupprimer(e) {
 	var hrefDuBtnSupprimer = e.target.href
 	var posSigneEgal = hrefDuBtnSupprimer.lastIndexOf("=")
 	var filmId = hrefDuBtnSupprimer.substring(posSigneEgal+1, hrefDuBtnSupprimer.length);
+<<<<<<< HEAD
+	var titreFilm = lesFilms[e.target.index]["Nom"];
+=======
+>>>>>>> refs/remotes/origin/master
 	
 	// alert(btnsSupprimer.length);
 	
@@ -101,10 +118,15 @@ function ConfirmationSupprimer(e) {
 			// titreFilm = lesFilms[i].Nom;
 		// }
 	// }
+<<<<<<< HEAD
+		
+	response = confirm("Voulez-vous vraiment supprimer le film " + titreFilm + " ?");
+=======
 	
 	alert(e.titreFilm);
 		
 	response = confirm("Voulez-vous vraiment supprimer le film " + e.target.titreFilm + " ?");
+>>>>>>> refs/remotes/origin/master
 	if (response != true) {
 		e.preventDefault();
 	}
