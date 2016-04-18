@@ -41,7 +41,7 @@ function DemarrerTimer() {
 	if (null == timer) {
 		arretDefilement();
 	}
-	timer = setInterval(demarrerDefilement, 2000);
+	timer = setInterval(demarrerDefilement, 2500);
 }
 
 function demarrerDefilement() {
@@ -90,7 +90,6 @@ function ConfirmationSupprimer(e) {
 	var hrefDuBtnSupprimer = e.target.href
 	var posSigneEgal = hrefDuBtnSupprimer.lastIndexOf("=")
 	var filmId = hrefDuBtnSupprimer.substring(posSigneEgal+1, hrefDuBtnSupprimer.length);
-	var titreFilm = lesFilms[e.target.index]["Nom"];
 	
 	// alert(btnsSupprimer.length);
 	
@@ -102,8 +101,10 @@ function ConfirmationSupprimer(e) {
 			// titreFilm = lesFilms[i].Nom;
 		// }
 	// }
+	
+	alert(e.titreFilm);
 		
-	response = confirm("Voulez-vous vraiment supprimer le film " + titreFilm + " ?");
+	response = confirm("Voulez-vous vraiment supprimer le film " + e.target.titreFilm + " ?");
 	if (response != true) {
 		e.preventDefault();
 	}

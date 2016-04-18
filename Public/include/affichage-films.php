@@ -26,7 +26,7 @@
 			<h3><?php echo $film['Nom']; ?></h3>
 			<div class="film-section-bouton">
 				<?php if ($_SESSION['utilisateur']['Acces'] == "admin"){ ?>
-					<a href="include/supprimer.php?filmid=<?php echo $film['Id']; ?>" class="button file-upload-btn btn-auto btn-red">Supprimer</a>
+					<a titreFilm="<?php echo $film['Nom']; ?>"  href="include/supprimer.php?filmid=<?php echo $film['Id']; ?>" class="button file-upload-btn btn-auto btn-red">Supprimer</a>
 					<a href="modifier-film.php?filmid=<?php echo $film['Id']; ?>" class="button file-upload-btn btn-auto btn-orange">Modifier</a>
 				<?php } ?>
 				<a href="film.php?filmid=<?php echo $film['Id']; ?>" class="button file-upload-btn btn-auto">Fiche du film</a>
