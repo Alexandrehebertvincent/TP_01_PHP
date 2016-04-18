@@ -1931,3 +1931,7 @@ footer{
     background: repeating-linear-gradient(45deg, #bc4248, #bc3334 10px, #982f3e 10px, #982229 20px);
     color: #ffffff;
 }
+.input-recherche{
+    padding: 2px 5px;
+    font-style: italic;
+}

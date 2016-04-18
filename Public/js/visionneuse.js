@@ -19,7 +19,7 @@ function init() {
 	grandeImage = document.getElementById("grande-image-visionneuse");
 	aGrandeImage = document.getElementById("aGrandeImage");
 	liVignettes = document.getElementsByClassName("liVignette");
-	btnsSupprimer = document.getElementsByClassName("button file-upload-btn btn-auto btn-red");
+	btnsSupprimer = document.getElementsByClassName("btn-red");
 
 	grandeImage.addEventListener("mouseover", arretDefilement, false)
 	grandeImage.addEventListener("mouseout", DemarrerTimer, false)
@@ -86,29 +86,16 @@ function choisirImage(e)  {
 	DemarrerTimer();
 }
 
+/**
+ * Confirme avant de supprimer un film.
+ * @param e => Button qui enclanche la validation.
+ * @constructor
+ */
 function ConfirmationSupprimer(e) {
-	var hrefDuBtnSupprimer = e.target.href
-	var posSigneEgal = hrefDuBtnSupprimer.lastIndexOf("=")
-	var filmId = hrefDuBtnSupprimer.substring(posSigneEgal+1, hrefDuBtnSupprimer.length);
-
-	// alert(btnsSupprimer.length);
-
-	// e.preventDefault();
-
-	// for(var i = 0; i < btnsSupprimer.length; i++) {
-	// alert( lesFilms[i].Id + " et " + filmId);
-	// if (lesFilms[i].Id == filmId) {
-	// titreFilm = lesFilms[i].Nom;
-	// }
-	// }
-
-	alert(e.titreFilm);
-
-	response = confirm("Voulez-vous vraiment supprimer le film " + e.target.titreFilm + " ?");
+	response = confirm("Voulez-vous vraiment supprimer le film " + $(e.target).attr("titreFilm") + " ?");
 	if (response != true) {
 		e.preventDefault();
 	}
-
 }
 
 function fonctionXhr(e) {

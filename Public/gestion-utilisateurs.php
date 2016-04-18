@@ -68,5 +68,68 @@
 		</div>
 		<?php include "include/footer.php"; ?>
 	</section>
+	 <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script>
+	var btnsSupprimer;
+
+	function init() {
+		btnsSupprimer = document.getElementsByClassName("button file-upload-btn btn-auto btn-red");
+
+		for (var i = 0; i < btnsSupprimer.length; i++) {
+			btnsSupprimer[i].addEventListener("click", ConfirmationSupprimer, false);
+		}
+	}
+
+	/**
+	 * Confirme avant de supprimer un film.
+	 * @param e => Button qui enclanche la validation.
+	 * @constructor
+	 */
+	function ConfirmationSupprimer(e) {
+		response = confirm("Voulez-vous vraiment supprimer le compte de  l'utilisateur " + $(e.target).attr("nomuser") + " ?");
+		if (response != true) {
+			e.preventDefault();
+		}
+	}
+
+	$(document).ready(function () {
+		init();
+		$("#recherche").on("change paste keyup", function() {
+			if ($(this).val().length >= 3){
+				$.ajax({
+						method: "POST",
+						url: "include/getUsers.php",
+						dataType: "JSON",
+						data: { pseudo: $(this).val() }
+					})
+					.done(function( msg ) {
+                        if (msg.length > 0) {
+                            $("#user-table").html("");
+                            for (i = 0; i < msg.length; i++) {
+                                console.log(msg[i]);
+                                $("#user-table").append('<tr><?php if($_SESSION['utilisateur']['Acces'] == "admin") { ?><td><a nomuser="' + msg[i]['Nom'] + '" href="include/supprimer-utilisateur.php?userid=' + msg[i]['Id'] + '" class="button file-upload-btn btn-auto btn-red">Supprimer</a></td><td><a href="modifier-utilisateur.php?userid=' + msg[i]['Id'] + '" class="button file-upload-btn btn-auto btn-orange">Modifier</a></td><?php } ?><td>Nom d\'utilisateur: ' + msg[i]['Nom'] + '</td><td>Type d\'utilisateur: ' + msg[i]['Acces'] + '</td></tr>');
+                            }
+                        }else{
+                            $("#user-table").html('<tr><th>Aucun résultat trouvé.</th></tr>');
+                        }
+					});
+			}else{
+                $.ajax({
+                        method: "POST",
+                        url: "include/getUsers.php",
+                        dataType: "JSON",
+                        data: { pseudo: "" }
+                    })
+                    .done(function( msg ) {
+                        $("#user-table").html("");
+                        for (i = 0; i < msg.length; i++){
+                            console.log(msg[i]);
+                            $("#user-table").append('<tr><?php if($_SESSION['utilisateur']['Acces'] == "admin") { ?><td><a nomuser="'+msg[i]['Nom']+'" href="include/supprimer-utilisateur.php?userid=' + msg[i]['Id'] + '" class="button file-upload-btn btn-auto btn-red">Supprimer</a></td><td><a href="modifier-utilisateur.php?userid=' + msg[i]['Id'] + '" class="button file-upload-btn btn-auto btn-orange">Modifier</a></td><?php } ?><td>Nom d\'utilisateur: ' + msg[i]['Nom'] + '</td><td>Type d\'utilisateur: ' + msg[i]['Acces'] + '</td></tr>');
+                        }
+                    });
+            }
+		});
+	})
+</script>
 </body>
 </html>	
