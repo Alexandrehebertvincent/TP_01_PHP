@@ -105,35 +105,47 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <div class="sminputs">
                                 <div class="input full">
                                     <label class="string" for="user-name">Pseudo</label>
-                                    <input class="string" maxlength="255" id="nouveau_nom" name="pseudo" placeholder="Pseudo" type="text" size="50" required/>
-                                    <span class="input-info"></span>
-                                    <div class="input-message"></div>
+                                    <input class="string" autocomplete="off" maxlength="255" id="nouveau_nom" name="pseudo" placeholder="Pseudo" type="text" size="50" required/>
+                                    <i class="fa fa-check-circle validee" aria-hidden="true"></i>
+                                    <span class="input-info" id="info-nom-nouveau"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Le pseudo ne peut être vide.</span>
                                 </div>
                                 <div class="input full">
                                     <label class="string" for="user-name">Date de naissance</label>
                                     <input class="string" maxlength="255" name="dateNaissance" placeholder="Date de naissance" type="date" size="50" required/>
+                                    <i class="fa fa-check-circle validee" aria-hidden="true"></i>
+                                    <span class="input-info" id="info-nom-nouveau"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Veuillez entrer votre date de naissance</span>
                                 </div>
                                 <div class="input full">
                                     <label class="string" for="user-name">Adresse</label>
                                     <input class="string" maxlength="255" name="adresse" placeholder="Adresse" type="text" size="100" required/>
+                                    <i class="fa fa-check-circle validee" aria-hidden="true"></i>
+                                    <span class="input-info" id="info-nom-nouveau"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Veuillez entrer votre adresse</span>
                                 </div>
                                 <div class="input full">
                                     <label class="string" for="user-name">Numéro de téléphone</label>
-                                    <input class="string" maxlength="255" name="telephone" placeholder="Téléphone" type="text" size="50" required/>
+                                    <input class="string" pattern="[0-9]{10}" maxlength="255" name="telephone" placeholder="Téléphone" type="text" size="50" required/>
+                                    <i class="fa fa-check-circle validee" aria-hidden="true"></i>
+                                    <span class="input-info" id="info-nom-nouveau"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Veuillez entrer votre numéro de télépone</span>
                                 </div>
                                 <div class="input full">
                                     <label class="string" for="user-name">Email</label>
                                     <input class="string" maxlength="255" name="email" placeholder="Email" type="email" size="50" required/>
+                                    <i class="fa fa-check-circle validee" aria-hidden="true"></i>
+                                    <span class="input-info" id="info-nom-nouveau"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Veuillez entrer un email valide</span>
                                 </div>
                             </div>
                             <div class="sminputs">
                                 <div class="input string">
                                     <label class="string" for="user-pw">Mot de passe</label>
-                                    <input class="string" maxlength="255" name="mdp" placeholder="Mot de passe" type="password" size="50" required/>
+                                    <input class="string" maxlength="255" id="mdp" name="mdp" placeholder="Mot de passe" type="password" size="50" required/>
+                                    <i class="fa fa-check-circle validee" aria-hidden="true"></i>
+                                    <span class="input-info" id="info-nom-nouveau"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Veuillez entrer votre mot de passe</span>
                                 </div>
                                 <div class="input string">
                                     <label class="string" for="user-pw-repeat">Répétez</label>
                                     <input class="string" maxlength="255" id="mdpR" name="mdpR" placeholder="Répéter mot de passe" type="password" size="50" required/>
+                                    <i class="fa fa-check-circle validee" aria-hidden="true"></i>
+                                    <span class="input-info" id="info-nom-nouveau"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Le mot de passe ne concorde pas</span>
                                 </div>
                             </div>
                             <div class="sminputs sminputs-radio">
@@ -143,7 +155,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <input title="Utilisateur" id="user_radio" class="radio" type="radio" name="acces" value="user" checked>
                             </div>
                             <div class="simform__actions">
-                                <input class="sumbit" type="submit" value="Créer" />
+                                <input class="sumbit" id="submit-nouveau" type="submit" value="Créer" >
                             </div>
 							<input type="hidden" name="pagedorigine" id="hiddenField" value="connexion" >
                         </form>
@@ -154,15 +166,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <span class="logmod__heading-subtitle">Entrez votre pseudo et votre mot de passe <strong>pour vous connecter.</strong></span>
                     </div>
                     <div class="logmod__form">
-                        <form class="simform" action="connexion.php" method="post">
+                        <form class="simform" id="form-connexion" action="connexion.php" method="post">
                             <div class="sminputs">
                                 <div class="input full">
                                     <label class="string optional" for="pseudo">Pseudo</label>
-                                    <input required class="string optional" maxlength="255" name="pseudo" placeholder="Pseudo" type="text" size="50"
+                                    <input required class="string optional" autocomplete="off" maxlength="255" name="pseudo" placeholder="Pseudo" type="text" size="50"
                                     <?php
                                         echo isset($_POST['pseudo']) == true ? 'value="'.$_POST['pseudo'].'"' : '';
                                     ?>
                                     />
+                                    <span class="input-info" id="info-nom-nouveau"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Le pseudo ne peut être vide.</span>
                                 </div>
                             </div>
                             <div class="sminputs">
@@ -170,6 +183,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     <label class="string optional" for="mdp">Mot de passe</label>
                                     <input required class="string optional" maxlength="255" name="mdp" placeholder="Mot de passe" type="password" size="50" />
                                     <span class="hide-password">Voir</span>
+                                    <span class="input-info" id="info-nom-nouveau"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Entrer votre mot de passe.</span>
                                 </div>
                             </div>
                             <div class="simform__actions">
